@@ -195,7 +195,7 @@
 	<?php ob_start(); ?>
 		<header id="main-header" data-height-onload="<?php echo esc_attr( et_get_option( 'menu_height', '66' ) ); ?>">
 			<div class="container clearfix et_menu_container top_header">
-                <div class="col-md-3 top_left">
+                <div class="col-md-2 top_left">
                     <?php if ( $et_top_info_defined && ! $et_slide_header || is_customize_preview() ) : ?>
                         <?php ob_start(); ?>
                         <div class="soc_box">
@@ -218,7 +218,7 @@
 
                                 et_show_cart_total();
                                 ?>
-                        </div> <!-- #top-header -->
+                        </div>
                         <?php
                         $top_header = ob_get_clean();
 
@@ -241,7 +241,7 @@
 
 				ob_start();
 			?>
-                <div class="col-md-6 top_center">
+                <div class="col-md-9 top_center">
 				<div class="logo_container">
 					<span class="logo_helper"></span>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -328,10 +328,10 @@
 				</div>
             </div>
                 <?php if ( ( false !== et_get_option( 'show_search_icon', true ) && ! $et_slide_header ) || is_customize_preview() ) : ?>
-                    <div class="col-md-3 search_block">
+                    <div class="col-md-1 search_block">
                         <div id="sb-search" class="sb-search">
                             <form>
-                                <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="search" id="search">
+                                <input class="sb-search-input" type="text" value="" name="search" id="search">
                                 <input class="sb-search-submit" type="submit" value="">
                                 <span class="sb-icon-search"></span>
                             </form>

@@ -4,9 +4,10 @@
 ?>
 
 <div class="container">
-	<div id="footer-widgets" class="clearfix">
-	<?php
-		$footer_sidebars = array( 'sidebar-2', 'sidebar-3', 'sidebar-4', 'sidebar-5' );
+    <div class="row">
+        <?php
+        $footer_sidebars = array('sidebar-2', 'sidebar-3', 'sidebar-4', 'sidebar-5');
+        $date = date("Y");
 
 		foreach ( $footer_sidebars as $key => $footer_sidebar ) :
 			if ( is_active_sidebar( $footer_sidebar ) ) :
