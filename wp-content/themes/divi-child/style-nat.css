@@ -877,6 +877,7 @@ input[type=email]:-moz-placeholder { /* Firefox 18- */
 
 .posts .blog_item .img-wrapper img{
     filter: grayscale(100%);
+    min-height: 500px;
 
 }
 .posts .blog_item:hover .img-wrapper img{

@@ -84,13 +84,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
                     if ($type == 'latest') {
                         $args = array(
-                            'numberposts' => 7,
+                            'numberposts' => 6,
                             'order'    => 'DESC',
                             'category'    => 6
                         );
                     } else {
                         $args = array(
-                            'numberposts' => 7,
+                            'numberposts' => 6,
                             'category'    => 6,
                             'meta_key' => 'post_views_count',
                             'orderby'  => 'meta_value_num',

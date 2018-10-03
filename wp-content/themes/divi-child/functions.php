@@ -72,14 +72,12 @@ function news_filtr_get_posts()
 
         if ($type == 'latest') {
             $args = array(
-                'numberposts' => 7,
+                'numberposts' => 6,
                 'order'    => 'DESC',
-                'category'    => 6
             );
         } else {
             $args = array(
-                'numberposts' => 7,
-                'category'    => 6,
+                'numberposts' => 6,
                 'meta_key' => 'post_views_count',
                 'orderby'  => 'meta_value_num'
             );
@@ -87,6 +85,9 @@ function news_filtr_get_posts()
 
         if (isset($data['mainPostId'])) {
             $args['exclude'] = [$data['mainPostId']];
+        }
+        if (isset($data['catId'])) {
+            $args['category'] = $data['catId'];
         }
         $posts = get_posts($args);
         ob_start();
@@ -132,7 +133,3 @@ function news_filtr_get_posts()
     wp_die($resp);
 }
 
-
-
-
-//Test

@@ -55,7 +55,8 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
                 var $that = $(this),
                     $type = $that.attr('data-type'),
                     $newsWrap = $('.news_posts_wrap'),
-                    $mainPostId = $newsWrap.attr('data-main-post');
+                    $mainPostId = $newsWrap.attr('data-main-post'),
+                    $catId = $newsWrap.attr('data-cat');
                 if (!$that.hasClass('active')) {
                     $('.posts_filter-list .filter a').removeClass('active');
                     $that.addClass('active');
@@ -66,6 +67,9 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
                     };
                     if ($mainPostId) {
                         data['mainPostId'] = $mainPostId;
+                    }
+                    if ($catId) {
+                        data['catId'] = $catId;
                     }
                     $.ajax({
                         type: "POST", //Метод отправки
@@ -119,13 +123,13 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">НАПИСАТИ РЕДАКТОРУ</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                ...
+                <?php echo do_shortcode( ' [contact-form-7 id="325" title="Contact form news"] ' ); ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
