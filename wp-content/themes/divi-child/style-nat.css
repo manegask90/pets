@@ -853,7 +853,8 @@ input[type=email]:-moz-placeholder { /* Firefox 18- */
     text-transform: uppercase;
     color: #404040;
 }
-.posts .posts_filter-list li a:hover{
+.posts .posts_filter-list li a:hover,
+.posts .posts_filter-list li a.active{
     color: #FF8000;
     border-bottom: 2px solid #FF8000;
 }

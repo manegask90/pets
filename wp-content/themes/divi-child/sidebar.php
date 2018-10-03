@@ -33,4 +33,44 @@
             ?>
         </ul>
     </div>
+
+    <div class="sidebar_contact-box">
+        <h4 class="cbox_txt">Маєш цікаву історію? Розкажи редактору</h4>
+        <a href="#" class="cbox_btn" data-toggle="modal" data-target="#sidebarModal"> Написати</a>
+    </div>
+
+    <div class="sidebar_events_box">
+        <h3 class="sidebar_header">Найближчі події</h3>
+        <ul class="sidebar_events-list">
+            <li>
+                <a href="#" class="event_url">
+                    <span class="event_time">14.04.2017</span>
+                    <span class="event_tittle">Змагання службових вівчарок з усіх регіонів України</span>
+                    <i class="demo-icon icon-arrow-right"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="event_url">
+                    <span class="event_time">14.04.2017</span>
+                    <span class="event_tittle">Виставка котів України та Европи</span>
+                    <i class="demo-icon icon-arrow-right"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="event_url">
+                    <span class="event_time">14.04.2017</span>
+                    <span class="event_tittle">Змагання службових вівчарок з усіх регіонів України</span>
+                    <i class="demo-icon icon-arrow-right"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="event_url">
+                    <span class="event_time">14.04.2017</span>
+                    <span class="event_tittle">Змагання службових вівчарок з усіх регіонів України</span>
+                    <i class="demo-icon icon-arrow-right"></i>
+                </a>
+            </li>
+
+        </ul>
+    </div>
 </div>
