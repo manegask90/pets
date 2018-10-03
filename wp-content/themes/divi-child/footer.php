@@ -111,6 +111,16 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 
             document.cookie = updatedCookie;
         }
+
+
+        jQuery(function(){
+
+            jQuery(".file_text input").change(function(){
+                var val = jQuery(this).val();
+                jQuery(".file_text").html(val.replace("C:\\fakepath\\", ""));
+            });
+
+        });
     </script>
 </body>
 </html>
@@ -119,8 +129,8 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 
 
 <!-- Modal -->
-<div class="modal fade" id="sidebarModal" tabindex="-1" role="dialog" aria-labelledby="sidebarModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div class="modal fade bd-example-modal-lg" id="sidebarModal" tabindex="-1" role="dialog" aria-labelledby="sidebarModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">НАПИСАТИ РЕДАКТОРУ</h5>
@@ -130,10 +140,6 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
             </div>
             <div class="modal-body">
                 <?php echo do_shortcode( ' [contact-form-7 id="325" title="Contact form news"] ' ); ?>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
