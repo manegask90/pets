@@ -390,7 +390,7 @@
     width: 15px;
     height: 15px;
     vertical-align: middle;
-    /*background: url(images/arrow.png) no-repeat 100%;*/
+    background: url(images/arrow.png) no-repeat 100%;
     border: none;
 }
 
