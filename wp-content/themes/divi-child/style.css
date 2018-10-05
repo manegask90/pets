@@ -879,6 +879,49 @@
     font-size: 45px;
 }
 
+/*Events*/
+.events {
+    margin-bottom: 45px;
+}
+.events_filter {
+    display: flex;
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 14px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: #404040;
+}
+.event-filtr {
+    display: flex;
+}
+.events_filter span {
+    margin-right: 45px;
+}
+.events_filter .event-filtr select {
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    letter-spacing: 1.82px;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1;
+    background-position: 85% 50%;
+}
+.events_filter .event-filtr .select-box:first-child {
+    margin-right: 50px;
+}
+.events_filter .event-filtr .select-box:after {
+    content: '';
+    background: url(images/arrow.png) no-repeat 100%;
+    display: inline-block;
+    height: 9px;
+    width: 15px;
+}
+.events_filter .event-filtr select:hover {
+    cursor: pointer;
+}
 
 
 /*Footer*/
@@ -976,6 +1019,27 @@
 .main_footer .tnp-field-email input:-moz-placeholder {
     color: #fff;
     letter-spacing: 2.25px;
+}
+/********/
+
+
+body .scroll-top-inner span {
+    font-family: dashicons;
+    width: 29px;
+    height: 29px;
+    background: transparent;
+    color: #FF8000;
+    font-size: 20px;
+    line-height: 29px;
+}
+body .scroll-top-inner {
+    background: transparent;
+    border: 2px solid #FF8000;
+    opacity: 1;
+    width: 30px;
+    height: 30px;
+    right: 65px;
+    bottom: 25px;
 }
 /*MEDIA*/
 @media screen 

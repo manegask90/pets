@@ -21,167 +21,188 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
             </div>
             <div class="col-md-12">
                 <div class="events_filter">
-                    <ul class="events_filter-list">
-                        <li>Показувати спочатку:</li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle dropdown-toggle_cust" data-toggle="dropdown" aria-expanded="false">Серпень<span class="caret"></span></a>
-                            <ul class="dropdown-menu dropdown-menu_cust" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -170px, 0px);">
-                                <li><a href="#">Вересень</a></li>
-                                <li><a href="#">Жовтень</a></li>
-                                <li><a href="#">Листопад</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown dropdown_cust">
-                            <span class="dropdown-toggle dropdown-toggle_cust">Всі міста<span class="caret"></span></span>
-                            <ul class="dropdown-menu dropdown-menu_cust">
-                                <li><a href="#" data-type="lviv">Львів</a></li>
-                                <li><a href="#" data-type="kyiv">Київ</a></li>
-                                <li><a href="#" data-type="dnipro">Дніпро</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-
                     <?php
-                    $city = '';
+
+                    $curent_month = date("m");
+                    $selectMonth = $_COOKIE['select-month'];
+                    $selectCity  = $_COOKIE['select-city'];
+
+                        $allMons = array(
+                                '01' => 'Січень',
+                                '02' => 'Лютий',
+                                '03' => 'Березень',
+                                '04' => 'Квітень',
+                                '05' => 'Травень',
+                                '06' => 'Червень',
+                                '07' => 'Липень',
+                                '08' => 'Серпень',
+                                '09' => 'Вересень',
+                                '10' => 'Жовтень',
+                                '11' => 'Листопад',
+                                '12' => 'Грудень'
+                        );
+                        $allCity = array(
+                          'all-city' => 'Всі міста',
+                          'lviv'     => 'Львів',
+                          'kyiv'     => 'Київ',
+                          'dnipro'   => 'Дніпро'
+                        )
 
                     ?>
 
-                    <form action="" method="get">
-                        <select name="date" onchange="this.form.submit()">
-                            <option value="all-date" selected >Всі місяці</option>
-                            <option value="01">Січень</option>
-                            <option value="02">Лютий</option>
-                            <option value="03">Березень</option>
-                            <option value="04">Квітень</option>
-                            <option value="05">Травень</option>
-                            <option value="06">Червень</option>
-                            <option value="07">Липень</option>
-                            <option value="08">Серпень</option>
-                            <option value="09">Вересень</option>
-                            <option value="10">Жовтень</option>
-                            <option value="11">Листопад</option>
-                            <option value="12">Грудень</option>
-                        </select>
-                        <select name="city" onchange="this.form.submit()">
-                            <option value="all-city" selected >Всі міста</option>
-                            <option value="lviv">Львів</option>
-                            <option value="kyiv">Київ</option>
-                            <option value="dnipro">Дніпро</option>
-                        </select>
+                    <span>Показувати спочатку:</span>
+                    <form action="" method="post" class="event-filtr">
+                        <div class="select-box">
+                            <select name="date" class="filtr-select-month">
+                            <?php
+                                if (isset($_COOKIE['select-month'])) {
+                                    foreach ($allMons as $numberMon => $mon) {
+                                        $option = '<option value="' . $numberMon . '"';
+                                        if ($numberMon == $_COOKIE['select-month']) {
+                                            $option .= ' selected="selected"';
+                                        }
+                                        $option .= '>' . $mon . '</option>';
+                                        echo $option;
+                                    }
+                                } else {
+                                    foreach ($allMons as $numberMon => $mon) {
+                                        $option = '<option value="' . $numberMon . '"';
+                                        if ($numberMon == $curent_month) {
+                                            $option .= ' selected="selected"';
+                                        }
+                                        $option .= '>' . $mon . '</option>';
+                                        echo $option;
+                                    }
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="select-box">
+                            <select name="city" class="filtr-select-city">
+                                <?php
+                                foreach ($allCity as $numberCity => $city) {
+                                    $option = '<option value="' . $numberCity . '"';
+                                    if ($numberCity == $_COOKIE['select-city']) {
+                                        $option .= ' selected="selected"';
+                                    }
+                                    $option .= '>' . $city . '</option>';
+                                    echo $option;
+                                }
+                                ?>
+                            </select>
+                        </div>
                     </form>
 
                 </div>
             </div>
         </div>
-        <div class="row">
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+        <div class="row events_posts_wrap">
+        <?php
 
-    $date = get_field('date');
-    $month = explode("/", $date)[0];
-    $year = explode("/", $date)[2];
-    var_dump($year);
-        ?>
+            if( !empty($posts) ):
 
-
-            <?php
+                $city = $_GET['city'];
+                $date_filtr = $_GET['date'];
 
 
+                if (isset($selectMonth)){
+                    $args = array(
+                        'posts_per_page' => -1,
+                        'category' => 17,
+                        'orderby' => 'meta_value_num',
+                        'order' => 'DESC',
+                        'meta_query' => array(
+                            'relation' => 'AND',
+                            array(
+                                'key' => 'date',
+                                'compare' => 'REGEXP',
+                                'value' => '[0-9]{4}' . $selectMonth . '[0-9]{2}',
+                            )
+                        )
+                    );
+                } elseif (isset($selectCity)) {
+                    $args = array(
+                        'posts_per_page' => -1,
+                        'category' => 17,
+                        'orderby' => 'meta_value_num',
+                        'order' => 'DESC',
+                        'meta_query' => array(
+                            'relation' => 'AND',
+                            array(
+                                'key' => 'city',
+                                'value' => $selectCity,
+                                'compare' => '='
+                            ),
+                        )
+                    );
+                } elseif (isset($selectMonth) && isset($selectCity)) {
+                    $args = array(
+                        'posts_per_page' => -1,
+                        'category' => 17,
+                        'orderby' => 'meta_value_num',
+                        'order' => 'DESC',
+                        'meta_query' => array(
+                            'relation' => 'AND',
+                            array(
+                                'key' => 'city',
+                                'value' => $selectCity,
+                                'compare' => '='
+                            ),
+                            array(
+                                'key' => 'date',
+                                'compare' => 'REGEXP',
+                                'value' => '[0-9]{4}' . $selectMonth . '[0-9]{2}',
+                            )
+                        )
+                    );
+                } else {
+                    $args  = array(
+                        'posts_per_page' => -1,
+                        'category'       => 17,
+                        'orderby'        => 'meta_value_num',
+                        'order'          => 'DESC',
+                        'meta_query' => array(
+                            array(
+                                'key' => 'date',
+                                'compare' => 'REGEXP',
+                                'value' => '[0-9]{4}' . $curent_month . '[0-9]{2}',
+                            )
+                        )
+                    );
+                }
 
-            $city = $_GET['city'];
-            $date = $_GET['date'];
 
-            $posts = get_posts(array(
-                'posts_per_page'	=> -1,
-//                'meta_key'			=> 'date',
-//                'mate_value'        => $date,
-                'orderby'			=> 'meta_value',
-                'order'				=> 'ASC',
-                'category'          => 17,
-//                'meta_query'	=> array(
-//                    'relation'		=> 'AND',
-//                    array(
-//                        'key'		=> 'city',
-//                        'value'		=> $city,
-//                        'compare'	=> '='
-//                    ),
-//                    array(
-//                        'key'		=> 'date',
-//                        'value'		=> $month . '',
-//                        'compare'	=> '>'
-//                    )
-//                )
-            ));
+                $posts = get_posts( $args );
 
-            if( $posts ):
-                ?>
-
-                <ul>
-
-                    <?php foreach( $posts as $post ):
-
-                        setup_postdata( $post );
-
-//                    $date = get_field('date');
-//                    $month = explode("/", $date)[0];
-//                    $year = explode("/", $date)[2];
-//                    var_dump($year);
-
-                        ?>
-                        <li>
-                            <span><?php the_title(); ?> (date: <?php the_field('date'); ?>)</span>
-                        </li>
-
-                    <?php endforeach; ?>
-
-                </ul>
-
-                <?php wp_reset_postdata(); ?>
+                foreach ($posts as $post) {
+                    $events_date = $post;
+                    ?>
+                    <div <?php post_class('col-md-3 col-sm-6'); ?> >
+                        <a href="<?php the_permalink(); ?>" class="">
+                            <div class="blog_item">
+                                <div class="img-wrapper">
+                                    <?php the_post_thumbnail(); ?>
+                                </div>
+                                <div class="content">
+                                    <div class="date">
+                                        <h5 class="date_txt"><span><?php echo get_field('date'); ?></span><?php echo get_field('city'); ?></h5>
+                                    </div>
+                                    <div class="content-text">
+                                        <h4 class="event_tittle"><?php the_title(); ?></h4>
+                                        <div class="event_brief"><?php the_excerpt(); ?></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                <?php } ?>
+            <?php wp_reset_postdata(); ?>
 
             <?php endif; ?>
-
-
-<?php
-//
-//            $args = array(
-//                'numberposts' => 0,
-//                'order'    => 'DESC',
-//                'category'    => 17
-//            );
-//
-//            $posts = get_posts( $args );
-//
-//            if (!empty($posts)) {
-//                foreach ($posts as $post) {
-//                    $events_date = $post;
-//                    ?>
-<!--                    <div --><?php //post_class('col-md-3 col-sm-6'); ?><!-- >-->
-<!--                        <a href="--><?php //the_permalink(); ?><!--" class="">-->
-<!--                            <div class="blog_item">-->
-<!--                                <div class="img-wrapper">-->
-<!--                                    --><?php //the_post_thumbnail(); ?>
-<!--                                </div>-->
-<!--                                <div class="content">-->
-<!--                                    <div class="date">-->
-<!--                                        <h5 class="date_txt"><span>29.07.2017</span>Lviv</h5>-->
-<!--                                    </div>-->
-<!--                                    <div class="content-text">-->
-<!--                                        <h4 class="event_tittle">Vestibulum dapibus elit sollicitudin</h4>-->
-<!--                                        <p class="event_brief">Phasellus tincidunt dictum ligula et auctor. Sed dapibus justo tortor, ut ultricies felis convallis luctus. Sed at arcu viverra, maximus dui ultrices, porttitor nisi.</p>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                --><?php //}
-//            }
-//            ?>
         </div>
     </div>
 </section>
 
 
-<?php endwhile; else: ?>
-    <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-<?php endif; ?>
 <?php
     get_footer();

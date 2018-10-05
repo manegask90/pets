@@ -121,6 +121,68 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
             });
 
         });
+
+
+        // Filtr events
+        jQuery(document).ready(function($) {
+            $('.event-filtr select').change(function (e) {
+                e.preventDefault();
+                var $thatSelect = $(this),
+                    $selectedMonth = $('.filtr-select-month option:selected').val(),
+                    $selectedCity  = $('.filtr-select-city option:selected').val(),
+                    $eventsWrap    = $('.events_posts_wrap');
+                // console.log($selected);
+
+                setCookie('select-month', $selectedMonth);
+                setCookie('select-city', $selectedCity);
+                var data = {
+                    'select-month': $selectedMonth,
+                    'select-city':  $selectedCity,
+                    action: 'events_filtr',
+                };
+                $.ajax({
+                    type: "POST", //Метод отправки
+                    url: MyAjax.ajaxurl, //путь до php фаила отправителя
+                    data: data,
+                    success: function (response) {
+                        $eventsWrap.html(response);
+                    }
+                });
+
+                if (!$thatSelect.hasClass('active')) {
+                }
+
+            });
+        });
+
+        // function setCookie(name, value, options) {
+        //     options = options || {};
+        //
+        //     var expires = options.expires;
+        //
+        //     if (typeof expires == "number" && expires) {
+        //         var d = new Date();
+        //         d.setTime(d.getTime() + expires * 1000);
+        //         expires = options.expires = d;
+        //     }
+        //     if (expires && expires.toUTCString) {
+        //         options.expires = expires.toUTCString();
+        //     }
+        //
+        //     value = encodeURIComponent(value);
+        //
+        //     var updatedCookie = name + "=" + value;
+        //
+        //     for (var propName in options) {
+        //         updatedCookie += "; " + propName;
+        //         var propValue = options[propName];
+        //         if (propValue !== true) {
+        //             updatedCookie += "=" + propValue;
+        //         }
+        //     }
+        //
+        //     document.cookie = updatedCookie;
+        // }
     </script>
 </body>
 </html>

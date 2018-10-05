@@ -13,13 +13,6 @@ $mois_annee = array(
 setlocale (LC_TIME, 'fr_FR');
 $mois_calendar = strftime('%B');
 $query_calendrier = new WP_Query( array(
-//    'post_type' => 'spectacle' ,
-//    'tax_query' => array(
-//        'relation' => 'OR',
-//        array(
-//            'cat' => '17',
-//        )
-//    )
     'category'    => 17
 ));
 $has_thumb = has_post_thumbnail();

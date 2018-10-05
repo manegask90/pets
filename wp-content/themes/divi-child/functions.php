@@ -74,6 +74,7 @@ function news_filtr_get_posts()
             $args = array(
                 'numberposts' => 6,
                 'order'    => 'DESC',
+                'category' => 6
             );
         } else {
             $args = array(
@@ -131,5 +132,88 @@ function news_filtr_get_posts()
         ob_clean();
     }
     wp_die($resp);
+}
+
+
+//Filtr events
+add_action( 'wp_ajax_events_filtr', 'events_filtr_get_posts' );
+add_action( 'wp_ajax_nopriv_events_filtr', 'events_filtr_get_posts' );
+
+function events_filtr_get_posts()
+{
+
+    $data = $_POST;
+    $resp = '';
+
+    if (isset($data['select-month']) && isset($data['select-city'])) {
+        $month = $data['select-month'];
+        $city  = $data['select-city'];
+
+        $args  = array(
+            'posts_per_page' => -1,
+            'category'       => 17,
+            'orderby'        => 'meta_value_num',
+            'order'          => 'ASC',
+            'meta_query'     => array(
+                'relation'		=> 'AND',
+                array(
+                    'key'		=> 'city',
+                    'value'		=> $city,
+                    'compare'	=> '='
+                ),
+                array(
+                    'key'     => 'date',
+                    'compare'  => 'REGEXP',
+                    'value'    => '[0-9]{4}' . $month . '[0-9]{2}',
+                )
+            )
+        );
+
+        if ($city == 'all-city') {
+            $args = array(
+                'posts_per_page' => -1,
+                'category'       => 17,
+                'orderby'        => 'meta_value_num',
+                'order'          => 'ASC',
+                'meta_query'     => array(
+                    array(
+                        'key'     => 'date',
+                        'compare'  => 'REGEXP',
+                        'value'    => '[0-9]{4}' . $month . '[0-9]{2}',
+                    )
+                )
+            );
+        }
+
+        $posts = get_posts($args);
+        ob_start();
+        if (!empty($posts)) {
+            foreach( $posts as $post ){ setup_postdata($post); ?>
+                <div <?php post_class('col-md-3 col-sm-6'); ?>>
+                    <a href="<?php the_permalink($post->ID); ?>" class="">
+                        <div class="blog_item">
+                            <div class="img-wrapper">
+                                <?php echo get_the_post_thumbnail($post); ?>
+                            </div>
+                            <div class="content">
+                                <div class="date">
+                                    <h5 class="date_txt"><span><?php echo get_field('date', $post->ID ); ?></span><?php  echo get_field('city', $post->ID ); ?></h5>
+                                </div>
+                                <div class="content-text">
+                                    <h4 class="event_tittle"><?php echo get_the_title($post); ?></h4>
+                                    <div class="event_brief"><?php echo apply_filters( 'the_excerpt', get_the_excerpt($post) ); ?></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <?php }
+            wp_reset_postdata(); // сброс
+        }
+        $resp = ob_get_contents();
+        ob_clean();
+    }
+    wp_die($resp);
+
 }
 
