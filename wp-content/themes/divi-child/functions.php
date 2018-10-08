@@ -11,6 +11,7 @@ function my_theme_enqueue_styles() {
     wp_enqueue_script('modernizr.custom', get_stylesheet_directory_uri().'/assets/search-bar/js/modernizr.custom.js', array('jquery'), false, true);
     wp_enqueue_script('classie', get_stylesheet_directory_uri().'/assets/search-bar/js/classie.js', array('jquery'), false, true);
     wp_enqueue_script('uisearch', get_stylesheet_directory_uri().'/assets/search-bar/js/uisearch.js', array('jquery'), false, true);
+    wp_enqueue_script('loadmore', get_stylesheet_directory_uri().'/assets/load-more/loadmore.js', array('jquery'), false, true);
     wp_localize_script( 'bootstrap', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
@@ -145,12 +146,13 @@ function events_filtr_get_posts()
     $data = $_POST;
     $resp = '';
 
+
     if (isset($data['select-month']) && isset($data['select-city'])) {
         $month = $data['select-month'];
         $city  = $data['select-city'];
 
         $args  = array(
-            'posts_per_page' => -1,
+            'posts_per_page' => 4,
             'category'       => 17,
             'orderby'        => 'meta_value_num',
             'order'          => 'ASC',
@@ -171,7 +173,7 @@ function events_filtr_get_posts()
 
         if ($city == 'all-city') {
             $args = array(
-                'posts_per_page' => -1,
+                'posts_per_page' => 4,
                 'category'       => 17,
                 'orderby'        => 'meta_value_num',
                 'order'          => 'ASC',
@@ -185,11 +187,20 @@ function events_filtr_get_posts()
             );
         }
 
-        $posts = get_posts($args);
+        query_posts($args);
         ob_start();
-        if (!empty($posts)) {
-            foreach( $posts as $post ){ setup_postdata($post); ?>
-                <div <?php post_class('col-md-3 col-sm-6'); ?>>
+        if (have_posts()) :
+            $iter = 0;
+            while (have_posts()) : the_post();
+                $iter++;
+                $number_posts = $iter;
+            ?>
+
+                <?php if ($number_posts == 3) { ?>
+                     <div <?php post_class('col-md-6 col-sm-12'); ?> >
+                <?php } else { ?>
+                    <div <?php post_class('col-md-3 col-sm-6'); ?> >
+                    <?php } ?>
                     <a href="<?php the_permalink($post->ID); ?>" class="">
                         <div class="blog_item">
                             <div class="img-wrapper">
@@ -207,9 +218,20 @@ function events_filtr_get_posts()
                         </div>
                     </a>
                 </div>
-            <?php }
-            wp_reset_postdata(); // сброс
-        }
+            <?php
+            endwhile;
+            ?>
+
+            <?php
+//            if (  $post->max_num_pages > 1 ) : ?>
+            <script id="true_loadmore">
+                var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
+                var true_posts = '<?php echo serialize($args); ?>';
+                var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
+            </script>
+            <?php
+        endif;
+//        endif;
         $resp = ob_get_contents();
         ob_clean();
     }
@@ -217,3 +239,46 @@ function events_filtr_get_posts()
 
 }
 
+
+
+//Load more
+function true_load_posts(){
+
+    $args = unserialize( stripslashes( $_POST['query'] ) );
+    $args['paged'] = $_POST['page'] + 1; // следующая страница
+    $args['post_status'] = 'publish';
+    $args['cat'] = '17';
+
+
+
+    query_posts($args);?>
+    <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post(); ?>
+            <div <?php post_class('col-md-3 col-sm-6'); ?> >
+                <a href="<?php the_permalink(); ?>" class="">
+                    <div class="blog_item">
+                        <div class="img-wrapper">
+                            <?php the_post_thumbnail(); ?>
+                        </div>
+                        <div class="content">
+                            <div class="date">
+                                <h5 class="date_txt"><span><?php echo get_field('date'); ?></span><?php echo get_field('city'); ?></h5>
+                            </div>
+                            <div class="content-text">
+                                <h4 class="event_tittle"><?php the_title(); ?></h4>
+                                <div class="event_brief"><?php the_excerpt(); ?></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <?php
+        endwhile;
+
+    endif;
+    die();
+}
+
+
+add_action('wp_ajax_loadmore', 'true_load_posts');
+add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');

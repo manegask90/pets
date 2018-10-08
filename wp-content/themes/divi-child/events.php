@@ -107,7 +107,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
                 if (isset($selectMonth)){
                     $args = array(
-                        'posts_per_page' => -1,
+                        'posts_per_page' => 4,
                         'category' => 17,
                         'orderby' => 'meta_value_num',
                         'order' => 'DESC',
@@ -122,7 +122,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                     );
                 } elseif (isset($selectCity)) {
                     $args = array(
-                        'posts_per_page' => -1,
+                        'posts_per_page' => 4,
                         'category' => 17,
                         'orderby' => 'meta_value_num',
                         'order' => 'DESC',
@@ -137,7 +137,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                     );
                 } elseif (isset($selectMonth) && isset($selectCity)) {
                     $args = array(
-                        'posts_per_page' => -1,
+                        'posts_per_page' => 4,
                         'category' => 17,
                         'orderby' => 'meta_value_num',
                         'order' => 'DESC',
@@ -157,7 +157,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                     );
                 } else {
                     $args  = array(
-                        'posts_per_page' => -1,
+                        'posts_per_page' => 4,
                         'category'       => 17,
                         'orderby'        => 'meta_value_num',
                         'order'          => 'DESC',
@@ -172,11 +172,38 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                 }
 
 
-                $posts = get_posts( $args );
+                query_posts($args);
+                if (have_posts()) :
+                    $iter = 0;
+                while (have_posts()) : the_post();
+                    $iter++;
+                    $number_posts = $iter;
+                ?>
 
-                foreach ($posts as $post) {
-                    $events_date = $post;
-                    ?>
+<!--                    $events_date = $post;-->
+                <?php if ($number_posts == 3) { ?>
+                     <div <?php post_class('col-md-6 col-sm-12'); ?> >
+                         <a href="" class="">
+                             <div class="blog_item blog_item-main">
+                                 <div class="date">
+                                     <h5 class="date_txt"><span><?php echo get_field('date'); ?></span><?php echo get_field('city'); ?></h5>
+                                 </div>
+                                 <div class="img-wrapper">
+                                     <?php the_post_thumbnail(); ?>
+                                 </div>
+                                 <div class="content">
+                                     <div class="content-text">
+                                         <h4 class="event_tittle"><?php the_title(); ?></h4>
+                                         <div class="event_brief"><?php the_excerpt(); ?></div>
+                                     </div>
+                                     <div class="place">
+                                         <h5 class="place_txt"><?php echo get_field('location'); ?></h5>
+                                         <h5 class="place_txt">FREE entrance</h5>
+                                     </div>
+                                 </div>
+                             </div>
+                         </a>
+                <?php } else { ?>
                     <div <?php post_class('col-md-3 col-sm-6'); ?> >
                         <a href="<?php the_permalink(); ?>" class="">
                             <div class="blog_item">
@@ -194,10 +221,36 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                 </div>
                             </div>
                         </a>
+                    <?php } ?>
                     </div>
-                <?php } ?>
-            <?php wp_reset_postdata(); ?>
+                <?php
+                endwhile; ?>
 
+                <?php
+                /*
+                    if (  $wp_query->max_num_pages > 1 ) : ?>
+                        <script>
+                            var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
+                            var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
+                            var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
+                            var max_pages = '<?php echo $wp_query->max_num_pages; ?>';
+                        </script>
+                        <div id="true_loadmore" class="col-md-12">Загрузить ещё<div id="preloader1"></div></div>
+                    <?php endif; ?>
+                */
+                ?>
+
+                <?php if (  $wp_query->max_num_pages > 1 ) : ?>
+                    <script id="true_loadmore">
+                        var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
+                        var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
+                        var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
+                    </script>
+                <?php endif; ?>
+
+
+            <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
             <?php endif; ?>
         </div>
     </div>

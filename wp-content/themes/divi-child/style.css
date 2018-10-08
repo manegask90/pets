@@ -906,7 +906,7 @@
     letter-spacing: 1.82px;
     text-transform: uppercase;
     font-weight: 500;
-    line-height: 1;
+    line-height: 1.3;
     background-position: 85% 50%;
 }
 .events_filter .event-filtr .select-box:first-child {
@@ -921,6 +921,9 @@
 }
 .events_filter .event-filtr select:hover {
     cursor: pointer;
+}
+.events .blog_item {
+    margin-bottom: 62px;
 }
 
 
@@ -1041,6 +1044,22 @@ body .scroll-top-inner {
     right: 65px;
     bottom: 25px;
 }
+
+
+/*Ajax load more*/
+
+#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    background: #333 url('//cdnjs.cloudflare.com/ajax/libs/file-uploader/3.7.0/processing.gif') no-repeat center center;
+}
+
+/********/
 /*MEDIA*/
 @media screen 
   and (min-device-width: 820px) 
