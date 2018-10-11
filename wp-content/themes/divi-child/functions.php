@@ -2,6 +2,7 @@
 function my_theme_enqueue_styles() {
     wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() .'/css/bootstrap.min.css');
     wp_enqueue_style('fontello-icons', get_stylesheet_directory_uri() .'/assets/icons/css/icons.css');
+    wp_enqueue_style('fontawesome-icons', get_stylesheet_directory_uri() .'/assets/icons/fontawesome/css/all.css');
     wp_enqueue_style('default-search', get_stylesheet_directory_uri() .'/assets/search-bar/css/default.css');
     wp_enqueue_style('component-search', get_stylesheet_directory_uri() .'/assets/search-bar/css/component.css');
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
@@ -152,7 +153,7 @@ function events_filtr_get_posts()
         $city  = $data['select-city'];
 
         $args  = array(
-            'posts_per_page' => 4,
+            'posts_per_page' => 7,
             'category'       => 17,
             'orderby'        => 'meta_value_num',
             'order'          => 'ASC',
@@ -173,7 +174,7 @@ function events_filtr_get_posts()
 
         if ($city == 'all-city') {
             $args = array(
-                'posts_per_page' => 4,
+                'posts_per_page' => 7,
                 'category'       => 17,
                 'orderby'        => 'meta_value_num',
                 'order'          => 'ASC',
@@ -198,29 +199,48 @@ function events_filtr_get_posts()
 
                 <?php if ($number_posts == 3) { ?>
                      <div <?php post_class('col-md-6 col-sm-12'); ?> >
+                        <a href="" class="">
+                             <div class="blog_item blog_item-main">
+                                 <div class="date">
+                                     <h5 class="date_txt"><span><?php echo get_field('date'); ?></span><?php echo get_field('city'); ?></h5>
+                                 </div>
+                                 <div class="img-wrapper">
+                                     <?php the_post_thumbnail(); ?>
+                                 </div>
+                                 <div class="content">
+                                     <div class="content-text">
+                                         <h4 class="event_tittle"><?php the_title(); ?></h4>
+                                         <div class="event_brief"><?php the_excerpt(); ?></div>
+                                     </div>
+                                     <div class="place">
+                                         <h5 class="place_txt"><?php echo get_field('location'); ?></h5>
+                                         <h5 class="place_txt">FREE entrance</h5>
+                                     </div>
+                                 </div>
+                             </div>
+                         </a>
                 <?php } else { ?>
                     <div <?php post_class('col-md-3 col-sm-6'); ?> >
-                    <?php } ?>
-                    <a href="<?php the_permalink($post->ID); ?>" class="">
-                        <div class="blog_item">
-                            <div class="img-wrapper">
-                                <?php echo get_the_post_thumbnail($post); ?>
-                            </div>
-                            <div class="content">
-                                <div class="date">
-                                    <h5 class="date_txt"><span><?php echo get_field('date', $post->ID ); ?></span><?php  echo get_field('city', $post->ID ); ?></h5>
+                        <a href="<?php the_permalink($post->ID); ?>" class="">
+                            <div class="blog_item">
+                                <div class="img-wrapper">
+                                    <?php echo get_the_post_thumbnail($post); ?>
                                 </div>
-                                <div class="content-text">
-                                    <h4 class="event_tittle"><?php echo get_the_title($post); ?></h4>
-                                    <div class="event_brief"><?php echo apply_filters( 'the_excerpt', get_the_excerpt($post) ); ?></div>
+                                <div class="content">
+                                    <div class="date">
+                                        <h5 class="date_txt"><span><?php echo get_field('date', $post->ID ); ?></span><?php  echo get_field('city', $post->ID ); ?></h5>
+                                    </div>
+                                    <div class="content-text">
+                                        <h4 class="event_tittle"><?php echo get_the_title($post); ?></h4>
+                                        <div class="event_brief"><?php echo apply_filters( 'the_excerpt', get_the_excerpt($post) ); ?></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-            <?php
-            endwhile;
-            ?>
+                        </a>
+                        <?php } ?>
+                    </div>
+
+            <?php endwhile; ?>
 
             <?php
 //            if (  $post->max_num_pages > 1 ) : ?>
@@ -229,6 +249,11 @@ function events_filtr_get_posts()
                 var true_posts = '<?php echo serialize($args); ?>';
                 var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
             </script>
+            <div id="loader" class="col-md-12"></div>
+            <?php else: ?>
+                         <div class="col-md-12">
+                             <p>Події не знайдені</p>
+                         </div>
             <?php
         endif;
 //        endif;

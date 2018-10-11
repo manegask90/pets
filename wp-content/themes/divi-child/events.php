@@ -17,7 +17,18 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="evens_tittle">Події на <span><?php echo date('Y'); ?></span> рік в місті: <span>ЛЬВІВ</span></h2>
+                <h2 class="evens_tittle">Події на <span><?php echo date('Y'); ?></span> рік в місті:
+                    <span class="span-city">
+                        <?php if (isset($_COOKIE['select-city']) && $_COOKIE['select-city'] == 'dnipro'){
+                            echo 'Дніпро';
+                        } elseif (isset($_COOKIE['select-city']) && $_COOKIE['select-city'] == 'lviv'){
+                            echo 'Львів';
+                        } elseif (isset($_COOKIE['select-city']) && $_COOKIE['select-city'] == 'kyiv'){
+                            echo 'Київ';
+                        }
+                        ?>
+                    </span>
+                </h2>
             </div>
             <div class="col-md-12">
                 <div class="events_filter">
@@ -105,71 +116,129 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                 $date_filtr = $_GET['date'];
 
 
-                if (isset($selectMonth)){
-                    $args = array(
-                        'posts_per_page' => 4,
-                        'category' => 17,
-                        'orderby' => 'meta_value_num',
-                        'order' => 'DESC',
-                        'meta_query' => array(
-                            'relation' => 'AND',
-                            array(
-                                'key' => 'date',
-                                'compare' => 'REGEXP',
-                                'value' => '[0-9]{4}' . $selectMonth . '[0-9]{2}',
-                            )
-                        )
-                    );
-                } elseif (isset($selectCity)) {
-                    $args = array(
-                        'posts_per_page' => 4,
-                        'category' => 17,
-                        'orderby' => 'meta_value_num',
-                        'order' => 'DESC',
-                        'meta_query' => array(
-                            'relation' => 'AND',
-                            array(
-                                'key' => 'city',
-                                'value' => $selectCity,
-                                'compare' => '='
-                            ),
-                        )
-                    );
-                } elseif (isset($selectMonth) && isset($selectCity)) {
-                    $args = array(
-                        'posts_per_page' => 4,
-                        'category' => 17,
-                        'orderby' => 'meta_value_num',
-                        'order' => 'DESC',
-                        'meta_query' => array(
-                            'relation' => 'AND',
-                            array(
-                                'key' => 'city',
-                                'value' => $selectCity,
-                                'compare' => '='
-                            ),
-                            array(
-                                'key' => 'date',
-                                'compare' => 'REGEXP',
-                                'value' => '[0-9]{4}' . $selectMonth . '[0-9]{2}',
-                            )
-                        )
-                    );
-                } else {
-                    $args  = array(
-                        'posts_per_page' => 4,
-                        'category'       => 17,
-                        'orderby'        => 'meta_value_num',
-                        'order'          => 'DESC',
-                        'meta_query' => array(
-                            array(
-                                'key' => 'date',
-                                'compare' => 'REGEXP',
-                                'value' => '[0-9]{4}' . $curent_month . '[0-9]{2}',
-                            )
-                        )
-                    );
-                }
+//                if (isset($selectMonth)){
+//                    $args = array(
+//                        'posts_per_page' => 4,
+//                        'category' => 17,
+//                        'orderby' => 'meta_value_num',
+//                        'order' => 'DESC',
+//                        'meta_query' => array(
+//                            'relation' => 'AND',
+//                            array(
+//                                'key' => 'date',
+//                                'compare' => 'REGEXP',
+//                                'value' => '[0-9]{4}' . $selectMonth . '[0-9]{2}',
+//                            )
+//                        )
+//                    );
+//                } elseif (isset($selectCity)) {
+//                    $args = array(
+//                        'posts_per_page' => 4,
+//                        'category' => 17,
+//                        'orderby' => 'meta_value_num',
+//                        'order' => 'DESC',
+//                        'meta_query' => array(
+//                            'relation' => 'AND',
+//                            array(
+//                                'key' => 'city',
+//                                'value' => $selectCity,
+//                                'compare' => '='
+//                            ),
+//                        )
+//                    );
+//                } elseif (isset($selectMonth) && isset($selectCity)) {
+//                    $args = array(
+//                        'posts_per_page' => 4,
+//                        'category' => 17,
+//                        'orderby' => 'meta_value_num',
+//                        'order' => 'DESC',
+//                        'meta_query' => array(
+//                            'relation' => 'AND',
+//                            array(
+//                                'key' => 'city',
+//                                'value' => $selectCity,
+//                                'compare' => '='
+//                            ),
+//                            array(
+//                                'key' => 'date',
+//                                'compare' => 'REGEXP',
+//                                'value' => '[0-9]{4}' . $selectMonth . '[0-9]{2}',
+//                            )
+//                        )
+//                    );
+//                } else {
+//                    $args  = array(
+//                        'posts_per_page' => 4,
+//                        'category'       => 17,
+//                        'orderby'        => 'meta_value_num',
+//                        'order'          => 'DESC',
+//                        'meta_query' => array(
+//                            array(
+//                                'key' => 'date',
+//                                'compare' => 'REGEXP',
+//                                'value' => '[0-9]{4}' . $curent_month . '[0-9]{2}',
+//                            )
+//                        )
+//                    );
+//                }
+
+        if (isset($selectMonth) and isset($selectCity)) {
+            $args = array(
+                'posts_per_page' => 7,
+                'category' => 17,
+                'orderby' => 'meta_value_num',
+                'order' => 'ASC',
+                'meta_query' => array(
+                    'relation' => 'AND',
+                    array(
+                        'key' => 'city',
+                        'value' => $selectCity,
+                        'compare' => '='
+                    ),
+                    array(
+                        'key' => 'date',
+                        'compare' => 'REGEXP',
+                        'value' => '[0-9]{4}' . $selectMonth . '[0-9]{2}',
+                    )
+                )
+            );
+        } else {
+            $args = array(
+                'posts_per_page' => 7,
+                'category' => 17,
+                'orderby' => 'meta_value_num',
+                'order' => 'ASC',
+                'meta_query' => array(
+                    'relation' => 'AND',
+                    array(
+                        'key' => 'city',
+                        'value' => $city,
+                        'compare' => '='
+                    ),
+                    array(
+                        'key' => 'date',
+                        'compare' => 'REGEXP',
+                        'value' => '[0-9]{4}' . $mon . '[0-9]{2}',
+                    )
+                )
+            );
+        }
+
+        if ($selectCity == 'all-city') {
+            $args = array(
+                'posts_per_page' => 7,
+                'category'       => 17,
+                'orderby'        => 'meta_value_num',
+                'order'          => 'ASC',
+                'meta_query'     => array(
+                    array(
+                        'key'     => 'date',
+                        'compare'  => 'REGEXP',
+                        'value'    => '[0-9]{4}' . $month . '[0-9]{2}',
+                    )
+                )
+            );
+        }
 
 
                 query_posts($args);
@@ -178,6 +247,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                 while (have_posts()) : the_post();
                     $iter++;
                     $number_posts = $iter;
+                    $cost = get_field('cost');
                 ?>
 
 <!--                    $events_date = $post;-->
@@ -197,8 +267,19 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                          <div class="event_brief"><?php the_excerpt(); ?></div>
                                      </div>
                                      <div class="place">
-                                         <h5 class="place_txt"><?php echo get_field('location'); ?></h5>
-                                         <h5 class="place_txt">FREE entrance</h5>
+                                         <i class="icon fas fa-map-marker-alt"></i>
+                                         <div class="place_txt"><?php echo get_field('location'); ?></div>
+                                     </div>
+                                     <div class="cost">
+                                         <i class="icon icon-money"></i>
+                                         <?php
+                                         if ($cost == 0) { ?>
+                                             <div class="place_txt">FREE entrance</div>
+                                         <?php } else { ?>
+                                             <div class="place_txt"><?php echo $cost; ?></div>
+                                         <?php }
+                                         ?>
+
                                      </div>
                                  </div>
                              </div>
@@ -223,8 +304,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                         </a>
                     <?php } ?>
                     </div>
-                <?php
-                endwhile; ?>
+                         <?php
+                         endwhile; ?>
 
                 <?php
                 /*
@@ -240,16 +321,19 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                 */
                 ?>
 
-                <?php if (  $wp_query->max_num_pages > 1 ) : ?>
+
+                <?php //if (  $wp_query->max_num_pages > 1 ) : ?>
                     <script id="true_loadmore">
                         var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
                         var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
                         var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
                     </script>
-                <?php endif; ?>
+                    <div id="loader" class="col-md-12"></div>
+                <?php //endif; ?>
 
 
             <?php wp_reset_postdata(); ?>
+
             <?php endif; ?>
             <?php endif; ?>
         </div>

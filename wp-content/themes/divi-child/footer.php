@@ -130,8 +130,11 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
                 var $thatSelect = $(this),
                     $selectedMonth = $('.filtr-select-month option:selected').val(),
                     $selectedCity  = $('.filtr-select-city option:selected').val(),
+                    $selectedCityText  = $('.filtr-select-city option:selected').text(),
                     $eventsWrap    = $('.events_posts_wrap');
-                // console.log($selected);
+                if(jQuery(this).hasClass('filtr-select-city')){
+                    jQuery('.span-city').text($selectedCityText);
+                }
 
                 setCookie('select-month', $selectedMonth);
                 setCookie('select-city', $selectedCity);

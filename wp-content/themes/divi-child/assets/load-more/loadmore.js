@@ -39,6 +39,10 @@ jQuery(function($){
                 type:'POST',
                 beforeSend: function( xhr){
                     $('body').addClass('loading');
+                    $('#loader').show();
+                },
+                complete: function() {
+                    $('#loader').hide();
                 },
                 success:function(data){
                     if( data ) {
