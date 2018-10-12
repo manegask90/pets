@@ -1,9 +1,9 @@
 <?php
 
-class ET_Builder_Module_ImageTextBottom extends ET_Builder_Module {
+class ET_Builder_Module_ImageFullWidth extends ET_Builder_Module {
 	function init() {
-		$this->name       = 'Image text bottom';
-		$this->slug       = 'et_pb_image_text_bottom';
+		$this->name       = 'Image full width';
+		$this->slug       = 'et_pb_image_full_width';
 		$this->vb_support = 'on';
 
 		$this->settings_modal_toggles = array(
@@ -374,8 +374,8 @@ class ET_Builder_Module_ImageTextBottom extends ET_Builder_Module {
 		}
 
 		$output = sprintf(
-			'<div class="et_pb_image_wrap image-text-bottom"><img src="%1$s" alt="%2$s"%3$s />%4$s' .
-            '<div class="text-img"><div class="icon-box"><i class="icon icon-quote"></i></div><div class="text-box">' . $title_text . '</div> </div></div>',
+			'<div class="et_pb_image_wrap image-full-width"><img src="%1$s" alt="%2$s"%3$s />%4$s' .
+            '<div class="text-img"><div class="text-box">' . $title_text . '</div> </div></div>',
 			esc_attr( $src ),
 			esc_attr( $alt ),
 			( '' !== $title_text ? sprintf( ' title="%1$s"', esc_attr( $title_text ) ) : '' ),
@@ -432,7 +432,7 @@ class ET_Builder_Module_ImageTextBottom extends ET_Builder_Module {
 
 // This adds the upload label for Image module
 // TODO: Remove when BB is removed.
-function _et_bb_module_image_add_src_label2( $filed ) {
+function _et_bb_module_image_add_src_label3( $filed ) {
 	if ( ! isset( $filed['label'] ) ) {
 		$filed['label'] = esc_html__( 'Image URL', 'et_builder' );
 	}
@@ -440,6 +440,6 @@ function _et_bb_module_image_add_src_label2( $filed ) {
 	return $filed;
 }
 
-add_filter( 'et_builder_module_fields_et_pb_image_field_src', '_et_bb_module_image_add_src_label2' );
+add_filter( 'et_builder_module_fields_et_pb_image_field_src', '_et_bb_module_image_add_src_label3' );
 
-new ET_Builder_Module_ImageTextBottom;
+new ET_Builder_Module_ImageFullWidth;
