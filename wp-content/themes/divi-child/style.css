@@ -1315,6 +1315,22 @@ body .scroll-top-inner {
     letter-spacing: 0.13em;
     text-transform: uppercase;
 }
+.bx-wrapper {
+    margin: 50px auto;
+    box-shadow: none;
+}
+.bx-wrapper .bx-pager-item {
+    border-bottom: 2px solid #404040;
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+    background: url("assets/bxslider/images/pager.png");
+}
+.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus {
+    background: url("assets/bxslider/images/pager-active.png");
+}
+.slider.news .blog_item {
+    min-height: 455px;
+}
 /*********/
 
 /*MEDIA*/

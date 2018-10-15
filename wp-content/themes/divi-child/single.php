@@ -72,6 +72,41 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                     <div class="border-box"></div>
                                     <div class="text">читати більше</div>
                                 </div>
+
+
+                                <div class="slider news">
+                                    <?php
+
+                                $related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => -1, 'post__not_in' => array($post->ID) ) );
+                                if( $related ) foreach( $related as $post ) {
+                                    setup_postdata($post); ?>
+
+                                    <div  <?php post_class( 'col-md-3' ) ?>>
+
+                                        <a href="<?php the_permalink() ?>" class="blog_news_link">
+                                            <div class="blog_item">
+                                                <div class="img-wrapper">
+                                                    <?php the_post_thumbnail(); ?>
+                                                </div>
+                                                <div class="content">
+                                                    <div class="content_wrapper">
+                                                        <h5 class="news_time"> 1. 10. 2018</h5>
+                                                        <i class="icon demo-icon icon-union"></i>
+                                                        <h2 class="news_tittle"><?php the_title(); ?></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+
+                                        <div class="post-content"></div>
+                                    </div>
+                                <?php }
+                                wp_reset_postdata(); ?>
+
+                                </div>
+
+
                             </div>
 
                         <?php endwhile; ?>
