@@ -329,13 +329,7 @@
             </div>
                 <?php if ( ( false !== et_get_option( 'show_search_icon', true ) && ! $et_slide_header ) || is_customize_preview() ) : ?>
                     <div class="col-md-1 search_block">
-                        <div id="sb-search" class="sb-search">
-                            <form>
-                                <input class="sb-search-input" type="text" value="" name="search" id="search">
-                                <input class="sb-search-submit" type="submit" value="">
-                                <span class="sb-icon-search"></span>
-                            </form>
-                        </div>
+                        <?php echo do_shortcode('[et_pb_section global_module="457"][/et_pb_section]'); ?>
                     </div>
                     <div class="col-md-1 lang-block">
                             <ul class="language-chooser language-chooser-custom qtranxs_language_chooser" id="qtranslate-3-chooser">
