@@ -339,3 +339,27 @@ function content($limit) {
   $content = str_replace(']]>', ']]&gt;', $content);
   return $content;
 }
+
+//Register menu
+register_nav_menus(array(
+	'lang'    => 'Lang menu',
+));
+
+
+add_filter('template_include','start_buffer_EN',1);
+function start_buffer_EN($template) {
+  ob_start('end_buffer_EN');
+  return $template;
+}
+function end_buffer_EN($buffer) {
+  return str_replace('<span>English</span>','<span>EN</span>',$buffer);
+}
+
+add_filter('template_include','start_buffer_FR',1);
+function start_buffer_FR($template) {
+  ob_start('end_buffer_FR');
+  return $template;
+}
+function end_buffer_FR($buffer) {
+  return str_replace('<span>Français</span>','<span>FR</span>',$buffer);
+}

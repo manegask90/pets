@@ -241,7 +241,7 @@
 
 				ob_start();
 			?>
-                <div class="col-md-9 top_center">
+                <div class="col-md-8 top_center">
 				<div class="logo_container">
 					<span class="logo_helper"></span>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -336,6 +336,11 @@
                                 <span class="sb-icon-search"></span>
                             </form>
                         </div>
+                    </div>
+                    <div class="col-md-1 lang-block">
+                            <ul class="language-chooser language-chooser-custom qtranxs_language_chooser" id="qtranslate-3-chooser">
+                                <?php the_widget('qTranslateXWidget', array('type' => 'custom', 'format' => '%n')); ?>
+                            </ul>
                     </div>
                 <?php endif; // true === et_get_option( 'show_search_icon', false ) ?>
 			</div>

@@ -98,6 +98,29 @@
 .logo_container img {
     max-width: 164px;
 }
+.qtranxs_widget .widgettitle {
+    display: none;
+}
+.language-chooser li a {
+    color: #404040;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.language-chooser li.active a {
+    color: #FF8000;
+    font-weight: bold;
+}
+header .qtranxs_widget ul li.active {
+    opacity: 1;
+}
+header .qtranxs_widget ul li {
+    opacity: 1;
+}
+.lang-block {
+    padding-top: 10px;
+    text-align: left;
+    padding-left: 0;
+}
 
 /*Home*/
 .home .block_1 {
