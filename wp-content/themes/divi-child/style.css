@@ -137,6 +137,8 @@ header .qtranxs_widget ul li {
 /*Home*/
 .home .block_1 {
     padding-left: 0;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.15);
+    padding-right: 0;
 }
 .home .block_1 img {
     width: 100%;
@@ -199,6 +201,10 @@ header .qtranxs_widget ul li {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+}
+.main_news_item .img_box {
+    height: 100%;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.15);
 }
 .main_news_item a:hover {
     color: #404040;
