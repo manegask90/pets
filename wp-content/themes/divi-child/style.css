@@ -121,6 +121,18 @@ header .qtranxs_widget ul li {
     text-align: left;
     padding-left: 0;
 }
+#top-menu li.current_page_item>a {
+    color: #FF8000;
+    font-weight: bold;
+}
+#top-menu li.current_page_item>a:after {
+    content: '';
+    display: block;
+    width: 75%;
+    height: 2px;
+    background-color: #FF8000;
+    margin-top: 3px;
+}
 
 /*Home*/
 .home .block_1 {
@@ -187,6 +199,9 @@ header .qtranxs_widget ul li {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+}
+.main_news_item a:hover {
+    color: #404040;
 }
 .main_news_wrap .pagination {
     display: none;
@@ -1356,6 +1371,51 @@ body .scroll-top-inner {
 }
 /*********/
 
+
+/*Share btn*/
+.share_btn_wrap #viber_share img {
+    width: 70px;
+    height: 28px;
+}
+.share_btn_wrap .telegram_wrap {
+    background-color: #026698;
+    color: #fff;
+    width: 70px;
+    border-radius: 5px;
+    height: 28px;
+}
+.share_btn_wrap .telegram_wrap img {
+    width: 13px;
+    vertical-align: text-bottom;
+    margin-left: 6px;
+    margin-right: 4px;
+    margin-top: 3px;
+    height: 13px;
+}
+.share_btn_wrap .telegram_wrap span {
+    font-size: 14px;
+    vertical-align: text-top;
+}
+.share_btn_wrap .dropdown-toggle::after {
+    display: none;
+}
+.share_btn_wrap .icon {
+    color: #959595;
+}
+.share_btn_wrap .dropdown-item {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.share_btn_wrap .dropdown-menu.show {
+    min-width: 100px;
+}
+.share_btn_wrap .dropdown {
+    display: inline-block;
+}
+.share_btn_wrap {
+    text-align: right;
+}
+/**********/
 /*MEDIA*/
 @media screen 
   and (min-device-width: 820px) 

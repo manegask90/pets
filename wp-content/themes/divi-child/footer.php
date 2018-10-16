@@ -168,6 +168,13 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
             controls: false
         });
 
+
+        <!--Viber share-->
+        var buttonID = "viber_share";
+        var text = "Check this out: ";
+        document.getElementById(buttonID)
+            .setAttribute('href', "https://3p3x.adj.st/?adjust_t=u783g1_kw9yml&adjust_fallback=https%3A%2F%2Fwww.viber.com%2F%3Futm_source%3DPartner%26utm_medium%3DSharebutton%26utm_campaign%3DDefualt&adjust_campaign=Sharebutton&adjust_deeplink=" + encodeURIComponent("viber://forward?text=" + encodeURIComponent(text + " " + window.location.href)));
+
 </script>
 </body>
 </html>
