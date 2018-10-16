@@ -1046,11 +1046,11 @@ class ET_Builder_Module_Advice extends ET_Builder_Module_Type_PostBased {
 
 			<div id="post-<?php the_ID(); ?>" <?php post_class( 'et_pb_post clearfix' . $no_thumb_class . $overlay_class . $bootstrap_col  ); ?>>
 
-                <a href="<?php esc_url( the_permalink() ); ?>" class="blog_advices_link">
+                <div  class="blog_advices_link">
                     <div class="advice_item">
                         <div class="advice_item-header">
                             <h4 class="header_tittle"><span><?php echo $category[0]->cat_name; ?></span></h4>
-                            <h4 class="header_tittle"><?php the_title(); ?></h4>
+                            <h4 class="header_tittle"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h4>
                             <?php
                              if ($category[0]->term_id == 9) {
                                  echo '<i class="icon demo-icon icon-cat"></i>';
@@ -1064,14 +1064,28 @@ class ET_Builder_Module_Advice extends ET_Builder_Module_Type_PostBased {
                         </div>
                         <div class="advice_item-content">
                             <?php the_excerpt(); ?>
-                            <div>
-                                <a href="#">
-                                    <i class="icon demo-icon icon-union"></i>
-                                </a>
-                            </div>
                         </div>
+                        <div class="share_btn_wrap">
+                                    <div class="dropup">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="icon icon-union"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
+                                            <a class="dropdown-item" id="viber_share">
+                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
+                                            </a>
+                                            <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
+                                                <div class="telegram_wrap">
+                                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
+                                                    <span>Share</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                     </div>
-                </a>
+                </div>
 			</div> <!-- end_post -->
 
 	<?php

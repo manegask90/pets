@@ -1045,21 +1045,40 @@ class ET_Builder_Module_HomeNews extends ET_Builder_Module_Type_PostBased {
 
 			<div id="post-<?php the_ID(); ?>" <?php post_class( 'et_pb_post clearfix' . $no_thumb_class . $overlay_class . $bootstrap_col  ); ?>>
 
-                <a href="<?php esc_url( the_permalink() ); ?>" class="blog_news_link">
+                <div class="blog_news_link">
                     <div class="blog_item">
                         <div class="img-wrapper">
-                            <?php print_thumbnail( $thumb, $thumbnail["use_timthumb"], $titletext, $width, $height ); ?>
+                            <a href="<?php esc_url( the_permalink() ); ?>" class="blog_news_link">
+                                <?php print_thumbnail( $thumb, $thumbnail["use_timthumb"], $titletext, $width, $height ); ?>
+                            </a>
                         </div>
                         <div class="content">
                             <div class="content_wrapper">
-                                <h5 class="news_time"><?php echo esc_html( get_the_date( $meta_date ) ) ?></h5>
-                                    <i class="icon demo-icon icon-union"></i>
-                                <<?php echo $processed_header_level; ?> class="news_tittle"><?php the_title(); ?></<?php echo $processed_header_level; ?>>
+                                <div class="share_btn_wrap">
+                                    <div class="dropdown dropleft show">
+                                        <h5 class="news_time"><?php echo esc_html( get_the_date( $meta_date ) ) ?></h5>
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="icon icon-union"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
+                                            <a class="dropdown-item" id="viber_share">
+                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
+                                            </a>
+                                            <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
+                                                <div class="telegram_wrap">
+                                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
+                                                    <span>Share</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <<?php echo $processed_header_level; ?> class="news_tittle"><a href="<?php esc_url( the_permalink() ); ?>" class="blog_news_link"><?php the_title(); ?></a></<?php echo $processed_header_level; ?>>
                             </div>
                         </div>
                     </div>
-                </a>
-
+                </div>
                 <?php if ( 'off' === $fullwidth || ! in_array( $post_format, array( 'link', 'audio', 'quote' ) ) || post_password_required( $post ) ) { ?>
 
 				<?php

@@ -1023,21 +1023,38 @@ class ET_Builder_Module_Zoomans extends ET_Builder_Module_Type_PostBased {
                 <?php
                 foreach( $posts as $post ){ ?>
                     <?php setup_postdata($post); ?>
-
-                    <a href="<?php esc_url( the_permalink() ); ?>">
                         <div class="blog_item blog_item_main">
-                            <img src="<?php the_field('main_img'); ?>" alt="" />
+                                <img src="<?php the_field('main_img'); ?>" alt="" />
                             <div class="blog_item-overlay">
                                 <div class="content">
-                                    <h2 class="entry-title"><?php the_title(); ?></h2>
-                                    <p><span>Зоопсихолог</span></p>
-                                    <p>В доме случается нечистоплотное поведение?</p>
-                                    <p><span>05.05.2018</span></p>
+                                    <h2 class="entry-title"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h2>
+                                    <div class="text-wrap">
+                                        <p><span>Зоопсихолог</span></p>
+                                        <?php the_excerpt(); ?>
+                                        <div class="share_btn_wrap">
+                                            <div class="dropdown show">
+                                                <span class="meta-date"><?php echo esc_html( get_the_date( $meta_date ) ) ?></span>
+                                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="icon icon-union"></i>
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                    <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
+                                                    <a class="dropdown-item" id="viber_share">
+                                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
+                                                    </a>
+                                                    <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
+                                                        <div class="telegram_wrap">
+                                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
+                                                            <span>Share</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </a>
-
                 <?php }
 
                 wp_reset_postdata(); // сброс ?>

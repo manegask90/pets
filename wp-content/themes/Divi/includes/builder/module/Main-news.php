@@ -1086,7 +1086,7 @@ class ET_Builder_Module_Main_news extends ET_Builder_Module {
                 <div id="post-<?php the_ID(); ?>" <?php post_class( 'et_pb_post clearfix' . $no_thumb_class . $overlay_class . $bootstrap_col  ); ?>>
                         <div class="main_news_item">
                             <div class="col-md-4">
-                                <div class="img_box"
+                                <div class="img_box">
                                     <a href="<?php esc_url( the_permalink() ); ?>">
                                         <?php print_thumbnail( $thumb, $thumbnail["use_timthumb"], $titletext, $width, $height ); ?>
                                     </a>

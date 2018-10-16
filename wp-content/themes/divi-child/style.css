@@ -92,6 +92,9 @@
 .top_header .soc_box a {
     color: inherit;
 }
+.top_header .soc_box a:hover {
+    color: #FF8000;
+}
 #main-header {
     z-index: initial;
 }
@@ -126,6 +129,19 @@ header .qtranxs_widget ul li {
     font-weight: bold;
 }
 #top-menu li.current_page_item>a:after {
+    content: '';
+    display: block;
+    width: 75%;
+    height: 2px;
+    background-color: #FF8000;
+    margin-top: 3px;
+}
+#top-menu-nav>ul>li>a:hover {
+    color: #FF8000;
+    /*font-weight: bold;*/
+    opacity: 1;
+}
+#top-menu-nav>ul>li:hover a:after {
     content: '';
     display: block;
     width: 75%;
@@ -387,12 +403,14 @@ header .qtranxs_widget ul li {
 .home .news .blog_item{
     max-height: 455px;
     position: relative;
+    /*overflow: visible;*/
 }
 .home .news .img-wrapper{
     height: 100%;
 }
 .home .news .img-wrapper img{
     filter: grayscale(100%);
+    max-height: 455px;
 }
 .home .news .content{
     position: absolute;
@@ -571,6 +589,24 @@ header .qtranxs_widget ul li {
     box-shadow: none;
     -webkit-box-shadow: none;
 }
+.advices .advice_item .share_btn_wrap .icon {
+    color: #fff;
+}
+.advices .advice_item .share_btn_wrap .dropup {
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 5px;
+}
+.advices .advice_item-content {
+    padding-bottom: 0;
+    height: 125px;
+}
+.blog_news_link a:hover {
+    color: inherit;
+}
+.advice_item a:hover {
+    color: inherit;
+}
 /************/
 
 
@@ -739,6 +775,38 @@ header .qtranxs_widget ul li {
     text-transform: uppercase;
     color: #fff;
 }
+.zoopeople .blog_item_main .content p {
+    max-width: 100%;
+}
+.zoopeople .blog_item_main .content .text-wrap {
+    width: 35%;
+}
+.zoopeople .blog_item_main .share_btn_wrap {
+    text-align: left;
+    margin-top: 10px;
+}
+.zoopeople .blog_item_main .share_btn_wrap .icon {
+    color: #fff;
+}
+.zoopeople .blog_item_main .share_btn_wrap .dropdown .dropdown-toggle {
+    margin-left: 15px;
+}
+.zoopeople .blog_item_main .share_btn_wrap a {
+    color: inherit;
+}
+.zoopeople .blog_item_main .share_btn_wrap .meta-date {
+    font-style: italic;
+    font-weight: normal;
+}
+.zoopeople .blog_item:hover .blog_item-overlay {
+    background-image: linear-gradient(180deg,rgba(0,0,0,0) 97%,#ff8000 97%);
+}
+.zoopeople .blog_item_main:hover .blog_item-overlay {
+    background-image: linear-gradient(180deg,rgba(255, 128, 0, 0.1) 97%,#ff8000 97%);
+}
+.zoopeople .blog_item_main a:hover {
+    color: inherit;
+}
 .blog_item{
     width: 100%;
     max-height: 500px;
@@ -781,6 +849,7 @@ header .qtranxs_widget ul li {
     padding: 25px 28px;
     background-image: url(images/Vector.png);
     background-size: cover;
+    min-height: 230px;
 }
 .blog_item_main .content p{
     max-width: 35%;
@@ -1386,7 +1455,7 @@ body .scroll-top-inner {
 .share_btn_wrap .telegram_wrap {
     background-color: #026698;
     color: #fff;
-    width: 70px;
+    width: 100%;
     border-radius: 5px;
     height: 28px;
 }
@@ -1397,6 +1466,7 @@ body .scroll-top-inner {
     margin-right: 4px;
     margin-top: 3px;
     height: 13px;
+    min-width: 13px;
 }
 .share_btn_wrap .telegram_wrap span {
     font-size: 14px;
@@ -1420,6 +1490,12 @@ body .scroll-top-inner {
 }
 .share_btn_wrap {
     text-align: right;
+}
+.share_btn_wrap .dropleft .dropdown-toggle::before {
+    display: none;
+}
+.share_btn_wrap .dropdown a:hover .icon {
+    color: #FF8000;
 }
 /**********/
 /*MEDIA*/
