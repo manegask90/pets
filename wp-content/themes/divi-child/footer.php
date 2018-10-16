@@ -183,6 +183,61 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
                 js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
+
+
+        // Form validator
+        // jQuery(document).ready(function() {
+        //     jQuery('.newsletter').bootstrapValidator({
+        //         // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+        //         feedbackIcons: {
+        //             valid: 'glyphicon glyphicon-ok',
+        //             invalid: 'glyphicon glyphicon-remove',
+        //             validating: 'glyphicon glyphicon-refresh'
+        //         },
+        //         fields: {
+        //             ne: {
+        //                 validators: {
+        //                     notEmpty: {
+        //                         message: 'Supply email address'
+        //                     },
+        //                     emailAddress: {
+        //                         message: 'No email added'
+        //                     }
+        //                 }
+        //             },
+        //         }
+        //     })
+        //         .on('success.form.bv', function(e) {
+        //             jQuery('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
+        //             jQuery('.newsletter').data('bootstrapValidator').resetForm();
+        //
+        //             // Prevent form submission
+        //             e.preventDefault();
+        //
+        //             // Get the form instance
+        //             var $form = $(e.target);
+        //
+        //             // Get the BootstrapValidator instance
+        //             var bv = $form.data('bootstrapValidator');
+        //
+        //             // Use Ajax to submit form data
+        //             $.post($form.attr('action'), $form.serialize(), function(result) {
+        //                 console.log(result);
+        //             }, 'json');
+        //         });
+        // });
+
+        jQuery(document).ready(function ($) {
+
+            $('.newsletter').validate({ // initialize the plugin
+                rules: {
+                    ne: {
+                        email: true
+                    }
+                },
+            });
+
+        });
 </script>
 </body>
 </html>

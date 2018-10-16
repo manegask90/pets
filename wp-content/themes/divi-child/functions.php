@@ -15,6 +15,8 @@ function my_theme_enqueue_styles() {
     wp_enqueue_script('uisearch', get_stylesheet_directory_uri().'/assets/search-bar/js/uisearch.js', array('jquery'), false, true);
     wp_enqueue_script('loadmore', get_stylesheet_directory_uri().'/assets/load-more/loadmore.js', array('jquery'), false, true);
     wp_enqueue_script('bxslider', get_stylesheet_directory_uri().'/assets/bxslider/jquery.bxslider.js', array('jquery'), false, true);
+//    wp_enqueue_script('validator', get_stylesheet_directory_uri().'/js/bootstrapvalidator.min.js', array('jquery'), false, true);
+    wp_enqueue_script('validator', get_stylesheet_directory_uri().'/js/jquery.validate.min.js', array('jquery'), false, true);
     wp_localize_script( 'bootstrap', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
@@ -114,11 +116,26 @@ function news_filtr_get_posts()
                                     }
                                     echo esc_html( $the_date );
                                     ?></h5>
-                                <object>
-                                    <a href="#">
-                                        <i class="icon demo-icon icon-union"></i>
-                                    </a>
-                                </object>
+                                <div class="share_btn_wrap">
+                                                <div class="dropdown dropleft show">
+                                                    <h5 class="news_time"><?php echo esc_html( get_the_date( $meta_date ) ) ?></h5>
+                                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="icon icon-union"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                        <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
+                                                        <a class="dropdown-item" id="viber_share">
+                                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
+                                                        </a>
+                                                        <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
+                                                            <div class="telegram_wrap">
+                                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
+                                                                <span>Share</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                             </div>
                             <div class="blog_item-overlay">
                                 <div class="content_bottom">

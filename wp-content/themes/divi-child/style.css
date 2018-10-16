@@ -1516,6 +1516,9 @@ body .scroll-top-inner {
     display: block;
 }
 /**********/
+/*.tnp-field-button {*/
+    /*display: none;*/
+/*}*/
 /*MEDIA*/
 @media screen 
   and (min-device-width: 820px) 
