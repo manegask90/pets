@@ -722,6 +722,10 @@ header .qtranxs_widget ul li {
 .sidebar .cbox_btn {
     padding: 10px 30px;
 }
+.posts {
+    position: relative;
+    z-index: -1;
+}
 
     /***************/
 /*zoopeoples_blog*/
