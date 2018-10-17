@@ -1010,7 +1010,7 @@ class ET_Builder_Module_Main_news extends ET_Builder_Module {
 		?>
 
         <section class="main_news_wrap">
-        <div class="container-fluid">
+        <div class="container-fluid container-1">
 
             <?php
             $posts = get_posts(array(
@@ -1036,15 +1036,20 @@ class ET_Builder_Module_Main_news extends ET_Builder_Module {
             </div>
             <div class="container container-2">
                 <div class="row align-items-center">
-                    <div class="col-md-3 block_1_1">
+                    <div class="col-lg-3 col-md-12 block_1_1">
                         <a href="<?php esc_url( the_permalink() ); ?>">
-                            <h2 class="entry-title"><?php the_title(); ?></h2>
-                            <div class="entry-content">
-                                <?php the_excerpt(); ?>
+                            <div class="block-wrap">
+                                <h2 class="entry-title"><?php the_title(); ?></h2>
+                                <div class="mob-img">
+                                    <img src="<?php the_field('main_img'); ?>"  alt="" />
+                                </div>
+                                <div class="entry-content">
+                                    <?php the_excerpt(); ?>
+                                </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-7 offset-md-2 block_2_2">
+                    <div class="col-lg-7 offset-lg-2 col-md-12 offset-md-0 block_2_2">
 
                     <?php }
                     wp_reset_postdata(); // сброс ?>
@@ -1085,14 +1090,14 @@ class ET_Builder_Module_Main_news extends ET_Builder_Module {
 
                 <div id="post-<?php the_ID(); ?>" <?php post_class( 'et_pb_post clearfix' . $no_thumb_class . $overlay_class . $bootstrap_col  ); ?>>
                         <div class="main_news_item">
-                            <div class="col-md-4">
+                            <div class="col-lg-4 col-md-12">
                                 <div class="img_box">
                                     <a href="<?php esc_url( the_permalink() ); ?>">
                                         <?php print_thumbnail( $thumb, $thumbnail["use_timthumb"], $titletext, $width, $height ); ?>
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-md-8 entry-content">
+                            <div class="col-lg-8 col-md-12 entry-content">
                                 <<?php echo $processed_header_level; ?> class="entry-title"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></<?php echo $processed_header_level; ?>>
                                 <div class="share_btn_wrap">
                                     <div class="dropdown show">

@@ -1033,7 +1033,7 @@ class ET_Builder_Module_HomeNews extends ET_Builder_Module_Type_PostBased {
 				$thumb = $thumbnail['thumb'];
 
 				$no_thumb_class = '' === $thumb || 'off' === $show_thumbnail ? ' et_pb_no_thumb' : '';
-				$bootstrap_col = ' col-md-3 col-sm-12';
+				$bootstrap_col = ' col-lg-3 col-md-6 col-sm-12';
 
 				if ( in_array( $post_format, array( 'video', 'gallery' ) ) ) {
 					$no_thumb_class = '';
@@ -1055,8 +1055,8 @@ class ET_Builder_Module_HomeNews extends ET_Builder_Module_Type_PostBased {
                         <div class="content">
                             <div class="content_wrapper">
                                 <div class="share_btn_wrap">
+                                    <h5 class="news_time"><?php echo esc_html( get_the_date( $meta_date ) ) ?></h5>
                                     <div class="dropdown dropleft show">
-                                        <h5 class="news_time"><?php echo esc_html( get_the_date( $meta_date ) ) ?></h5>
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="icon icon-union"></i>
                                         </a>

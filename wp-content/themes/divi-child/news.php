@@ -66,7 +66,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                     if (isset($_COOKIE['type']) && !empty($_COOKIE['type']) && $_COOKIE['type'] == 'popular') {
                         $type = 'popular';
                     } ?>
-                <div class="row">
+                <div class="row ">
                     <div class="col-md-9 posts_filter">
                         <ul class="posts_filter-list">
                             <li>Показувати спочатку:</li>

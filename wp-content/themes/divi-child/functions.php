@@ -8,6 +8,8 @@ function my_theme_enqueue_styles() {
     wp_enqueue_style('bxslider', get_stylesheet_directory_uri() .'/assets/bxslider/jquery.bxslider.css');
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'nat-style', get_stylesheet_directory_uri() . '/style-nat.css' );
+    wp_enqueue_style( 'custom', get_stylesheet_directory_uri() . '/css/custom.css' );
+    wp_enqueue_style( 'respons', get_stylesheet_directory_uri() . '/css/respons.css' );
     wp_enqueue_script('popper', get_stylesheet_directory_uri().'/js/popper.min.js', array('jquery'), false, true);
     wp_enqueue_script('bootstrap', get_stylesheet_directory_uri().'/js/bootstrap.min.js', array('jquery'), false, true);
     wp_enqueue_script('modernizr.custom', get_stylesheet_directory_uri().'/assets/search-bar/js/modernizr.custom.js', array('jquery'), false, true);
