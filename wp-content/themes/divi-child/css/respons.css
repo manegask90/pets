@@ -385,6 +385,48 @@
     .info_devider .devider-sub {
         font-size: 20px;
     }
+    .advices .header_tittle {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .advices .advice_item-header {
+        padding-right: 85px;
+    }
+    .blog_item_main {
+        min-height: 650px;
+    }
+    .zoopeople .blog_item_main p span {
+        font-size: 16px;
+    }
+    .zoopeople .blog_item_main .content p {
+        font-size: 18px;
+    }
+    .zoopeople .blog_item_main {
+        margin-bottom: 25px;
+    }
+    /*Footer*/
+    .main_footer .footer_info {
+        font-size: 11px;
+    }
+    .main_footer .footer_copyright {
+        font-size: 10px;
+    }
+    .main_footer .et-social-icon:before {
+        font-size: 20px;
+    }
+    .main_footer .redaction {
+        font-size: 11px;
+    }
+    .footer_bottom {
+        justify-content: space-between;
+        flex-direction: column-reverse;
+    }
+    .main_footer .bottom-nav li:first-child {
+        padding-left: 0;
+    }
+    .main_footer .bottom-nav {
+        text-align: left;
+    }
 }
 
 @media (max-width: 767px) and  (min-width: 576px) {

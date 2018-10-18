@@ -1425,14 +1425,14 @@ and (max-device-width: 820px){
         width: 100%;
         background: #FF8000;
     }
-    .news .icon {
-        color: #6c757d;
-        display: inline;
-        font-size: 20px;
-        position: absolute;
-        bottom: 10px;
-        right: 20px;
-    }
+    /*.news .icon {*/
+        /*color: #6c757d;*/
+        /*display: inline;*/
+        /*font-size: 20px;*/
+        /*position: absolute;*/
+        /*bottom: 10px;*/
+        /*right: 20px;*/
+    /*}*/
 
 
     /*events_blog*/

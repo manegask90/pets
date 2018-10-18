@@ -15,13 +15,13 @@ if ( ! is_active_sidebar( 'sidebar-2' ) && ! is_active_sidebar( 'sidebar-3' ) &&
                 dynamic_sidebar($footer_sidebar);
                 echo '</div>';
             elseif ($key == '1') :
-                echo '<div class="col-md-3 offset-md-3 footer_cont">';
+                echo '<div class="col-lg-3 offset-lg-3 col-md-4 offset-md-2 footer_cont">';
                 dynamic_sidebar($footer_sidebar);
                 get_template_part( '/includes/social_icons' );
                 echo do_shortcode( ' [newsletter_form button_label="G"][newsletter_field name="email"][/newsletter_form] ' );
                 echo '</div>';
             elseif ($key == '2') :
-                echo '<div class="col-md-6 col-sm-12">';
+                echo '<div class="col-lg-6 col-md-7 col-sm-12">';
                 echo '<div class="footer_bottom">';
                 echo '<div class="footer_copyright">© ' . $date . ' PetsUkraine. Всі права захищені</div>';
                 if (has_nav_menu('footer-menu')) : ?>

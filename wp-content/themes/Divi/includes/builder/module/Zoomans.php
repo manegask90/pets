@@ -1085,7 +1085,7 @@ class ET_Builder_Module_Zoomans extends ET_Builder_Module_Type_PostBased {
 				$thumb = $thumbnail['thumb'];
 
 				$no_thumb_class = '' === $thumb || 'off' === $show_thumbnail ? ' et_pb_no_thumb' : '';
-				$bootstrap_col = ' col-md-3 col-sm-6';
+				$bootstrap_col = ' col-md-3 col-md-6 col-sm-6';
 
 				if ( in_array( $post_format, array( 'video', 'gallery' ) ) ) {
 					$no_thumb_class = '';
