@@ -1039,7 +1039,28 @@ class ET_Builder_Module_Main_news extends ET_Builder_Module {
                     <div class="col-lg-3 col-md-12 block_1_1">
                         <a href="<?php esc_url( the_permalink() ); ?>">
                             <div class="block-wrap">
-                                <h2 class="entry-title"><?php the_title(); ?></h2>
+                                <div class="title-box">
+                                    <h2 class="entry-title"><?php the_title(); ?></h2>
+                                    <div class="share_btn_wrap mob-block">
+                                        <div class="dropdown show">
+                                          <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="icon icon-union"></i>
+                                          </a>
+                                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
+                                            <a class="dropdown-item" id="viber_share">
+                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
+                                            </a>
+                                            <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
+                                              <div class="telegram_wrap">
+                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
+                                                <span>Share</span>
+                                              </div>
+                                            </a>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="mob-img">
                                     <img src="<?php the_field('main_img'); ?>"  alt="" />
                                 </div>
@@ -1098,28 +1119,30 @@ class ET_Builder_Module_Main_news extends ET_Builder_Module {
                                 </div>
                             </div>
                             <div class="col-lg-8 col-md-12 entry-content">
-                                <<?php echo $processed_header_level; ?> class="entry-title"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></<?php echo $processed_header_level; ?>>
-                                <div class="share_btn_wrap">
-                                    <div class="dropdown show">
-                                      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="icon icon-union"></i>
-                                      </a>
-                                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
-                                        <a class="dropdown-item" id="viber_share">
-                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
-                                        </a>
-                                        <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
-                                          <div class="telegram_wrap">
-                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
-                                            <span>Share</span>
+                                <div class="entry-content-wrap">
+                                    <<?php echo $processed_header_level; ?> class="entry-title"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></<?php echo $processed_header_level; ?>>
+                                    <div class="share_btn_wrap">
+                                        <div class="dropdown show">
+                                          <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="icon icon-union"></i>
+                                          </a>
+                                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
+                                            <a class="dropdown-item" id="viber_share">
+                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
+                                            </a>
+                                            <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
+                                              <div class="telegram_wrap">
+                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
+                                                <span>Share</span>
+                                              </div>
+                                            </a>
                                           </div>
-                                        </a>
-                                      </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="content_box">
-                                    <?php the_excerpt(); ?>
+                                    <div class="content_box">
+                                        <?php the_excerpt(); ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -205,7 +205,8 @@
 
 	<?php ob_start(); ?>
 		<header id="main-header" data-height-onload="<?php echo esc_attr( et_get_option( 'menu_height', '66' ) ); ?>">
-			<div class="container clearfix et_menu_container top_header">
+			<div class="container et_menu_container">
+                <div class="row top_header">
                 <div class="col-md-2 top_left">
                     <?php if ( $et_top_info_defined && ! $et_slide_header || is_customize_preview() ) : ?>
                         <?php ob_start(); ?>
@@ -252,7 +253,7 @@
 
 				ob_start();
 			?>
-                <div class="col-md-8 top_center">
+                <div class="col-md-8 col-sm-8 top_center">
 				<div class="logo_container">
 					<span class="logo_helper"></span>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -339,7 +340,7 @@
 				</div>
             </div>
                 <?php if ( ( false !== et_get_option( 'show_search_icon', true ) && ! $et_slide_header ) || is_customize_preview() ) : ?>
-                    <div class="col-md-1 search_block">
+                    <div class="col-md-1 col-sm-4 search_block">
                         <?php echo do_shortcode('[et_pb_section global_module="457"][/et_pb_section]'); ?>
                     </div>
                     <div class="col-md-1 lang-block">
@@ -349,6 +350,7 @@
                     </div>
                 <?php endif; // true === et_get_option( 'show_search_icon', false ) ?>
 			</div>
+            </div>
 		</header> <!-- #main-header -->
 	<?php
 		$main_header = ob_get_clean();

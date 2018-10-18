@@ -1514,6 +1514,10 @@ body .scroll-top-inner {
 .dropdown-custom:hover .dropdown-content {
     display: block;
 }
+
+.mob-block {
+    display: none;
+}
 /**********/
 /*.tnp-field-button {*/
 /*display: none;*/
