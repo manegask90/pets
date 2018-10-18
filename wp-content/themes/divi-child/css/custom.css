@@ -1563,15 +1563,15 @@ and (max-device-width: 1600px){
 @media screen
 and (min-device-width: 320px)
 and (max-device-width: 820px){
-    .col-sm-12{
-        padding-right: 5px;
-        padding-left: 5px;
-    }
-    .col-sm-6{
-        width: 50%;
-        padding-right: 5px;
-        padding-left: 5px;
-    }
+    /*.col-sm-12{*/
+        /*padding-right: 5px;*/
+        /*padding-left: 5px;*/
+    /*}*/
+    /*.col-sm-6{*/
+        /*width: 50%;*/
+        /*padding-right: 5px;*/
+        /*padding-left: 5px;*/
+    /*}*/
     .zoopeople h2{
         font-size: 24px;
     }

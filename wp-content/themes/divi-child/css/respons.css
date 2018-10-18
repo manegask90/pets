@@ -512,7 +512,7 @@
         font-size: 11px;
         letter-spacing: 2px;
         padding-bottom: 0;
-        min-height: 100px;
+        min-height: 80px;
         line-height: 20px;
     }
     .news .img-wrapper {
@@ -529,9 +529,20 @@
     .home .news .news_tittle {
         font-size: 10px;
         letter-spacing: 0.1em;
+        text-align: left;
     }
     .home .news .content_wrapper {
         margin-top: 0;
+        padding-left: 175px;
+        padding-top: 15px;
+    }
+    .home .news .share_btn_wrap .dropdown {
+        position: absolute;
+        bottom: 10px;
+        right: 15px;
+    }
+    .home .news .content_wrapper .share_btn_wrap {
+        text-align: left;
     }
     .home .news .content::after {
         display: none;
@@ -550,10 +561,16 @@
         line-height: 18px;
     }
     .advices .advice_item-header {
-        padding-right: 85px;
+        padding-right: 25px;
+        background: #fff url("../images/Intersect.png") no-repeat 120% -100%;
+    }
+    .advices .advice_item-header .icon {
+        font-size: 21px;
+        top: 10px;
+        right: 10px;
     }
     .blog_item_main {
-        min-height: 650px;
+        min-height: 550px;
     }
     .zoopeople .blog_item_main p span {
         font-size: 16px;
@@ -580,16 +597,387 @@
     .main_news_item .content_box {
         border: none;
         padding-right: 0;
+        margin-bottom: 0;
     }
     .main_news_item .entry-content-wrap {
         display: flex;
         flex-direction: column;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        padding: 0 15px;
+        min-height: 490px;
+        justify-content: space-between;
     }
     .main_news_item .share_btn_wrap {
         order: 1;
+        margin-bottom: 15px;
+    }
+    .main_news_item .img_box {
+        box-shadow: 4px 0px 5px rgba(0, 0, 0, 0.15);
+    }
+    .info_devider .tnp-field-email label {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+    .info_devider .newsletter {
+        display: block;
+        text-align: right;
+        position: relative;
+    }
+    .info_devider input[type=email] {
+        width: 85%;
+        margin: 0 auto;
+        display: block;
+    }
+    .tnp-field-button {
+        display: inline-block;
+    }
+    .info_devider .newsletter input[type="submit"] {
+        position: absolute;
+        bottom: 25px;
+        right: 10%;
+    }
+    .home .news .et_pb_row {
+        padding-top: 0;
+    }
+    .news .section-tittle {
+        font-size: 18px;
+        padding: 20px 0;
+    }
+    .news .et_pb_ajax_pagination_container {
+        padding: 0 10px;
+    }
+    .home .news .section-tittle-wrap {
+        margin-bottom: 0;
+    }
+    .news .img-wrapper {
+        width: 40%;
+        border-right: 2px solid #FF8000;
+    }
+    .home .news .blog_item {
+        max-height: 150px;
+    }
+    .home .news .img-wrapper img {
+        max-height: 150px;
+    }
+    .home-soc .et_pb_column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .home-soc .et_pb_column .et-social-icons {
+        margin-top: 25px;
+        padding-left: 0;
+    }
+    .home-soc .et_pb_column .et-social-icons li:first-child {
+        margin-left: 0;
+    }
+    .home-soc .devider-sub {
+        margin-right: 0;
+    }
+    .advices .header_tittle span {
+        font-size: 14px;
+    }
+    .zoopeople h2 {
+        padding-bottom: 0;
+    }
+    /*Footer*/
+    .main_footer .footer_info {
+        font-size: 11px;
+        padding: 0 15px;
+    }
+    .main_footer .footer_copyright {
+        font-size: 10px;
+    }
+    .main_footer .et-social-icon:before {
+        font-size: 20px;
+    }
+    .main_footer .redaction {
+        font-size: 14px;
+    }
+    .footer_bottom {
+        justify-content: space-between;
+        flex-direction: column-reverse;
+    }
+    .main_footer .bottom-nav li:first-child {
+        padding-left: 0;
+    }
+    .main_footer .bottom-nav {
+        text-align: left;
+    }
+    .main_footer #et-footer-nav {
+        display: none;
+    }
+    .main_footer .et-social-icons {
+        text-align: left;
     }
 }
 
 @media (max-width: 575px) and  (min-width: 320px) {
-
+    .container {
+        width: 100%;
+    }
+    .et_pb_row {
+        width: 100%;
+    }
+    /*Header*/
+    .top_left {
+        display: none;
+    }
+    .et_header_style_centered #main-header .logo_container {
+        background: none;
+    }
+    .et_header_style_centered #main-header .mobile_nav {
+        background: none;
+    }
+    .mobile_menu_bar:before {
+        color: #000;
+    }
+    .et_header_style_centered .mobile_nav .select_page {
+        display: none;
+    }
+    .top_center {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    span.logo_helper {
+        display: none;
+    }
+    .et_header_style_centered .mobile_menu_bar {
+        left: 5px;
+        right: initial;
+    }
+    .lang-block {
+        display: none;
+    }
+    .et_header_style_centered #main-header {
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    }
+    .et_header_style_centered .et_mobile_menu {
+        width: 90vw;
+    }
+    /*Home*/
+    .home #main-content .container-1 {
+        display: none;
+    }
+    .home #main-content .container-2 {
+        position: initial;
+    }
+    .home .block_1_1 {
+        background: none;
+        margin-top: 0;
+        padding: 0 7px;
+        margin-bottom: 25px;
+    }
+    .home .block_1_1:before {
+        display: none;
+    }
+    .home .block_1_1 .mob-img {
+        display: block;
+    }
+    .main_news_wrap {
+        max-height: none;
+    }
+    .home .block_1_1 .entry-title {
+        color: #404040;
+        font-size: 26px;
+        padding: 20px 30px 20px;
+    }
+    .home .block_1_1 .block-wrap {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border: 0.25px solid rgba(64, 64, 64, 0.4);
+    }
+    .home .block_1_1 .entry-content {
+        padding: 15px 60px 15px 30px;
+        font-size: 16px;
+    }
+    .home .main_news_wrap .et_pb_post {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .main_news_wrap .block_2_2 {
+        flex-direction: column;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .main_news_item .entry-title {
+        font-size: 11px;
+        letter-spacing: 2px;
+        padding-bottom: 0;
+        min-height: auto;
+        line-height: 20px;
+    }
+    .news .img-wrapper {
+        border-right: none;
+    }
+    .home .news .content::before {
+        display: none;
+    }
+    .home .news .content {
+        position: initial;
+        height: auto;
+        padding-right: 15px;
+    }
+    .home .news .news_tittle {
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-align: left;
+    }
+    .home .news .content_wrapper {
+        margin-top: 0;
+        padding-left: 175px;
+        padding-top: 15px;
+    }
+    .home .news .share_btn_wrap .dropdown {
+        position: absolute;
+        bottom: 10px;
+        right: 15px;
+    }
+    .home .news .content_wrapper .share_btn_wrap {
+        text-align: left;
+    }
+    .home .news .content::after {
+        display: none;
+    }
+    .news .blog_item {
+        height: auto;
+    }
+    .home .news .et_pb_post {
+        margin-bottom: 15px;
+    }
+    .info_devider .devider-sub {
+        font-size: 20px;
+    }
+    .advices .header_tittle {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .advices .advice_item-header {
+        padding-right: 25px;
+        background: #fff url("../images/Intersect.png") no-repeat 120% -100%;
+    }
+    .advices .advice_item-header .icon {
+        font-size: 21px;
+        top: 10px;
+        right: 10px;
+    }
+    .blog_item_main {
+        min-height: 550px;
+    }
+    .zoopeople .blog_item_main p span {
+        font-size: 16px;
+    }
+    .zoopeople .blog_item_main .content p {
+        font-size: 18px;
+    }
+    .zoopeople .blog_item_main {
+        margin-bottom: 25px;
+    }
+    .mob-block {
+        display: block;
+    }
+    .main_news_wrap .block_1_1 .title-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding-right: 30px;
+    }
+    .main_news_wrap .block_1_1 .share_btn_wrap .icon {
+        color: #404040;
+        font-size: 24px;
+    }
+    .main_news_item .content_box {
+        border: none;
+        padding-right: 0;
+        margin-bottom: 0;
+    }
+    .main_news_item .entry-content-wrap {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        padding: 0 15px;
+        min-height: auto;
+        justify-content: space-between;
+    }
+    .main_news_item .share_btn_wrap {
+        order: 1;
+        margin-bottom: 15px;
+    }
+    .main_news_item .img_box {
+        box-shadow: 4px 0px 5px rgba(0, 0, 0, 0.15);
+    }
+    .info_devider .tnp-field-email label {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+    .info_devider .newsletter {
+        display: block;
+        text-align: right;
+        position: relative;
+    }
+    .info_devider input[type=email] {
+        width: 85%;
+        margin: 0 auto;
+        display: block;
+    }
+    .tnp-field-button {
+        display: inline-block;
+    }
+    .info_devider .newsletter input[type="submit"] {
+        position: absolute;
+        bottom: 25px;
+        right: 10%;
+    }
+    .home .news .et_pb_row {
+        padding-top: 0;
+    }
+    .news .section-tittle {
+        font-size: 18px;
+        padding: 20px 0;
+    }
+    .news .et_pb_ajax_pagination_container {
+        padding: 0 10px;
+    }
+    .home .news .section-tittle-wrap {
+        margin-bottom: 0;
+    }
+    .news .img-wrapper {
+        width: 40%;
+        border-right: 2px solid #FF8000;
+    }
+    .home .news .blog_item {
+        max-height: 150px;
+    }
+    .home .news .img-wrapper img {
+        max-height: 150px;
+    }
+    .home-soc .et_pb_column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .home-soc .et_pb_column .et-social-icons {
+        margin-top: 25px;
+        padding-left: 0;
+    }
+    .home-soc .et_pb_column .et-social-icons li:first-child {
+        margin-left: 0;
+    }
+    .home-soc .devider-sub {
+        margin-right: 0;
+    }
+    .advices .header_tittle span {
+        font-size: 14px;
+    }
+    .zoopeople h2 {
+        padding-bottom: 0;
+    }
+    .main_news_item {
+        margin-bottom: 25px;
+    }
 }
