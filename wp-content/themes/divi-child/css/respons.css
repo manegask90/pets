@@ -827,7 +827,7 @@
     }
     .home .news .content_wrapper {
         margin-top: 0;
-        padding-left: 175px;
+        padding-left: 40%;
         padding-top: 15px;
     }
     .home .news .share_btn_wrap .dropdown {
@@ -848,7 +848,7 @@
         margin-bottom: 15px;
     }
     .info_devider .devider-sub {
-        font-size: 20px;
+        font-size: 16px;
     }
     .advices .header_tittle {
         font-size: 12px;
@@ -856,24 +856,60 @@
     }
     .advices .advice_item-header {
         padding-right: 25px;
-        background: #fff url("../images/Intersect.png") no-repeat 120% -100%;
+        background: #fff url("../images/Intersect.png") no-repeat 100% -100%;
     }
     .advices .advice_item-header .icon {
-        font-size: 21px;
+        font-size: 30px;
         top: 10px;
         right: 10px;
     }
+    .advices .et_pb_row {
+        padding-top: 0;
+    }
+    .advices .section-tittle {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .advices .et_pb_ajax_pagination_container {
+        padding: 0 10px;
+    }
+    .advices .et_pb_post {
+        margin-bottom: 0;
+    }
     .blog_item_main {
-        min-height: 550px;
+        min-height: 345px;
     }
     .zoopeople .blog_item_main p span {
-        font-size: 16px;
+        font-size: 12px;
     }
     .zoopeople .blog_item_main .content p {
-        font-size: 18px;
+        font-size: 14px;
     }
     .zoopeople .blog_item_main {
         margin-bottom: 25px;
+    }
+    .zoopeople .et_pb_post {
+        margin-bottom: 0;
+    }
+    .zoopeople .et_pb_post:nth-child(even) {
+        padding-left: 5px;
+    }
+    .zoopeople .et_pb_post:nth-child(odd) {
+        padding-right: 5px;
+    }
+    .zoopeople .entry-title {
+        font-size: 13px;
+        padding: 0 5px;
+    }
+    .zoopeople .blog_item-overlay {
+        padding: 0;
+    }
+    .zoopeople .content_bottom {
+        bottom: 15px;
+        padding: 0 5px;
+    }
+    .zoopeople .blog_item .content_bottom h4 p {
+        font-size: 9px;
     }
     .mob-block {
         display: block;
@@ -938,7 +974,7 @@
     }
     .news .section-tittle {
         font-size: 18px;
-        padding: 20px 0;
+        padding: 20px 15px;
     }
     .news .et_pb_ajax_pagination_container {
         padding: 0 10px;
@@ -976,8 +1012,50 @@
     }
     .zoopeople h2 {
         padding-bottom: 0;
+        padding-left: 15px;
+        padding-right: 15px;
     }
     .main_news_item {
         margin-bottom: 25px;
+    }
+    .zoopeople .et_pb_ajax_pagination_container {
+        padding: 0 10px;
+    }
+    .zoopeople .blog_item_main .blog_item-overlay .entry-title {
+        font-size: 24px;
+        padding: 0;
+    }
+    .zoopeople .blog_item_main .content .text-wrap {
+        width: 100%;
+    }
+    /*Footer*/
+    .main_footer .footer_info {
+        font-size: 11px;
+        padding: 0 15px;
+    }
+    .main_footer .footer_copyright {
+        font-size: 10px;
+    }
+    .main_footer .et-social-icon:before {
+        font-size: 20px;
+    }
+    .main_footer .redaction {
+        font-size: 14px;
+    }
+    .footer_bottom {
+        justify-content: space-between;
+        flex-direction: column-reverse;
+    }
+    .main_footer .bottom-nav li:first-child {
+        padding-left: 0;
+    }
+    .main_footer .bottom-nav {
+        text-align: left;
+    }
+    .main_footer #et-footer-nav {
+        display: none;
+    }
+    .main_footer .et-social-icons {
+        text-align: left;
     }
 }
