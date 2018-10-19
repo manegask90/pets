@@ -1224,6 +1224,7 @@ body .scroll-top-inner {
 .post-thumb img {
     width: 100%;
     vertical-align: top;
+    min-height: 665px;
 }
 .single-post .post-header-block {
     width: 857px;
@@ -1442,6 +1443,9 @@ body .scroll-top-inner {
 }
 .slider.news .blog_item {
     min-height: 455px;
+}
+.news .content {
+    right: 0;
 }
 /*********/
 
