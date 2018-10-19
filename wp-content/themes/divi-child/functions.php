@@ -1,6 +1,5 @@
 <?php
 function my_theme_enqueue_styles() {
-    $templates = "'events.php', 'news.php'";
     wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() .'/css/bootstrap.min.css');
     wp_enqueue_style('fontello-icons', get_stylesheet_directory_uri() .'/assets/icons/css/icons.css');
     wp_enqueue_style('fontawesome-icons', get_stylesheet_directory_uri() .'/assets/icons/fontawesome/css/all.css');
@@ -16,8 +15,11 @@ function my_theme_enqueue_styles() {
     wp_enqueue_script('modernizr.custom', get_stylesheet_directory_uri().'/assets/search-bar/js/modernizr.custom.js', array('jquery'), false, true);
     wp_enqueue_script('classie', get_stylesheet_directory_uri().'/assets/search-bar/js/classie.js', array('jquery'), false, true);
     wp_enqueue_script('uisearch', get_stylesheet_directory_uri().'/assets/search-bar/js/uisearch.js', array('jquery'), false, true);
-    if( is_page_template( array($templates) ) ) {
+    if( is_page_template( array('events.php', 'news.php') ) ) {
         wp_enqueue_script('loadmore', get_stylesheet_directory_uri().'/assets/load-more/loadmore.js', array('jquery'), false, true);
+    }
+    if( is_page_template( array('zoomans.php') ) ) {
+        wp_enqueue_script('loadmore-zoo', get_stylesheet_directory_uri().'/assets/load-more/loadmore-zoo.js', array('jquery'), false, true);
     }
     wp_enqueue_script('bxslider', get_stylesheet_directory_uri().'/assets/bxslider/jquery.bxslider.js', array('jquery'), false, true);
 //    wp_enqueue_script('validator', get_stylesheet_directory_uri().'/js/bootstrapvalidator.min.js', array('jquery'), false, true);
@@ -331,6 +333,56 @@ function true_load_posts(){
 
 add_action('wp_ajax_loadmore', 'true_load_posts');
 add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
+
+
+//Load more zoomans
+function true_load_posts_zoo(){
+//    ob_start();
+//    $args = unserialize( stripslashes( $_POST['query'] ) );
+//    $args['paged'] = $_POST['page'] + 1; // следующая страница
+            $args = array(
+                'posts_per_page' => 8,
+                'cat'       => 3,
+                'post_type'     => 'post',
+                'post_status'   => 'publish',
+                'offset'     => $_POST['posts_counter']
+            );
+            $query = new WP_Query($args);
+            if ($query->have_posts()) :
+            while ( $query->have_posts() ) :
+                $query->the_post(); ?>
+
+                <?php $date = get_the_date('j. m. Y'); ?>
+                <div id="post-<?php the_ID(); ?>" <?php post_class('et_pb_post col-lg-3 col-md-6 col-sm-6 col-6'); ?>>
+
+                    <a href="<?php esc_url(the_permalink()); ?>">
+                        <div class="blog_item">
+                            <?php //print_thumbnail(); ?>
+                            <?php the_post_thumbnail(); ?>
+                            <div class="blog_item-overlay">
+                                <div class="content_top">
+                                    <h2 class="entry-title"><?php the_title(); ?></h2>
+                                    <p><span>Зоопсихолог</span></p>
+                                </div>
+                                <div class="content_bottom">
+                                    <h4><?php the_excerpt(); ?></h4>
+                                    <p><span><?php echo $date ?></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <?php endwhile; ?>
+
+                <?php
+                wp_reset_postdata();
+            endif;
+    die();
+}
+
+
+add_action('wp_ajax_loadmore-zoo', 'true_load_posts_zoo');
+add_action('wp_ajax_nopriv_loadmore-zoo', 'true_load_posts_zoo');
 
 
 
