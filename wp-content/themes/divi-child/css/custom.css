@@ -1228,7 +1228,7 @@ body .scroll-top-inner {
 .post-thumb img {
     width: 100%;
     vertical-align: top;
-    min-height: 665px;
+    height: 665px;
 }
 .single-post .post-header-block {
     width: 857px;
@@ -1527,9 +1527,43 @@ body .scroll-top-inner {
     display: none;
 }
 /**********/
-/*.tnp-field-button {*/
-/*display: none;*/
-/*}*/
+
+
+/*Search*/
+.search .et_pb_post a img {
+    max-height: 250px;
+    width: 250px;
+}
+.search .date {
+    background: #FF8000;
+    padding: 8px 24px;
+}
+.search .date_txt {
+    text-transform: uppercase;
+    color: #fff;
+    padding-bottom: 0;
+}
+.search .content-text {
+    padding: 15px 20px;
+}
+.search .event_tittle {
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 14px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: #000000;
+    text-align: left;
+}
+.search .event_brief {
+    font-style: normal;
+    font-weight: 300;
+    line-height: 21px;
+    font-size: 15px;
+    color: #000000;
+    text-align: left;
+}
 /*MEDIA*/
 @media screen
 and (min-device-width: 820px)

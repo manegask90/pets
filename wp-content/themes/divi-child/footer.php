@@ -48,6 +48,78 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 
 
 
+        // Filtr stories
+        jQuery(document).ready(function($) {
+            $('#filter-list-stories .filter a').on('click', function (e) {
+                e.preventDefault();
+                var $that = $(this),
+                    $type = $that.attr('data-type'),
+                    $newsWrap = $('.news_posts_wrap'),
+                    $mainPostId = $newsWrap.attr('data-main-post'),
+                    $catId = $newsWrap.attr('data-cat');
+                if (!$that.hasClass('active')) {
+                    $('#filter-list-stories .filter a').removeClass('active');
+                    $that.addClass('active');
+                    setCookie('type', $type);
+                    var data = {
+                        'type': $type,
+                        action: 'stories_filtr',
+                    };
+                    if ($mainPostId) {
+                        data['mainPostId'] = $mainPostId;
+                    }
+                    if ($catId) {
+                        data['catId'] = $catId;
+                    }
+                    $.ajax({
+                        type: "POST", //Метод отправки
+                        url: MyAjax.ajaxurl, //путь до php фаила отправителя
+                        data: data,
+                        success: function (response) {
+                            $newsWrap.html(response);
+                        }
+                    });
+                }
+
+            });
+        });
+
+        // Filtr advices
+        jQuery(document).ready(function($) {
+            $('#filter-list-advices .filter a').on('click', function (e) {
+                e.preventDefault();
+                var $that = $(this),
+                    $type = $that.attr('data-type'),
+                    $newsWrap = $('.news_posts_wrap'),
+                    $mainPostId = $newsWrap.attr('data-main-post'),
+                    $catId = $newsWrap.attr('data-cat');
+                if (!$that.hasClass('active')) {
+                    $('#filter-list-advices .filter a').removeClass('active');
+                    $that.addClass('active');
+                    setCookie('type', $type);
+                    var data = {
+                        'type': $type,
+                        action: 'advices_filtr',
+                    };
+                    if ($mainPostId) {
+                        data['mainPostId'] = $mainPostId;
+                    }
+                    if ($catId) {
+                        data['catId'] = $catId;
+                    }
+                    $.ajax({
+                        type: "POST", //Метод отправки
+                        url: MyAjax.ajaxurl, //путь до php фаила отправителя
+                        data: data,
+                        success: function (response) {
+                            $newsWrap.html(response);
+                        }
+                    });
+                }
+
+            });
+        });
+
         // Filtr
         jQuery(document).ready(function($) {
             $('.posts_filter-list .filter a').on('click', function (e) {
@@ -72,8 +144,8 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
                         data['catId'] = $catId;
                     }
                     $.ajax({
-                        type: "POST", //Метод отправки
-                        url: MyAjax.ajaxurl, //путь до php фаила отправителя
+                        type: "POST",
+                        url: MyAjax.ajaxurl,
                         data: data,
                         success: function (response) {
                             $newsWrap.html(response);
@@ -83,6 +155,8 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 
             });
         });
+
+
         function setCookie(name, value, options) {
             options = options || {};
 

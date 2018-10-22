@@ -6,63 +6,34 @@ get_header(); ?>
 
 <div id="main-content">
 	<div class="container">
-		<div id="content-area" class="clearfix">
-			<div id="left-area">
+		<div class="row">
 		<?php
+        $args = array(
+            'posts_per_page' => -1,
+        );
+        query_posts($args);
 			if ( have_posts() ) :
 				while ( have_posts() ) : the_post();
 					$post_format = et_pb_post_format(); ?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class( 'et_pb_post' ); ?>>
-
-				<?php
-					$thumb = '';
-
-					$width = (int) apply_filters( 'et_pb_index_blog_image_width', 1080 );
-
-					$height = (int) apply_filters( 'et_pb_index_blog_image_height', 675 );
-					$classtext = 'et_pb_post_main_image';
-					$titletext = get_the_title();
-					$thumbnail = get_thumbnail( $width, $height, $classtext, $titletext, $titletext, false, 'Blogimage' );
-					$thumb = $thumbnail["thumb"];
-
-					et_divi_post_format_content();
-
-					if ( ! in_array( $post_format, array( 'link', 'audio', 'quote' ) ) ) {
-						if ( 'video' === $post_format && false !== ( $first_video = et_get_first_video() ) ) :
-							printf(
-								'<div class="et_main_video_container">
-									%1$s
-								</div>',
-								$first_video
-							);
-						elseif ( ! in_array( $post_format, array( 'gallery' ) ) && 'on' === et_get_option( 'divi_thumbnails_index', 'on' ) && '' !== $thumb ) : ?>
-							<a class="entry-featured-image-url" href="<?php the_permalink(); ?>">
-								<?php print_thumbnail( $thumb, $thumbnail["use_timthumb"], $titletext, $width, $height ); ?>
-							</a>
-					<?php
-						elseif ( 'gallery' === $post_format ) :
-							et_pb_gallery_images();
-						endif;
-					} ?>
-
-				<?php if ( ! in_array( $post_format, array( 'link', 'audio', 'quote' ) ) ) : ?>
-					<?php if ( ! in_array( $post_format, array( 'link', 'audio' ) ) ) : ?>
-						<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-					<?php endif; ?>
-
-					<?php
-						et_divi_post_meta();
-
-						if ( 'on' !== et_get_option( 'divi_blog_style', 'false' ) || ( is_search() && ( 'on' === get_post_meta( get_the_ID(), '_et_pb_use_builder', true ) ) ) ) {
-							truncate_post( 270 );
-						} else {
-							the_content();
-						}
-					?>
-				<?php endif; ?>
-
-					</article> <!-- .et_pb_post -->
+					<div id="post-<?php the_ID(); ?>" <?php post_class( 'col-md-3 col-sm-6 et_pb_post' ); ?>>
+                        <a href="<?php the_permalink(); ?>" class="">
+                            <div class="blog_item">
+                                <div class="img-wrapper">
+                                    <?php the_post_thumbnail(); ?>
+                                </div>
+                                <div class="content">
+                                    <div class="date">
+                                        <h5 class="date_txt"><span><?php echo get_the_date('j. m. Y'); ?></span></h5>
+                                    </div>
+                                    <div class="content-text">
+                                        <h4 class="event_tittle"><?php the_title() ?></h4>
+                                        <div class="event_brief"><?php the_excerpt(); ?></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+					</div> <!-- .et_pb_post -->
 			<?php
 					endwhile;
 
@@ -73,8 +44,8 @@ get_header(); ?>
 				else :
 					get_template_part( 'includes/no-results', 'index' );
 				endif;
+
 			?>
-			</div> <!-- #left-area -->
 
 			<?php //get_sidebar(); ?>
 		</div> <!-- #content-area -->
