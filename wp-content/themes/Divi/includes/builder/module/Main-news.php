@@ -1042,7 +1042,7 @@ class ET_Builder_Module_Main_news extends ET_Builder_Module {
                                 <div class="title-box">
                                     <h2 class="entry-title"><?php the_title(); ?></h2>
                                     <div class="share_btn_wrap mob-block">
-                                        <div class="dropdown show">
+                                        <div class="dropdown dropleft show">
                                           <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="icon icon-union"></i>
                                           </a>
@@ -1122,7 +1122,7 @@ class ET_Builder_Module_Main_news extends ET_Builder_Module {
                                 <div class="entry-content-wrap">
                                     <<?php echo $processed_header_level; ?> class="entry-title"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></<?php echo $processed_header_level; ?>>
                                     <div class="share_btn_wrap">
-                                        <div class="dropdown show">
+                                        <div class="dropdown dropleft show">
                                           <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="icon icon-union"></i>
                                           </a>

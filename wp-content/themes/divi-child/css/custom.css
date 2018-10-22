@@ -142,6 +142,9 @@ header .qtranxs_widget ul li {
     background-color: #FF8000;
     margin-top: 3px;
 }
+.mobile_menu_bar:before {
+    color: #FF8000;
+}
 
 /*Home*/
 .home .block_1 {

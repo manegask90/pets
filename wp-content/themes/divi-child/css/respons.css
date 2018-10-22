@@ -646,7 +646,7 @@
         padding: 20px 0;
     }
     .news .et_pb_ajax_pagination_container {
-        padding: 0 10px;
+        padding: 0 15px;
     }
     .home .news .section-tittle-wrap {
         margin-bottom: 0;
@@ -681,6 +681,16 @@
     }
     .zoopeople h2 {
         padding-bottom: 0;
+    }
+    .zoopeople .blog_item_main .share_btn_wrap .dropdown-menu.show {
+        top: -145px !important;
+    }
+    .zoopeople .blog_item_main .dropdown-menu img {
+        min-width: auto;
+        position: initial;
+    }
+    .zoopeople .blog_item_main .share_btn_wrap .dropdown a:hover .icon {
+        color: #fff;
     }
     /*Footer*/
     .main_footer .footer_info {
@@ -727,6 +737,7 @@
     }
     .et_header_style_centered #main-header .logo_container {
         background: none;
+        width: 100%;
     }
     .et_header_style_centered #main-header .mobile_nav {
         background: none;
@@ -756,6 +767,9 @@
     }
     .et_header_style_centered .et_mobile_menu {
         width: 90vw;
+    }
+    .top_header .et_mobile_menu {
+        border-top: 3px solid #FF8000;
     }
     /*Home*/
     .home #main-content .container-1 {
@@ -871,7 +885,7 @@
         padding-right: 15px;
     }
     .advices .et_pb_ajax_pagination_container {
-        padding: 0 10px;
+        padding: 0 15px;
     }
     .advices .et_pb_post {
         margin-bottom: 0;
@@ -977,7 +991,7 @@
         padding: 20px 15px;
     }
     .news .et_pb_ajax_pagination_container {
-        padding: 0 10px;
+        padding: 0 15px;
     }
     .home .news .section-tittle-wrap {
         margin-bottom: 0;
@@ -1019,7 +1033,7 @@
         margin-bottom: 25px;
     }
     .zoopeople .et_pb_ajax_pagination_container {
-        padding: 0 10px;
+        padding: 0 15px;
     }
     .zoopeople .blog_item_main .blog_item-overlay .entry-title {
         font-size: 24px;
@@ -1028,7 +1042,23 @@
     .zoopeople .blog_item_main .content .text-wrap {
         width: 100%;
     }
-    /*Footer*/
+    .home .news .blog_item .share_btn_wrap .dropdown-menu.show {
+        top: -100px !important;
+    }
+    .advices .advice_item .share_btn_wrap .dropdown-menu.show {
+        left: -50px !important;
+    }
+    .zoopeople .blog_item_main .share_btn_wrap .dropdown-menu.show {
+        top: -145px !important;
+    }
+    .zoopeople .blog_item_main .dropdown-menu img {
+        min-width: auto;
+        position: initial;
+    }
+    .zoopeople .blog_item_main .share_btn_wrap .dropdown a:hover .icon {
+        color: #fff;
+    }
+        /*Footer*/
     .main_footer .footer_info {
         font-size: 11px;
         padding: 0 15px;
