@@ -145,6 +145,9 @@ header .qtranxs_widget ul li {
 .mobile_menu_bar:before {
     color: #FF8000;
 }
+.top_header .et_mobile_menu {
+    border-top: 3px solid #FF8000;
+}
 
 /*Home*/
 .home .block_1 {
@@ -386,6 +389,13 @@ header .qtranxs_widget ul li {
     color: transparent;
     padding: 0;
     width: 10px;
+    /*display: none;*/
+}
+.newsletter.error input[type="submit"] {
+    display: none;
+}
+.newsletter.valid input[type="submit"] {
+    display: block;
 }
 .section-tittle {
     font-style: normal;
@@ -1566,6 +1576,11 @@ body .scroll-top-inner {
     font-size: 15px;
     color: #000000;
     text-align: left;
+}
+
+/*Valid form*/
+.newsletter label.error {
+    display: none !important;
 }
 /*MEDIA*/
 @media screen

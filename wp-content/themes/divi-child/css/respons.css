@@ -404,6 +404,16 @@
     .zoopeople .blog_item_main {
         margin-bottom: 25px;
     }
+    .zoopeople .blog_item_main .share_btn_wrap .dropdown-menu.show {
+        top: -145px !important;
+    }
+    .zoopeople .blog_item_main .dropdown-menu img {
+        min-width: auto;
+        position: initial;
+    }
+    .zoopeople .blog_item_main .share_btn_wrap .dropdown a:hover .icon {
+        color: #fff;
+    }
     /*Footer*/
     .main_footer .footer_info {
         font-size: 11px;
@@ -751,6 +761,7 @@
     .top_center {
         display: flex;
         flex-direction: row-reverse;
+        padding-left: 0;
     }
     span.logo_helper {
         display: none;

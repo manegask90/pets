@@ -42,6 +42,25 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                     <div class="col-md-5 block_1_1">
                         <a href="<?php esc_url( the_permalink() ); ?>">
                             <h2 class="entry-title"><?php the_title(); ?></h2>
+                            <div class="share_btn_wrap">
+                                <div class="dropdown show">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="icon icon-union"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
+                                        <a class="dropdown-item" id="viber_share">
+                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
+                                        </a>
+                                        <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
+                                            <div class="telegram_wrap">
+                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
+                                                <span>Share</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="entry-content">
                                 <?php the_excerpt(); ?>
                                 <div class="date-box">

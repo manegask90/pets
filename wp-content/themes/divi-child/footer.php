@@ -260,57 +260,24 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 
 
         // Form validator
-        // jQuery(document).ready(function() {
-        //     jQuery('.newsletter').bootstrapValidator({
-        //         // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
-        //         feedbackIcons: {
-        //             valid: 'glyphicon glyphicon-ok',
-        //             invalid: 'glyphicon glyphicon-remove',
-        //             validating: 'glyphicon glyphicon-refresh'
-        //         },
-        //         fields: {
-        //             ne: {
-        //                 validators: {
-        //                     notEmpty: {
-        //                         message: 'Supply email address'
-        //                     },
-        //                     emailAddress: {
-        //                         message: 'No email added'
-        //                     }
-        //                 }
-        //             },
-        //         }
-        //     })
-        //         .on('success.form.bv', function(e) {
-        //             jQuery('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
-        //             jQuery('.newsletter').data('bootstrapValidator').resetForm();
-        //
-        //             // Prevent form submission
-        //             e.preventDefault();
-        //
-        //             // Get the form instance
-        //             var $form = $(e.target);
-        //
-        //             // Get the BootstrapValidator instance
-        //             var bv = $form.data('bootstrapValidator');
-        //
-        //             // Use Ajax to submit form data
-        //             $.post($form.attr('action'), $form.serialize(), function(result) {
-        //                 console.log(result);
-        //             }, 'json');
-        //         });
-        // });
+        $(document).ready(function() {
+            $('.newsletter .tnp-email').keyup(function() {
+                if($(this).val() != '') {
+                    var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+                    var mail = $('.newsletter .tnp-email');
+                    if(pattern.test($(this).val())){
+                        $(this).parents('.newsletter').removeClass('error').addClass('valid');
+                        console.log('ok');
+                    } else {
+                        $(this).parents('.newsletter').removeClass('valid').addClass('error');
+                        console.log('error');
 
-        jQuery(document).ready(function ($) {
-
-            $('.newsletter').validate({ // initialize the plugin
-                rules: {
-                    ne: {
-                        email: true
                     }
-                },
+                } else {
+                    $(this).css({'border' : '1px solid #ff0000'});
+                    // $('#valid').text('Поле email не должно быть пустым');
+                }
             });
-
         });
 </script>
 </body>
