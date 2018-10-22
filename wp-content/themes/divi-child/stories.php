@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: News
+ * Template Name: Stories
  *
  */
 get_header();
@@ -18,7 +18,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
         'numberposts' => 1,
         'tag' => 'main',
         'post_type' => 'post',
-        'category' => 6,
+        'category' => 23,
         'suppress_filters' => true
     ));
     $main_post = null;
@@ -45,7 +45,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                             <div class="entry-content">
                                 <?php the_excerpt(); ?>
                                 <div class="date-box">
-                                    <?php echo esc_html( get_the_date( $meta_date ) ) ?>
+                                    <?php echo get_the_date('j. m. Y'); ?>
                                 </div>
                             </div>
                         </a>
@@ -68,7 +68,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                     } ?>
                 <div class="row ">
                     <div class="col-md-9 posts_filter">
-                        <ul class="posts_filter-list">
+                        <ul id="filter-list-stories" class="posts_filter-list">
                             <li>Показувати спочатку:</li>
                             <li class="filter">
                                 <a href="#" class="<?php echo ($type == 'latest' ? 'active' : '' ); ?>" data-type="latest">Останні</a>
@@ -86,12 +86,12 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                         $args = array(
                             'numberposts' => 6,
                             'order'    => 'DESC',
-                            'category'    => 6
+                            'category'    => 23
                         );
                     } else {
                         $args = array(
                             'numberposts' => 6,
-                            'category'    => 6,
+                            'category'    => 23,
                             'meta_key' => 'post_views_count',
                             'orderby'  => 'meta_value_num',
                         );

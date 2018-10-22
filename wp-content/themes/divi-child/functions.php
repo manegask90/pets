@@ -92,6 +92,7 @@ function news_filtr_get_posts()
         } else {
             $args = array(
                 'numberposts' => 6,
+                'category' => 6,
                 'meta_key' => 'post_views_count',
                 'orderby'  => 'meta_value_num'
             );
@@ -162,6 +163,188 @@ function news_filtr_get_posts()
     wp_die($resp);
 }
 
+
+//Filtr stories
+add_action( 'wp_ajax_stories_filtr', 'stories_filtr_get_posts' );
+add_action( 'wp_ajax_nopriv_stories_filtr', 'stories_filtr_get_posts' );
+
+function stories_filtr_get_posts()
+{
+    $data = $_POST;
+    $resp = '';
+    if (isset($data['type'])) {
+        $type = $data['type'];
+
+        if ($type == 'latest') {
+            $args = array(
+                'numberposts' => 6,
+                'order'    => 'DESC',
+                'category' => 23
+            );
+        } else {
+            $args = array(
+                'numberposts' => 6,
+                'category' => 23,
+                'meta_key' => 'post_views_count',
+                'orderby'  => 'meta_value_num'
+            );
+        }
+
+        if (isset($data['mainPostId'])) {
+            $args['exclude'] = [$data['mainPostId']];
+        }
+        if (isset($data['catId'])) {
+            $args['category'] = $data['catId'];
+        }
+        $posts = get_posts($args);
+        ob_start();
+        if (!empty($posts)) {
+            foreach( $posts as $post ){ setup_postdata($post); ?>
+                <div <?php post_class('col-md-4 col-sm-6'); ?>>
+                    <a href="<?php the_permalink($post->ID); ?>" class="blog_news_link">
+                        <div class="blog_item">
+                            <div class="img-wrapper">
+                                <?php echo get_the_post_thumbnail($post); ?>
+                            </div>
+                            <div class="blog_item-overlay-top">
+                                <h5 class="post_date"><?php
+                                    $d = '';
+                                    if ( '' == $d ) {
+                                        $the_date = mysql2date( get_option( 'date_format' ), $post->post_date );
+                                    } else {
+                                        $the_date = mysql2date( $d, $post->post_date );
+                                    }
+                                    echo esc_html( $the_date );
+                                    ?></h5>
+                                <div class="share_btn_wrap">
+                                                <div class="dropdown dropleft show">
+                                                    <h5 class="news_time"><?php echo get_the_date('j. m. Y'); ?></h5>
+                                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="icon icon-union"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                        <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
+                                                        <a class="dropdown-item" id="viber_share">
+                                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
+                                                        </a>
+                                                        <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
+                                                            <div class="telegram_wrap">
+                                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
+                                                                <span>Share</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            </div>
+                            <div class="blog_item-overlay">
+                                <div class="content_bottom">
+                                    <h4 class="post_tittle"><?php echo get_the_title($post); ?></h4>
+                                    <div class="post_brief"><?php echo apply_filters( 'the_excerpt', get_the_excerpt($post) ); ?></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <?php }
+            wp_reset_postdata(); // сброс
+        }
+        $resp = ob_get_contents();
+        ob_clean();
+    }
+    wp_die($resp);
+}
+
+//Filtr advices
+add_action( 'wp_ajax_advices_filtr', 'advices_filtr_get_posts' );
+add_action( 'wp_ajax_nopriv_advices_filtr', 'advices_filtr_get_posts' );
+
+function advices_filtr_get_posts()
+{
+    $data = $_POST;
+    $resp = '';
+    if (isset($data['type'])) {
+        $type = $data['type'];
+
+        if ($type == 'latest') {
+            $args = array(
+                'numberposts' => 6,
+                'order'    => 'DESC',
+                'category' => 7
+            );
+        } else {
+            $args = array(
+                'numberposts' => 6,
+                'category' => 7,
+                'meta_key' => 'post_views_count',
+                'orderby'  => 'meta_value_num'
+            );
+        }
+
+        if (isset($data['mainPostId'])) {
+            $args['exclude'] = [$data['mainPostId']];
+        }
+        if (isset($data['catId'])) {
+            $args['category'] = $data['catId'];
+        }
+        $posts = get_posts($args);
+        ob_start();
+        if (!empty($posts)) {
+            foreach( $posts as $post ){ setup_postdata($post); ?>
+                <div <?php post_class('col-md-4 col-sm-6'); ?>>
+                    <a href="<?php the_permalink($post->ID); ?>" class="blog_news_link">
+                        <div class="blog_item">
+                            <div class="img-wrapper">
+                                <?php echo get_the_post_thumbnail($post); ?>
+                            </div>
+                            <div class="blog_item-overlay-top">
+                                <h5 class="post_date"><?php
+                                    $d = '';
+                                    if ( '' == $d ) {
+                                        $the_date = mysql2date( get_option( 'date_format' ), $post->post_date );
+                                    } else {
+                                        $the_date = mysql2date( $d, $post->post_date );
+                                    }
+                                    echo esc_html( $the_date );
+                                    ?></h5>
+                                <div class="share_btn_wrap">
+                                                <div class="dropdown dropleft show">
+                                                    <h5 class="news_time"><?php echo get_the_date('j. m. Y'); ?></h5>
+                                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="icon icon-union"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                        <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
+                                                        <a class="dropdown-item" id="viber_share">
+                                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
+                                                        </a>
+                                                        <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
+                                                            <div class="telegram_wrap">
+                                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
+                                                                <span>Share</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            </div>
+                            <div class="blog_item-overlay">
+                                <div class="content_bottom">
+                                    <h4 class="post_tittle"><?php echo get_the_title($post); ?></h4>
+                                    <div class="post_brief"><?php echo apply_filters( 'the_excerpt', get_the_excerpt($post) ); ?></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <?php }
+            wp_reset_postdata(); // сброс
+        }
+        $resp = ob_get_contents();
+        ob_clean();
+    }
+    wp_die($resp);
+}
 
 //Filtr events
 add_action( 'wp_ajax_events_filtr', 'events_filtr_get_posts' );
