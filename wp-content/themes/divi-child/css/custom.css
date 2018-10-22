@@ -1307,7 +1307,7 @@ body .scroll-top-inner {
     background: #FF8000;
     height: 50px;
 }
-.single-post .single-content .social-box {
+.single-post .single-content .social-box .et-social-icons {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
