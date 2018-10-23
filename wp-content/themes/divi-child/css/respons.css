@@ -38,6 +38,28 @@
         font-size: 18px;
     }
     /**********/
+    /*News*/
+    .top_news_wrap .block_1_1 .entry-title {
+        font-size: 26px;
+    }
+    .top_news_wrap .block_1 img {
+        min-height: 500px;
+    }
+    .posts .blog_item .img-wrapper img {
+        height: 400px;
+    }
+    .news_posts_wrap .blog_item {
+        max-height: 375px;
+    }
+    .posts .blog_item .post_brief {
+        font-size: 13px;
+    }
+    .posts .blog_item-overlay .content_bottom {
+        height: 200px;
+    }
+    .top_news_wrap .block_1 {
+        padding-right: 0;
+    }
     /*Footer*/
     .main_footer .footer_info {
         font-size: 12px;
@@ -116,6 +138,39 @@
     }
     .zoopeople h4 p {
         font-size: 12px;
+    }
+    /*News*/
+    .top_news_wrap .block_1_1 .entry-title {
+        font-size: 19px;
+    }
+    .top_news_wrap .block_1 img {
+        min-height: 500px;
+    }
+    .posts .blog_item .img-wrapper img {
+        height: 300px;
+        min-height: initial;
+    }
+    .posts .blog_item .post_tittle {
+        font-size: 11px;
+    }
+    .news_posts_wrap .blog_item {
+        max-height: 300px;
+    }
+    .posts .blog_item .post_brief {
+        font-size: 11px;
+    }
+    .posts .blog_item-overlay .content_bottom {
+        height: 200px;
+        padding: 10px;
+    }
+    .top_news_wrap .block_1 {
+        padding-right: 0;
+    }
+    .sidebar .cbox_txt {
+        font-size: 11px;
+    }
+    .sidebar .sidebar_header {
+        font-size: 18px;
     }
     /*Footer*/
     .main_footer .footer_info {
@@ -219,6 +274,57 @@
     }
     .blog_item_main .content {
         min-height: 210px;
+    }
+    /*News*/
+    .top_news_wrap .block_1_1 .entry-title {
+        font-size: 16px;
+    }
+    .top_news_wrap .block_1 img {
+        min-height: 445px;
+    }
+    .posts .blog_item .img-wrapper img {
+        height: 300px;
+        min-height: initial;
+    }
+    .posts .blog_item .post_tittle {
+        font-size: 11px;
+    }
+    .news_posts_wrap .blog_item {
+        max-height: 300px;
+    }
+    .posts .blog_item .post_brief {
+        font-size: 11px;
+    }
+    .posts .blog_item-overlay .content_bottom {
+        height: 175px;
+        padding: 10px;
+    }
+    .top_news_wrap .block_1 {
+        padding-right: 15px;
+    }
+    .top_news_wrap .block_2_2 {
+        padding-left: 0;
+    }
+    .sidebar .cbox_txt {
+        font-size: 11px;
+    }
+    .sidebar .sidebar_header {
+        font-size: 16px;
+    }
+    .top_news_wrap .block_1_1 .entry-content {
+        font-size: 12px;
+    }
+    .sidebar li {
+        padding: 15px 10px;
+    }
+    .sidebar .sidebar_top-list li a {
+        font-size: 12px;
+    }
+    .sidebar .sidebar_contact-box {
+        padding: 23px 15px;
+    }
+    .sidebar .cbox_btn {
+        padding: 10px 25px;
     }
     /*Footer*/
     .main_footer .footer_info {
@@ -414,6 +520,45 @@
     .zoopeople .blog_item_main .share_btn_wrap .dropdown a:hover .icon {
         color: #fff;
     }
+    /*News*/
+    .top_news_wrap .block_1_1 .entry-title {
+        font-size: 32px;
+    }
+    .top_news_wrap .block_1 img {
+        min-height: 445px;
+    }
+    .posts .blog_item .img-wrapper img {
+        height: 300px;
+        min-height: initial;
+    }
+    .posts .blog_item .post_tittle {
+        font-size: 11px;
+    }
+    .news_posts_wrap .blog_item {
+        max-height: 300px;
+    }
+    .posts .blog_item .post_brief {
+        font-size: 14px;
+    }
+    .posts .blog_item-overlay .content_bottom {
+        height: 200px;
+        padding: 10px;
+    }
+    .top_news_wrap .block_1 {
+        padding-right: 0;
+    }
+    .top_news_wrap .block_2_2 {
+        display: none;
+    }
+    .top_news_wrap .block_1_1 .entry-content {
+        font-size: 14px;
+    }
+    .news_posts_wrap {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-right: 0;
+    }
     /*Footer*/
     .main_footer .footer_info {
         font-size: 11px;
@@ -446,6 +591,7 @@
     }
     .et_header_style_centered #main-header .logo_container {
         background: none;
+        width: 50%;
     }
     .et_header_style_centered #main-header .mobile_nav {
         background: none;
@@ -459,6 +605,12 @@
     .top_center {
         display: flex;
         flex-direction: row-reverse;
+        padding-left: 0;
+        padding-right: 0;
+        flex-wrap: wrap;
+    }
+    .et_header_style_centered #main-header div#et-top-navigation {
+        width: 50%;
     }
     span.logo_helper {
         display: none;
@@ -543,7 +695,7 @@
     }
     .home .news .content_wrapper {
         margin-top: 0;
-        padding-left: 175px;
+        padding-left: 42%;
         padding-top: 15px;
     }
     .home .news .share_btn_wrap .dropdown {
@@ -562,6 +714,9 @@
     }
     .home .news .et_pb_post {
         margin-bottom: 15px;
+    }
+    .home .news .blog_item .share_btn_wrap .dropdown-menu.show {
+        top: -100px !important;
     }
     .info_devider .devider-sub {
         font-size: 20px;
@@ -701,6 +856,49 @@
     }
     .zoopeople .blog_item_main .share_btn_wrap .dropdown a:hover .icon {
         color: #fff;
+    }
+    /*News*/
+    .top_news_wrap .block_1_1 .entry-title {
+        font-size: 24px;
+    }
+    .top_news_wrap .block_1 img {
+        min-height: 445px;
+    }
+    .posts .blog_item .img-wrapper img {
+        height: 300px;
+        min-height: initial;
+    }
+    .posts .blog_item .post_tittle {
+        font-size: 11px;
+    }
+    .news_posts_wrap .blog_item {
+        max-height: 300px;
+    }
+    .posts .blog_item .post_brief {
+        font-size: 13px;
+        padding-top: 10px;
+    }
+    .posts .blog_item-overlay .content_bottom {
+        height: 200px;
+        padding: 10px;
+    }
+    .top_news_wrap .block_1 {
+        padding-right: 0;
+    }
+    .top_news_wrap .block_2_2 {
+        display: none;
+    }
+    .top_news_wrap .block_1_1 .entry-content {
+        font-size: 14px;
+    }
+    .news_posts_wrap {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: initial;
+        padding-right: 0;
+    }
+    .posts .blog_item-overlay {
+        padding: 0 10px;
     }
     /*Footer*/
     .main_footer .footer_info {
@@ -885,7 +1083,7 @@
         line-height: 18px;
     }
     .advices .advice_item-header {
-        padding-right: 25px;
+        padding-right: 65px;
         background: #fff url("../images/Intersect.png") no-repeat 100% -100%;
     }
     .advices .advice_item-header .icon {
@@ -1073,6 +1271,81 @@
     }
     .zoopeople .blog_item_main .share_btn_wrap .dropdown a:hover .icon {
         color: #fff;
+    }
+    /*News*/
+    .top_news_wrap .container-1 {
+        display: none;
+    }
+    .top_news_wrap .mob-img {
+        display: block;
+    }
+    .top_news_wrap .container-2 {
+        position: initial;
+    }
+    .top_news_wrap .block_1_1 .entry-title {
+        font-size: 16px;
+        background: none;
+        color: #404040;
+        min-height: initial;
+        padding: 10px 15px;
+        letter-spacing: 3px;
+    }
+    .top_news_wrap .share_btn_wrap .icon {
+        color: #404040;
+    }
+    .top_news_wrap .block_1_1 .block-wrap {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border: 0.25px solid rgba(64, 64, 64, 0.4);
+    }
+    .top_news_wrap .block_1_1 .entry-title:after {
+        display: none;
+    }
+    .top_news_wrap .block_1 img {
+        min-height: 445px;
+    }
+    .posts .blog_item .img-wrapper img {
+        height: 300px;
+        min-height: initial;
+    }
+    .posts .blog_item .post_tittle {
+        font-size: 11px;
+    }
+    .news_posts_wrap .blog_item {
+        max-height: 300px;
+    }
+    .posts .blog_item .post_brief {
+        font-size: 13px;
+        padding-top: 10px;
+    }
+    .posts .blog_item-overlay .content_bottom {
+        height: 175px;
+        padding: 10px;
+    }
+    .top_news_wrap .block_1 {
+        padding-right: 0;
+    }
+    .top_news_wrap .block_2_2 {
+        display: none;
+    }
+    .top_news_wrap .block_1_1 .entry-content {
+        font-size: 13px;
+        color: #404040;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+    .news_posts_wrap {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: initial;
+        padding-right: 0;
+    }
+    .posts .blog_item-overlay {
+        padding: 0 10px;
+    }
+    .main-news-row {
+        min-height: initial;
     }
         /*Footer*/
     .main_footer .footer_info {

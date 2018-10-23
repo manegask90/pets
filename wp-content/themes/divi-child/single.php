@@ -43,7 +43,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                             <h2 class="entry-title"><?php the_title(); ?></h2>
                                         </div>
                                         <div class="text-block">
-                                            <?php echo excerpt(11); ?>
+                                            <?php the_excerpt(); ?>
                                             <div class="meta-box">
                                                 <div class="date">
                                                     <?php the_date(); ?>

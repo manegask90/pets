@@ -487,6 +487,9 @@ header .qtranxs_widget ul li {
     text-transform: uppercase;
     color: #404040;
 }
+.home .news .news_tittle a:visited {
+    color: #959595;
+}
 .home .news .tag-main {
     display: none;
 }
@@ -619,7 +622,7 @@ header .qtranxs_widget ul li {
 .advice_item a:hover {
     color: inherit;
 }
-.home .block_1_1 .mob-img {
+.block_1_1 .mob-img {
     display: none;
 }
 /************/
@@ -680,6 +683,15 @@ header .qtranxs_widget ul li {
     font-weight: 500;
     font-style: italic;
     font-size: 12px;
+}
+.top_news_wrap .main-news-row .share_btn_wrap .telegram_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 8px;
+}
+.top_news_wrap .main-news-row .share_btn_wrap .dropdown-item {
+    height: 36px;
 }
 .main-news-row {
     min-height: 500px;
@@ -1136,6 +1148,9 @@ header .qtranxs_widget ul li {
 .main_footer .et-social-icon:before {
     font-size: 30px;
 }
+.main_footer .et-social-icon:first-child:before {
+    margin: 0;
+}
 .main_footer .et-social-icons li:first-child {
     margin-left: 0;
 }
@@ -1502,6 +1517,8 @@ body .scroll-top-inner {
 .share_btn_wrap .telegram_wrap span {
     font-size: 14px;
     vertical-align: text-top;
+    text-transform: none;
+    letter-spacing: normal;
 }
 .share_btn_wrap .dropdown-toggle::after {
     display: none;
@@ -1512,6 +1529,7 @@ body .scroll-top-inner {
 .share_btn_wrap .dropdown-item {
     padding-left: 15px;
     padding-right: 15px;
+    height: 36px;
 }
 .share_btn_wrap .dropdown-menu.show {
     min-width: 100px;
@@ -1587,6 +1605,10 @@ body .scroll-top-inner {
     font-size: 15px;
     color: #000000;
     text-align: left;
+}
+.search .blog_item {
+    height: 525px;
+    max-height: 525px;
 }
 .wp-pagenavi-wrap {
     text-align: center;

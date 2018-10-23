@@ -21,7 +21,7 @@ get_header(); ?>
                         <a href="<?php the_permalink(); ?>" class="">
                             <div class="blog_item">
                                 <div class="img-wrapper">
-                                    <?php //the_post_thumbnail('medium'); ?>
+                                    <?php the_post_thumbnail(); ?>
                                 </div>
                                 <div class="content">
                                     <div class="date">

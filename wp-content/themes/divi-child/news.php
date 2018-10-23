@@ -27,9 +27,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
 
         <section class="top_news_wrap">
-            <div class="container-fluid">
+            <div class="container-fluid container-1">
                 <div class="row">
-                    <div class="col-md-8 block_1">
+                    <div class="col-lg-8 col-md-12 block_1">
                         <a href="<?php esc_url( the_permalink() ); ?>">
                             <img src="<?php the_field('main_img'); ?>" alt=""/>
                         </a>
@@ -39,7 +39,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
             </div>
             <div class="container container-2">
                 <div class="row main-news-row">
-                    <div class="col-md-5 block_1_1">
+                    <div class="col-lg-6 col-md-12 block_1_1">
+                        <div class="block-wrap">
                         <a href="<?php esc_url( the_permalink() ); ?>">
                             <h2 class="entry-title"><?php the_title(); ?>
                             <div class="share_btn_wrap">
@@ -62,6 +63,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                 </div>
                             </div>
                             </h2>
+                            <div class="mob-img">
+                                <img src="<?php the_field('main_img'); ?>"  alt="" />
+                            </div>
                             <div class="entry-content">
                                 <?php the_excerpt(); ?>
                                 <div class="date-box">
@@ -69,9 +73,10 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                 </div>
                             </div>
                         </a>
+                        </div>
                     <?php } wp_reset_postdata(); // сброс ?>
                     </div>
-                    <div class="col-md-3 offset-md-4 block_2_2">
+                    <div class="col-lg-3 offset-lg-3 col-md-3 offset-md-4 block_2_2">
                         <?php get_sidebar(); ?>
                     </div>
                 </div>
@@ -123,7 +128,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                     $posts = get_posts( $args );
                     if (!empty($posts)) {
                         foreach( $posts as $post ){ ?>
-                            <div <?php post_class('col-md-4 col-sm-6'); ?>>
+                            <div <?php post_class('col-xl-4 col-lg-6 col-md-6 col-sm-6'); ?>>
                                 <a href="<?php the_permalink(); ?>" class="blog_news_link">
                                     <div class="blog_item">
                                         <div class="img-wrapper">
