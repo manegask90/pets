@@ -260,7 +260,7 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 
 
         // Form validator
-        $(document).ready(function() {
+        jQuery(document).ready(function($) {
             $('.newsletter .tnp-email').keyup(function() {
                 if($(this).val() != '') {
                     var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
@@ -277,6 +277,25 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
                     $(this).css({'border' : '1px solid #ff0000'});
                     // $('#valid').text('Поле email не должно быть пустым');
                 }
+            });
+        });
+
+        // Input file
+        // jQuery('input#file-upload').click(function() {
+        //     // var i = jQuery(this).prev('label.custom-file-upload').clone();
+        //     // var file = jQuery('#file-upload')[0].files[0].name;
+        //     // jQuery(this).prev('label').text(file);
+        //     console.log('11111');
+        // });
+
+        // jQuery("input[type=file]").nicefileinput({
+        //     label : 'Examinar...' // Spanish label
+        // });
+        jQuery(document).ready(function($){
+            $("input[type=file].nicefileinput").nicefileinput();
+            $("#download-link").click(function(){
+                $('html, body').animate({scrollTop: $("#download").offset().top},'slow');
+                return false;
             });
         });
 </script>

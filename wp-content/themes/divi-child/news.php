@@ -41,7 +41,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                 <div class="row main-news-row">
                     <div class="col-md-5 block_1_1">
                         <a href="<?php esc_url( the_permalink() ); ?>">
-                            <h2 class="entry-title"><?php the_title(); ?></h2>
+                            <h2 class="entry-title"><?php the_title(); ?>
                             <div class="share_btn_wrap">
                                 <div class="dropdown show">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -61,10 +61,11 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                     </div>
                                 </div>
                             </div>
+                            </h2>
                             <div class="entry-content">
                                 <?php the_excerpt(); ?>
                                 <div class="date-box">
-                                    <?php echo esc_html( get_the_date( $meta_date ) ) ?>
+                                    <?php echo get_the_date('j. m. Y'); ?>
                                 </div>
                             </div>
                         </a>
@@ -152,8 +153,10 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                         </div>
                                         <div class="blog_item-overlay">
                                             <div class="content_bottom">
+                                                <a href="<?php the_permalink(); ?>">
                                                 <h4 class="post_tittle"><?php the_title(); ?></h4>
-                                                <div class="post_brief"><?php the_excerpt(); ?></div>
+                                                </a>
+                                                <div class="post_brief"><?php echo kama_excerpt(array('maxchar'=>100)); ?></div>
                                             </div>
                                         </div>
                                     </div>

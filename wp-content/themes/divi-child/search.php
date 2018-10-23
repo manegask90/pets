@@ -8,10 +8,10 @@ get_header(); ?>
 	<div class="container">
 		<div class="row">
 		<?php
-        $args = array(
-            'posts_per_page' => -1,
-        );
-        query_posts($args);
+//        $args = array(
+//            'posts_per_page' => -1,
+//        );
+//        query_posts($args);
 			if ( have_posts() ) :
 				while ( have_posts() ) : the_post();
 					$post_format = et_pb_post_format(); ?>
@@ -28,7 +28,7 @@ get_header(); ?>
                                     </div>
                                     <div class="content-text">
                                         <h4 class="event_tittle"><?php the_title() ?></h4>
-                                        <div class="event_brief"><?php the_excerpt(); ?></div>
+                                        <div class="event_brief test"><?php echo kama_excerpt(array('maxchar'=>100)); ?></div>
                                     </div>
                                 </div>
                             </div>

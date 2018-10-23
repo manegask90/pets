@@ -747,7 +747,7 @@
     }
     .et_header_style_centered #main-header .logo_container {
         background: none;
-        width: 100%;
+        width: 67%;
     }
     .et_header_style_centered #main-header .mobile_nav {
         background: none;
@@ -762,6 +762,11 @@
         display: flex;
         flex-direction: row-reverse;
         padding-left: 0;
+        padding-right: 0;
+        flex-wrap: wrap;
+    }
+    .et_header_style_centered #main-header div#et-top-navigation {
+        width: 33%;
     }
     span.logo_helper {
         display: none;

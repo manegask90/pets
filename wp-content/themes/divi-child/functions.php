@@ -22,6 +22,7 @@ function my_theme_enqueue_styles() {
         wp_enqueue_script('loadmore-zoo', get_stylesheet_directory_uri().'/assets/load-more/loadmore-zoo.js', array('jquery'), false, true);
     }
     wp_enqueue_script('bxslider', get_stylesheet_directory_uri().'/assets/bxslider/jquery.bxslider.js', array('jquery'), false, true);
+    wp_enqueue_script('file-input', get_stylesheet_directory_uri().'/assets/file-input/jquery.nicefileinput.min.js', array('jquery'), false, true);
 //    wp_enqueue_script('validator', get_stylesheet_directory_uri().'/js/bootstrapvalidator.min.js', array('jquery'), false, true);
 //    wp_enqueue_script('validator', get_stylesheet_directory_uri().'/js/jquery.validate.min.js', array('jquery'), false, true);
     wp_localize_script( 'bootstrap', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
@@ -597,6 +598,10 @@ function content($limit) {
   return $content;
 }
 
+add_filter( 'excerpt_length', function(){
+	return 20;
+} );
+
 //Register menu
 register_nav_menus(array(
 	'lang'    => 'Lang menu',
@@ -619,4 +624,75 @@ function start_buffer_FR($template) {
 }
 function end_buffer_FR($buffer) {
   return str_replace('<span>Français</span>','<span>FR</span>',$buffer);
+}
+
+
+/**
+ * Обрезка текста (excerpt). Шоткоды вырезаются. Минимальное значение maxchar может быть 22.
+ *
+ * @param string/array $args Параметры.
+ *
+ * @return string HTML
+ *
+ * @ver 2.6.3
+ */
+function kama_excerpt( $args = '' ){
+	global $post;
+
+	if( is_string($args) )
+		parse_str( $args, $args );
+
+	$rg = (object) array_merge( array(
+		'maxchar'   => 350,   // Макс. количество символов.
+		'text'      => '',    // Какой текст обрезать (по умолчанию post_excerpt, если нет post_content.
+							  // Если в тексте есть `<!--more-->`, то `maxchar` игнорируется и берется все до <!--more--> вместе с HTML.
+		'autop'     => true,  // Заменить переносы строк на <p> и <br> или нет?
+		'save_tags' => '',    // Теги, которые нужно оставить в тексте, например '<strong><b><a>'.
+		'more_text' => 'Читать дальше...', // Текст ссылки `Читать дальше`.
+	), $args );
+
+	$rg = apply_filters( 'kama_excerpt_args', $rg );
+
+	if( ! $rg->text )
+		$rg->text = $post->post_excerpt ?: $post->post_content;
+
+	$text = $rg->text;
+	$text = preg_replace( '~\[([a-z0-9_-]+)[^\]]*\](?!\().*?\[/\1\]~is', '', $text ); // убираем блочные шорткоды: [foo]some data[/foo]. Учитывает markdown
+	$text = preg_replace( '~\[/?[^\]]*\](?!\()~', '', $text ); // убираем шоткоды: [singlepic id=3]. Учитывает markdown
+	$text = trim( $text );
+
+	// <!--more-->
+	if( strpos( $text, '<!--more-->') ){
+		preg_match('/(.*)<!--more-->/s', $text, $mm );
+
+		$text = trim( $mm[1] );
+
+		$text_append = ' <a href="'. get_permalink( $post ) .'#more-'. $post->ID .'">'. $rg->more_text .'</a>';
+	}
+	// text, excerpt, content
+	else {
+		$text = trim( strip_tags($text, $rg->save_tags) );
+
+		// Обрезаем
+		if( mb_strlen($text) > $rg->maxchar ){
+			$text = mb_substr( $text, 0, $rg->maxchar );
+			$text = preg_replace( '~(.*)\s[^\s]*$~s', '\\1 ...', $text ); // убираем последнее слово, оно 99% неполное
+		}
+	}
+
+	// Сохраняем переносы строк. Упрощенный аналог wpautop()
+	if( $rg->autop ){
+		$text = preg_replace(
+			array("/\r/", "/\n{2,}/", "/\n/",   '~</p><br ?/?>~'),
+			array('',     '</p><p>',  '<br />', '</p>'),
+			$text
+		);
+	}
+
+	$text = apply_filters( 'kama_excerpt', $text, $rg );
+
+	if( isset($text_append) )
+		$text .= $text_append;
+
+	return ( $rg->autop && $text ) ? "<p>$text</p>" : $text;
 }
