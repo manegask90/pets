@@ -37,10 +37,12 @@ get_header(); ?>
 			<?php
 					endwhile;
 
-					if ( function_exists( 'wp_pagenavi' ) )
-						wp_pagenavi();
-					else
-						get_template_part( 'includes/navigation', 'index' );
+					if ( function_exists( 'kama_pagenavi' ) ) {?>
+                        <div class="col-md-12 wp-pagenavi-wrap">
+                            <?php kama_pagenavi(); ?>
+                        </div>
+            <?php } else {
+						get_template_part( 'includes/navigation', 'index' );}
 				else :
 					get_template_part( 'includes/no-results', 'index' );
 				endif;

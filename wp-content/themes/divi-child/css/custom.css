@@ -1589,6 +1589,9 @@ body .scroll-top-inner {
     color: #000000;
     text-align: left;
 }
+.wp-pagenavi-wrap {
+    text-align: center;
+}
 
 /*Valid form*/
 .newsletter label.error {
