@@ -313,9 +313,15 @@ class ET_Builder_Module_SearchCustom extends ET_Builder_Module {
 		}
 
 		$output = sprintf(
-			'<div id="sb-search" class="sb-search">
+			'<div%3$s id="sb-search" class="sb-search">
+                %11$s
+				%10$s
 				<form role="search" method="get" class="et_pb_searchform" action="%1$s">
-						<input type="text" value="" name="s" class="sb-search-input" id="search">
+						<input type="text" value="" name="s" class="et_pb_s sb-search-input" id="search"%7$s>
+						<input type="hidden" name="et_pb_searchform_submit" value="et_search_proccess" />
+						%4$s
+						%5$s
+						%6$s
 						<input type="submit" value="" class="sb-search-submit">
 						<span class="sb-icon-search"></span>
 				</form>

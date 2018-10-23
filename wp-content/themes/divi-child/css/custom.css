@@ -1555,8 +1555,7 @@ body .scroll-top-inner {
 
 /*Search*/
 .search .et_pb_post a img {
-    max-height: 250px;
-    min-height: 250px;
+    height: 350px;
     width: 250px;
 }
 .search .date {

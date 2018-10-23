@@ -14,13 +14,14 @@ get_header(); ?>
 //        query_posts($args);
 			if ( have_posts() ) :
 				while ( have_posts() ) : the_post();
+			        $thumb_url   = get_the_post_thumbnail_url();
 					$post_format = et_pb_post_format(); ?>
 
 					<div id="post-<?php the_ID(); ?>" <?php post_class( 'col-md-3 col-sm-6 et_pb_post' ); ?>>
                         <a href="<?php the_permalink(); ?>" class="">
                             <div class="blog_item">
                                 <div class="img-wrapper">
-                                    <?php the_post_thumbnail(); ?>
+                                    <?php //the_post_thumbnail('medium'); ?>
                                 </div>
                                 <div class="content">
                                     <div class="date">

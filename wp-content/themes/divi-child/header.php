@@ -342,6 +342,7 @@
                 <?php if ( ( false !== et_get_option( 'show_search_icon', true ) && ! $et_slide_header ) || is_customize_preview() ) : ?>
                     <div class="col-md-1 col-sm-4 col-3 search_block">
                         <?php echo do_shortcode('[et_pb_section global_module="457"][/et_pb_section]'); ?>
+                        <?php// echo do_shortcode('[et_pb_section global_module="550"][/et_pb_section]'); ?>
                     </div>
                     <div class="col-md-1 lang-block">
                             <ul class="language-chooser language-chooser-custom qtranxs_language_chooser" id="qtranslate-3-chooser">
