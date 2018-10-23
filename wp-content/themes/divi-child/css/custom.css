@@ -698,7 +698,7 @@ header .qtranxs_widget ul li {
     max-height: 490px;
 }
 .posts .blog_item-overlay {
-    min-height: auto;
+    min-height: initial;
     top: initial;
     padding: 0 20px;
     background-image: none;

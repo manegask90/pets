@@ -149,7 +149,8 @@ function news_filtr_get_posts()
                             <div class="blog_item-overlay">
                                 <div class="content_bottom">
                                     <h4 class="post_tittle"><?php echo get_the_title($post); ?></h4>
-                                    <div class="post_brief"><?php echo apply_filters( 'the_excerpt', get_the_excerpt($post) ); ?></div>
+                                    <?php $excerpt = apply_filters( 'the_excerpt', get_the_excerpt($post) ); ?>
+                                    <div class="post_brief"><?php echo mb_substr( strip_tags( $excerpt ), 0, 100 ); ?></div>
                                 </div>
                             </div>
                         </div>

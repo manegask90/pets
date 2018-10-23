@@ -274,23 +274,13 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 
                     }
                 } else {
-                    $(this).css({'border' : '1px solid #ff0000'});
+                    // $(this).css({'border' : '1px solid #ff0000'});
                     // $('#valid').text('Поле email не должно быть пустым');
                 }
             });
         });
 
         // Input file
-        // jQuery('input#file-upload').click(function() {
-        //     // var i = jQuery(this).prev('label.custom-file-upload').clone();
-        //     // var file = jQuery('#file-upload')[0].files[0].name;
-        //     // jQuery(this).prev('label').text(file);
-        //     console.log('11111');
-        // });
-
-        // jQuery("input[type=file]").nicefileinput({
-        //     label : 'Examinar...' // Spanish label
-        // });
         jQuery(document).ready(function($){
             $("input[type=file].nicefileinput").nicefileinput();
             $("#download-link").click(function(){
