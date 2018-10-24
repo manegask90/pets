@@ -46,7 +46,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                             <?php the_excerpt(); ?>
                                             <div class="meta-box">
                                                 <div class="date">
-                                                    <?php the_date(); ?>
+                                                    <?php echo get_the_date('j. m. Y'); ?>
                                                 </div>
                                                 <div class="view">
                                                     <i class="icon icon-eye"></i>
