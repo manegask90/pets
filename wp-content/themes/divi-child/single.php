@@ -35,7 +35,14 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                             <div class="col-md-12 header-block-wrap">
                                 <div class="post-thumb">
                                     <?php //the_post_thumbnail(); ?>
+                                    <?php
+                                    $single_img = get_field('img');
+                                    $test_url   = get_stylesheet_directory_uri();
+                                    if ( !empty($single_img)) { ?>
                                     <img src="<?php echo get_field('img'); ?>" alt="">
+                                    <?php } else {?>
+                                        <img class="test" src="<?php echo get_stylesheet_directory_uri(); ?>/images/bottom_large_pic.jpg" alt="">
+                                    <?php } ?>
                                 </div>
                                 <div class="post-header-block">
                                     <div class="post-header-block-wrap">
