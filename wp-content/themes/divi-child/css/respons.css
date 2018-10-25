@@ -213,6 +213,12 @@
         height: auto;
         margin-bottom: 75px;
     }
+    .zoopeople-single .blog_item_main .blog_item-overlay .entry-title {
+        font-size: 30px;
+    }
+    .zoopeople-single .blog_item_main .content .text-wrap {
+        width: 50%;
+    }
     /*Footer*/
     .main_footer .footer_info {
         font-size: 12px;
@@ -417,6 +423,19 @@
     .single-post .image-text-bottom .icon-box:before, .single-post .image-text-bottom .icon-box:after {
         width: 35%;
     }
+    .zoopeople-single .blog_item_main .blog_item-overlay .entry-title {
+        font-size: 26px;
+    }
+    .zoopeople-single p span {
+        line-height: 14px;
+        font-size: 10px;
+    }
+    .zoopeople-single .blog_item_main .content .text-wrap {
+        width: 50%;
+    }
+    .zoopeople-single .blog_item_main p {
+        font-size: 14px;
+    }
     /*Footer*/
     .main_footer .footer_info {
         font-size: 11px;
@@ -618,7 +637,8 @@
         max-height: initial;
     }
     .zoopeople .blog_item_main .share_btn_wrap .dropdown-menu.show {
-        top: -145px !important;
+        /*top: -145px !important;*/
+        transform: translate3d(94px, -120px, 0px) !important;
     }
     .zoopeople .blog_item_main .dropdown-menu img {
         min-width: auto;
@@ -752,6 +772,45 @@
     .slider.news .img-wrapper {
         width: auto;
         float: none;
+    }
+    .zoopeople-single .blog_item_main p span {
+        font-size: 16px;
+    }
+    .zoopeople-single .blog_item_main .content p {
+        font-size: 18px;
+    }
+    .zoopeople-single .blog_item_main {
+        margin-bottom: 25px;
+        min-height: initial;
+        max-height: initial;
+    }
+    .zoopeople-single .blog_item_main .share_btn_wrap .dropdown-menu.show {
+        /*top: -145px !important;*/
+        transform: translate3d(94px, -120px, 0px) !important;
+    }
+    .zoopeople-single .blog_item_main .dropdown-menu img {
+        min-width: auto;
+        position: initial;
+        vertical-align: middle;
+    }
+    .zoopeople-single .blog_item_main .share_btn_wrap .dropdown a:hover .icon {
+        color: #fff;
+    }
+    .zoopeople-single .blog_item_main .content {
+        background: none;
+        position: initial;
+        display: block;
+        width: 100%;
+    }
+    .zoopeople-single .blog_item_main .blog_item-overlay {
+        padding: 0;
+        position: initial;
+        background: #ff8000;
+    }
+    .zoopeople-single .blog_item_main img {
+        vertical-align: bottom;
+        position: initial;
+        min-width: auto;
     }
     /*Footer*/
     .main_footer .footer_info {
@@ -1045,7 +1104,8 @@
         padding-bottom: 0;
     }
     .zoopeople .blog_item_main .share_btn_wrap .dropdown-menu.show {
-        top: -145px !important;
+        /*top: -145px !important;*/
+        transform: translate3d(94px, -120px, 0px) !important;
     }
     .zoopeople .blog_item_main .dropdown-menu img {
         min-width: auto;
@@ -1201,6 +1261,33 @@
     }
     .bx-wrapper .bx-viewport {
         padding-bottom: 15px;
+    }
+    .zoopeople-single .blog_item_main p span {
+        font-size: 16px;
+    }
+    .zoopeople-single .blog_item_main .content p {
+        font-size: 18px;
+    }
+    .zoopeople-single .blog_item_main {
+        margin-bottom: 25px;
+    }
+    .zoopeople-single .blog_item_main img {
+        height: 90%;
+    }
+    .zoopeople-single .blog_item_main .share_btn_wrap .dropdown-menu.show {
+        /*top: -145px !important;*/
+        transform: translate3d(94px, -120px, 0px) !important;
+    }
+    .zoopeople-single .blog_item_main .dropdown-menu img {
+        min-width: auto;
+        position: initial;
+        height: auto;
+    }
+    .zoopeople-single .blog_item_main .share_btn_wrap .dropdown a:hover .icon {
+        color: #fff;
+    }
+    .single-post .et_pb_column .et_pb_module {
+        width: 100%;
     }
     /*Footer*/
     .main_footer .footer_info {
@@ -1578,7 +1665,8 @@
         left: -50px !important;
     }
     .zoopeople .blog_item_main .share_btn_wrap .dropdown-menu.show {
-        top: -145px !important;
+        /*top: -145px !important;*/
+        transform: translate3d(94px, -120px, 0px) !important;
     }
     .zoopeople .blog_item_main .dropdown-menu img {
         min-width: auto;
@@ -1789,6 +1877,51 @@
     .single-post .read-next .border-box {
         width: 85%;
     }
+    .zoopeople-single .blog_item_main .dropdown-menu img {
+        min-width: auto;
+        position: initial;
+        vertical-align: middle;
+    }
+    .zoopeople-single .blog_item_main .share_btn_wrap .dropdown a:hover .icon {
+        color: #fff;
+    }
+    .zoopeople-single .blog_item_main .blog_item-overlay .entry-title {
+        font-size: 24px;
+        padding: 0;
+    }
+    .zoopeople-single .blog_item_main .content {
+        position: initial;
+        min-height: initial;
+    }
+    .zoopeople-single .blog_item_main .blog_item-overlay {
+        min-height: initial;
+        position: initial;
+    }
+    .zoopeople-single .blog_item_main .content {
+        position: initial;
+        min-height: initial;
+    }
+    .zoopeople-single .blog_item_main {
+        margin-bottom: 25px;
+        min-height: initial;
+    }
+    .zoopeople-single .blog_item_main img {
+        position: inherit;
+    }
+    .zoopeople-single .blog_item_main .content .text-wrap {
+        width: 100%;
+    }
+    .zoopeople-single .blog_item_main .content p {
+        font-size: 14px;
+    }
+    .zoopeople-single .blog_item_main .share_btn_wrap .dropdown-menu.show {
+        /* top: -145px !important; */
+        transform: translate3d(94px, -120px, 0px) !important;
+    }
+    .zoopeople-single .blog_item_main img {
+        vertical-align: bottom;
+    }
+
     /*Footer*/
     .main_footer .footer_info {
         font-size: 11px;

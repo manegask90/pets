@@ -82,7 +82,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                         <?php while ( have_posts() ) : the_post(); ?>
                             <?php setPostViews(get_the_ID()); ?>
                             <?php if (et_get_option('divi_integration_single_top') <> '' && et_get_option('divi_integrate_singletop_enable') == 'on') echo(et_get_option('divi_integration_single_top')); ?>
-
+                            <div class="row">
                             <div class="col-md-12">
                                 <div class="single-content">
                                     <div class="social-box">
@@ -117,8 +117,26 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                                 </div>
                                                 <div class="content">
                                                     <div class="content_wrapper">
-                                                        <h5 class="news_time"> 1. 10. 2018</h5>
-                                                        <i class="icon demo-icon icon-union"></i>
+                                                        <h5 class="news_time"><?php echo get_the_date('j. m. Y'); ?></h5>
+                                                        <div class="share_btn_wrap">
+                                                            <div class="dropdown dropleft show">
+                                                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <i class="icon icon-union"></i>
+                                                                </a>
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                                    <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
+                                                                    <a class="dropdown-item" id="viber_share">
+                                                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
+                                                                    </a>
+                                                                    <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
+                                                                        <div class="telegram_wrap">
+                                                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
+                                                                            <span>Share</span>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                         <h2 class="news_tittle"><?php the_title(); ?></h2>
                                                     </div>
                                                 </div>
@@ -133,7 +151,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
                                 </div>
 
-
+                            </div>
                             </div>
 
                         <?php endwhile; ?>

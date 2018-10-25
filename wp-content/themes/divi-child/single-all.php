@@ -98,7 +98,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                                 </div>
                                                 <div class="content">
                                                     <div class="content_wrapper">
-                                                        <h5 class="news_time"> 1. 10. 2018</h5>
+                                                        <h5 class="news_time"><?php echo get_the_date('j. m. Y'); ?></h5>
                                                         <div class="share_btn_wrap">
                                                             <div class="dropdown dropleft show">
                                                                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
