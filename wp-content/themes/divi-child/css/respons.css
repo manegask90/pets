@@ -1075,6 +1075,110 @@
     .posts .blog_item-overlay {
         padding: 0 10px;
     }
+    /*Single*/
+    .single-post .post-header-block::before {
+        display: none;
+    }
+    .slider .blog_item img {
+        height: 175px;
+        min-width: 100%;
+    }
+    .slider.news .blog_item {
+        min-height: initial;
+        margin-bottom: 0;
+        height: auto;
+    }
+    .slider.news .blog_item .share_btn_wrap {
+        display: none;
+    }
+    .slider.news .content {
+        padding-left: 10px;
+        padding-right: 10px;
+        height: auto;
+    }
+    .slider.news .content_wrapper {
+        padding-left: 0;
+        padding-top: 0;
+    }
+    .slider.news .news_time {
+        font-size: 10px;
+        letter-spacing: normal;
+    }
+    .slider.news .post {
+        padding: 0 7px;
+        margin-bottom: 15px;
+    }
+    .slider .blog_item .telegram_wrap img {
+        height: 13px;
+        min-width: 13px;
+        display: inline-block;
+    }
+    .slider.news .content::after {
+        right: 5px;
+    }
+    .single-post .post-header-block .text-block {
+        height: auto;
+        margin-bottom: 35px;
+    }
+    .single-post .post-header-block {
+        width: auto;
+        margin: 0;
+        position: initial;
+        height: auto;
+    }
+    .single-post .post-thumb img {
+        height: auto;
+    }
+    .et_pb_pagebuilder_layout.single-post #page-container .et_pb_row.single-entry-content {
+        width: 100%;
+    }
+    .single-post .image-text-bottom .icon-box:before, .single-post .image-text-bottom .icon-box:after {
+        width: 33%;
+    }
+    .single-post .post-thumb {
+        padding-bottom: 0;
+    }
+    .single-post .image-full-width .text-img {
+        padding: 15px;
+        position: initial;
+        width: 100%;
+    }
+    .slider.news .img-wrapper {
+        width: auto;
+        float: none;
+        border: none;
+    }
+    .single-post .title-block .entry-title {
+        font-size: 30px;
+        padding-right: 15px;
+    }
+    .single-post .image-text-top .text-img {
+        position: initial;
+        width: auto;
+    }
+    .single-post .image-text-bottom .text-img {
+        position: initial;
+        width: 100%;
+        padding: 45px 15px;
+        font-size: 18px;
+        margin: 0;
+    }
+    .single-post .image-text-bottom .text-box {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .single-post .image-full-width {
+        margin-bottom: 0;
+    }
+    .news .news_tittle {
+        letter-spacing: 0.5px;
+    }
+    .bx-wrapper {
+        border-bottom: 0;
+    }
+    .bx-wrapper .bx-viewport {
+        padding-bottom: 15px;
+    }
     /*Footer*/
     .main_footer .footer_info {
         font-size: 11px;
@@ -1522,7 +1626,133 @@
     .main-news-row {
         min-height: initial;
     }
-        /*Footer*/
+    /*Single*/
+    .single-post .post-header-block::before {
+        display: none;
+    }
+    .slider .blog_item img {
+        height: 175px;
+        min-width: 100%;
+    }
+    .slider.news .blog_item {
+        min-height: initial;
+        margin-bottom: 0;
+        height: auto;
+    }
+    .slider.news .blog_item .share_btn_wrap {
+        display: none;
+    }
+    .slider.news .content {
+        padding-left: 10px;
+        padding-right: 10px;
+        height: auto;
+    }
+    .slider.news .content_wrapper {
+        padding-left: 0;
+        padding-top: 0;
+    }
+    .slider.news .news_time {
+        font-size: 10px;
+        letter-spacing: normal;
+    }
+    .slider.news .post {
+        padding: 0 7px;
+        margin-bottom: 15px;
+    }
+    .slider .blog_item .telegram_wrap img {
+        height: 13px;
+        min-width: 13px;
+        display: inline-block;
+    }
+    .slider.news .content::after {
+        right: 5px;
+    }
+    .single-post .post-header-block .text-block {
+        height: auto;
+        margin-bottom: 35px;
+        width: 90%;
+        font-size: 14px;
+    }
+    .single-post .post-header-block {
+        width: auto;
+        margin: 0;
+        position: initial;
+        height: auto;
+    }
+    .single-post .post-thumb img {
+        height: auto;
+    }
+    .et_pb_pagebuilder_layout.single-post #page-container .et_pb_row.single-entry-content {
+        width: 100%;
+        padding: 0 15px;
+    }
+    .single-post .image-text-bottom .icon-box:before, .single-post .image-text-bottom .icon-box:after {
+        width: 30%;
+    }
+    .single-post .post-thumb {
+        padding-bottom: 0;
+    }
+    .single-post .image-full-width .text-img {
+        padding: 15px;
+        position: initial;
+        width: 100%;
+    }
+    .slider.news .img-wrapper {
+        width: auto;
+        float: none;
+        border: none;
+    }
+    .single-post .title-block .entry-title {
+        font-size: 18px;
+        padding-right: 15px;
+    }
+    .single-post .image-text-top .text-img {
+        position: initial;
+        width: auto;
+    }
+    .single-post .image-text-bottom .text-img {
+        position: initial;
+        width: 100%;
+        padding: 25px 15px;
+        font-size: 18px;
+        margin: 0;
+    }
+    .single-post .image-text-bottom .text-box {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .single-post .image-full-width {
+        margin-bottom: 0;
+    }
+    .news .news_tittle {
+        letter-spacing: 0.5px;
+    }
+    .bx-wrapper {
+        border-bottom: 0;
+    }
+    .bx-wrapper .bx-viewport {
+        padding-bottom: 15px;
+    }
+    .single-post .single-content .social-box .et-social-icons {
+        margin: 25px 0;
+    }
+    .single-post .image-text-top {
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+    .single-post .image-text-bottom {
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+    .single-post .image-text-bottom .icon {
+        font-size: 25px;
+        margin: 0 15px;
+        width: 45px;
+    }
+    .single-post .read-next .border-box {
+        width: 85%;
+    }
+    /*Footer*/
     .main_footer .footer_info {
         font-size: 11px;
         padding: 0 15px;
