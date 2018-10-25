@@ -58,7 +58,7 @@
         font-size: 13px;
     }
     .posts .blog_item-overlay .content_bottom {
-        height: 200px;
+        height: 250px;
     }
     .top_news_wrap .block_1 {
         padding-right: 0;
@@ -1708,7 +1708,7 @@
         min-height: 445px;
     }
     .posts .blog_item .img-wrapper img {
-        height: 300px;
+        height: auto;
         min-height: initial;
     }
     .posts .blog_item .post_tittle {
@@ -1716,6 +1716,8 @@
     }
     .news_posts_wrap .blog_item {
         max-height: 300px;
+        max-width: 320px;
+        margin: 0 auto 25px;
     }
     .posts .blog_item .post_brief {
         font-size: 13px;
@@ -1750,6 +1752,9 @@
     }
     .main-news-row {
         min-height: initial;
+    }
+    .top_news_wrap .share_btn_wrap .dropdown-menu.show {
+        transform: translate3d(-69px, 19px, 0px) !important;
     }
     /*Single*/
     .single-post .post-header-block::before {

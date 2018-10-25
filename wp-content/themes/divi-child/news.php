@@ -161,7 +161,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                                 <a href="<?php the_permalink(); ?>">
                                                 <h4 class="post_tittle"><?php the_title(); ?></h4>
                                                 </a>
-                                                <div class="post_brief"><?php echo kama_excerpt(array('maxchar'=>100)); ?></div>
+                                                <div class="post_brief"><?php echo kama_excerpt(array('maxchar'=>80)); ?></div>
                                             </div>
                                         </div>
                                     </div>

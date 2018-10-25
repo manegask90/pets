@@ -127,7 +127,6 @@ function news_filtr_get_posts()
                                     ?></h5>
                                 <div class="share_btn_wrap">
                                                 <div class="dropdown dropleft show">
-                                                    <h5 class="news_time"><?php echo esc_html( get_the_date( $meta_date ) ) ?></h5>
                                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                         <i class="icon icon-union"></i>
                                                     </a>
@@ -150,7 +149,7 @@ function news_filtr_get_posts()
                                 <div class="content_bottom">
                                     <h4 class="post_tittle"><?php echo get_the_title($post); ?></h4>
                                     <?php $excerpt = apply_filters( 'the_excerpt', get_the_excerpt($post) ); ?>
-                                    <div class="post_brief"><?php echo mb_substr( strip_tags( $excerpt ), 0, 100 ); ?></div>
+                                    <div class="post_brief"><?php echo mb_substr( strip_tags( $excerpt ), 0, 80 ); ?></div>
                                 </div>
                             </div>
                         </div>

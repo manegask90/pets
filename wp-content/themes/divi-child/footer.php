@@ -233,28 +233,79 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
         });
 
         // Bxslider
-        jQuery(document).ready(function($){
-            var mySlider, settings1 = {
+        jQuery(document).ready(function($) {
+        //     $('.slider').bxSlider({
+        //         pager: true,
+        //         minSlides: 4,
+        //         maxSlides: 4,
+        //         moveSlides: 1,
+        //         slideWidth: 320,
+        //         controls: false,
+        //     });
+        // });
+            // var mySlider, settings1 = {
+            //         pager: true,
+            //         minSlides: 4,
+            //         maxSlides: 4,
+            //         moveSlides: 1,
+            //         slideWidth: 320,
+            //         controls: false,
+            //     touchEnabled:true
+            // }, settings2 = {
+            //     pager: true,
+            //     minSlides: 2,
+            //     maxSlides: 2,
+            //     moveSlides: 0,
+            //     slideWidth: 320,
+            //     controls: false,
+            //     touchEnabled:true
+            // };
+            // function settings() {return ($(window).width() > 575) ? settings1:settings2;}
+            // mySlider = $('.slider').bxSlider(settings());
+            // function tourLandingScript() {
+            //     mySlider.reloadSlider($.extend(settings()));
+            // }
+            // $(window).resize(tourLandingScript);
+
+            var width = $(window).width(),
+                ttCarousel,
+                ttCarousel_Config = {
                     pager: true,
                     minSlides: 4,
                     maxSlides: 4,
-                    moveSlides: 1,
+                    moveSlides: 0,
                     slideWidth: 320,
-                    controls: false
-            }, settings2 = {
-                pager: true,
-                minSlides: 2,
-                maxSlides: 2,
-                moveSlides: 0,
-                slideWidth: 320,
-                controls: false
+                    controls: false,
             };
-            function settings() {return ($(window).width() > 575) ? settings1:settings2;}
-            mySlider = $('.slider').bxSlider(settings());
-            function tourLandingScript() {
-                mySlider.reloadSlider($.extend(settings()));
+
+            if( width > 575) {
+                    ttCarousel = jQuery('.slider').bxSlider(ttCarousel_Config);
+            } else {
+                ttCarousel = jQuery('.slider').bxSlider({
+                    pager: true,
+                        minSlides: 2,
+                        maxSlides: 2,
+                        moveSlides: 0,
+                        slideWidth: 320,
+                        controls: false,
+                });
             }
-            $(window).resize(tourLandingScript);
+
+            // jQuery(window).resize(function() {
+            //     if( jQuery(window).width() > carouselWidth) {
+            //         if(ttCarousel) {
+            //             ttCarousel.reloadSlider();
+            //             console.log('reloading');
+            //         } else {
+            //             ttCarousel = jQuery('.event-carousel').bxSlider(ttCarousel_Config);
+            //         }
+            //     } else {
+            //         if(ttCarousel) {
+            //             ttCarousel.destroySlider();
+            //             console.log('destroying');
+            //         }
+            //     }
+            // });
         });
 
         <!--Viber share-->
