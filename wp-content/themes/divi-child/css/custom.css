@@ -1522,6 +1522,12 @@ body .scroll-top-inner {
 .slider.news .blog_item {
     min-height: 455px;
 }
+.slider.news .share_btn_wrap {
+    display: inline-block;
+}
+.slider.news .share_btn_wrap .icon {
+    font-size: 13px;
+}
 .news .content {
     right: 0;
 }

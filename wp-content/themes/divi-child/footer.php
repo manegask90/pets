@@ -233,7 +233,7 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
         });
 
         // Bxslider
-        $(document).ready(function($){
+        jQuery(document).ready(function($){
             var mySlider, settings1 = {
                     pager: true,
                     minSlides: 4,
