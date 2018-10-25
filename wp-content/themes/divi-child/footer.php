@@ -245,12 +245,12 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
                 pager: true,
                 minSlides: 2,
                 maxSlides: 2,
-                moveSlides: 1,
+                moveSlides: 0,
                 slideWidth: 320,
                 controls: false
             };
             function settings() {return ($(window).width() > 575) ? settings1:settings2;}
-            mySlider=$('.slider').bxSlider(settings());
+            mySlider = $('.slider').bxSlider(settings());
             function tourLandingScript() {
                 mySlider.reloadSlider($.extend(settings()));
             }

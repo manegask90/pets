@@ -614,6 +614,8 @@
     }
     .zoopeople .blog_item_main {
         margin-bottom: 25px;
+        min-height: initial;
+        max-height: initial;
     }
     .zoopeople .blog_item_main .share_btn_wrap .dropdown-menu.show {
         top: -145px !important;
@@ -621,9 +623,26 @@
     .zoopeople .blog_item_main .dropdown-menu img {
         min-width: auto;
         position: initial;
+        vertical-align: middle;
     }
     .zoopeople .blog_item_main .share_btn_wrap .dropdown a:hover .icon {
         color: #fff;
+    }
+    .zoopeople .blog_item_main .content {
+        background: none;
+        position: initial;
+        display: block;
+        width: 100%;
+    }
+    .zoopeople .blog_item_main .blog_item-overlay {
+        padding: 0;
+        position: initial;
+        background: #ff8000;
+    }
+    .zoopeople .blog_item_main img {
+        vertical-align: bottom;
+        position: initial;
+        min-width: auto;
     }
     /*News*/
     .top_news_wrap .block_1_1 .entry-title {
@@ -921,6 +940,9 @@
     .zoopeople .blog_item_main {
         margin-bottom: 25px;
     }
+    .zoopeople .blog_item_main img {
+        height: 90%;
+    }
     .mob-block {
         display: block;
     }
@@ -1028,6 +1050,7 @@
     .zoopeople .blog_item_main .dropdown-menu img {
         min-width: auto;
         position: initial;
+        height: auto;
     }
     .zoopeople .blog_item_main .share_btn_wrap .dropdown a:hover .icon {
         color: #fff;
@@ -1394,6 +1417,7 @@
     }
     .zoopeople .blog_item_main {
         margin-bottom: 25px;
+        min-height: initial;
     }
     .zoopeople .et_pb_post {
         margin-bottom: 0;
@@ -1417,6 +1441,18 @@
     }
     .zoopeople .blog_item .content_bottom h4 p {
         font-size: 9px;
+    }
+    .zoopeople .blog_item_main img {
+        position: inherit;
+        vertical-align: bottom;
+    }
+    .zoopeople .blog_item_main .blog_item-overlay {
+        min-height: initial;
+        position: initial;
+    }
+    .zoopeople .blog_item_main .content {
+        position: initial;
+        min-height: auto;
     }
     .mob-block {
         display: block;
@@ -1547,6 +1583,7 @@
     .zoopeople .blog_item_main .dropdown-menu img {
         min-width: auto;
         position: initial;
+        vertical-align: middle;
     }
     .zoopeople .blog_item_main .share_btn_wrap .dropdown a:hover .icon {
         color: #fff;

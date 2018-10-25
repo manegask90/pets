@@ -1,5 +1,8 @@
 /* =Theme customization starts here
 ------------------------------------------------------- */
+a {
+    color: #FF8000;
+}
 .et_pb_bg_layout_light .et_pb_portfolio_item .post-meta, .et_pb_bg_layout_light .et_pb_portfolio_item .post-meta a, .et_pb_bg_layout_light .et_pb_post .post-meta, .et_pb_bg_layout_light .et_pb_post .post-meta a, .et_pb_bg_layout_light .et_pb_post p, .et_pb_bg_layout_light p.et_pb_title_meta_container, .et_pb_bg_layout_light p.et_pb_title_meta_container a {
     color: #000;
 }
@@ -1616,6 +1619,7 @@ body .scroll-top-inner {
     margin-top: 3px;
     height: 13px;
     min-width: 13px;
+    display: inline-block;
 }
 .share_btn_wrap .telegram_wrap span {
     font-size: 14px;
