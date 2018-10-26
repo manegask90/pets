@@ -273,7 +273,7 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
                     pager: true,
                     minSlides: 4,
                     maxSlides: 4,
-                    moveSlides: 0,
+                    moveSlides: 1,
                     slideWidth: 320,
                     controls: false,
             };
@@ -283,11 +283,11 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
             } else {
                 ttCarousel = jQuery('.slider').bxSlider({
                     pager: true,
-                        minSlides: 2,
-                        maxSlides: 2,
-                        moveSlides: 0,
-                        slideWidth: 320,
-                        controls: false,
+                    minSlides: 2,
+                    maxSlides: 2,
+                    moveSlides: 1,
+                    slideWidth: 320,
+                    controls: false,
                 });
             }
 

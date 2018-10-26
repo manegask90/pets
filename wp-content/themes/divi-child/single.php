@@ -12,6 +12,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 $post = $wp_query->post;
 if ( in_category('3') ) {
     include(get_stylesheet_directory() . '/single-zoo.php');
+} elseif (in_category('7')) {
+    include(get_stylesheet_directory() . '/single-advices.php');
 } else {
     include(get_stylesheet_directory() . '/single-all.php');
 }

@@ -17,7 +17,7 @@ get_header(); ?>
 			        $thumb_url   = get_the_post_thumbnail_url();
 					$post_format = et_pb_post_format(); ?>
 
-					<div id="post-<?php the_ID(); ?>" <?php post_class( 'col-md-3 col-sm-6 et_pb_post' ); ?>>
+					<div id="post-<?php the_ID(); ?>" <?php post_class( 'col-xl-3 col-lg-4 col-md-4 col-sm-6 et_pb_post' ); ?>>
                         <a href="<?php the_permalink(); ?>" class="">
                             <div class="blog_item">
                                 <div class="img-wrapper">
@@ -29,7 +29,7 @@ get_header(); ?>
                                     </div>
                                     <div class="content-text">
                                         <h4 class="event_tittle"><?php the_title() ?></h4>
-                                        <div class="event_brief test"><?php echo kama_excerpt(array('maxchar'=>100)); ?></div>
+                                        <div class="event_brief test"><?php echo kama_excerpt(array('maxchar'=>80)); ?></div>
                                     </div>
                                 </div>
                             </div>
