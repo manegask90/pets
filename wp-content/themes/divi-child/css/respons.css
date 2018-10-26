@@ -219,6 +219,13 @@
     .zoopeople-single .blog_item_main .content .text-wrap {
         width: 50%;
     }
+    .advices-single .advice_item-header .icon {
+        font-size: 35px;
+        top: 15px;
+    }
+    .advices-single .advice_item-header {
+        background: #fff url(../images/Intersect.png) no-repeat 100% 0%;
+    }
     /*Footer*/
     .main_footer .footer_info {
         font-size: 12px;
@@ -1389,6 +1396,11 @@
         border-top: 3px solid #FF8000;
     }
     /*Home*/
+    .home .main_news_wrap .block_2_2 .post:nth-child(1) .img-wrap {
+        padding-right: 4px;
+        padding-left: 7px;
+        height: 165px;
+    }
     .home #main-content .container-1 {
         display: none;
     }
@@ -1424,12 +1436,12 @@
         font-size: 16px;
     }
     .home .main_news_wrap .et_pb_post {
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        max-width: 100%;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
     }
     .main_news_wrap .block_2_2 {
-        flex-direction: column;
+        flex-direction: row;
         padding-left: 0;
         padding-right: 0;
     }

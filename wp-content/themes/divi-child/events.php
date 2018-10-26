@@ -116,71 +116,71 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                 $date_filtr = $_GET['date'];
 
 
-//                if (isset($selectMonth)){
-//                    $args = array(
-//                        'posts_per_page' => 4,
-//                        'category' => 17,
-//                        'orderby' => 'meta_value_num',
-//                        'order' => 'DESC',
-//                        'meta_query' => array(
-//                            'relation' => 'AND',
-//                            array(
-//                                'key' => 'date',
-//                                'compare' => 'REGEXP',
-//                                'value' => '[0-9]{4}' . $selectMonth . '[0-9]{2}',
-//                            )
-//                        )
-//                    );
-//                } elseif (isset($selectCity)) {
-//                    $args = array(
-//                        'posts_per_page' => 4,
-//                        'category' => 17,
-//                        'orderby' => 'meta_value_num',
-//                        'order' => 'DESC',
-//                        'meta_query' => array(
-//                            'relation' => 'AND',
-//                            array(
-//                                'key' => 'city',
-//                                'value' => $selectCity,
-//                                'compare' => '='
-//                            ),
-//                        )
-//                    );
-//                } elseif (isset($selectMonth) && isset($selectCity)) {
-//                    $args = array(
-//                        'posts_per_page' => 4,
-//                        'category' => 17,
-//                        'orderby' => 'meta_value_num',
-//                        'order' => 'DESC',
-//                        'meta_query' => array(
-//                            'relation' => 'AND',
-//                            array(
-//                                'key' => 'city',
-//                                'value' => $selectCity,
-//                                'compare' => '='
-//                            ),
-//                            array(
-//                                'key' => 'date',
-//                                'compare' => 'REGEXP',
-//                                'value' => '[0-9]{4}' . $selectMonth . '[0-9]{2}',
-//                            )
-//                        )
-//                    );
-//                } else {
-//                    $args  = array(
-//                        'posts_per_page' => 4,
-//                        'category'       => 17,
-//                        'orderby'        => 'meta_value_num',
-//                        'order'          => 'DESC',
-//                        'meta_query' => array(
-//                            array(
-//                                'key' => 'date',
-//                                'compare' => 'REGEXP',
-//                                'value' => '[0-9]{4}' . $curent_month . '[0-9]{2}',
-//                            )
-//                        )
-//                    );
-//                }
+                if (isset($selectMonth)){
+                    $args = array(
+                        'posts_per_page' => 4,
+                        'category' => 17,
+                        'orderby' => 'meta_value_num',
+                        'order' => 'DESC',
+                        'meta_query' => array(
+                            'relation' => 'AND',
+                            array(
+                                'key' => 'date',
+                                'compare' => 'REGEXP',
+                                'value' => '[0-9]{4}' . $selectMonth . '[0-9]{2}',
+                            )
+                        )
+                    );
+                } elseif (isset($selectCity)) {
+                    $args = array(
+                        'posts_per_page' => 4,
+                        'category' => 17,
+                        'orderby' => 'meta_value_num',
+                        'order' => 'DESC',
+                        'meta_query' => array(
+                            'relation' => 'AND',
+                            array(
+                                'key' => 'city',
+                                'value' => $selectCity,
+                                'compare' => '='
+                            ),
+                        )
+                    );
+                } elseif (isset($selectMonth) && isset($selectCity)) {
+                    $args = array(
+                        'posts_per_page' => 4,
+                        'category' => 17,
+                        'orderby' => 'meta_value_num',
+                        'order' => 'DESC',
+                        'meta_query' => array(
+                            'relation' => 'AND',
+                            array(
+                                'key' => 'city',
+                                'value' => $selectCity,
+                                'compare' => '='
+                            ),
+                            array(
+                                'key' => 'date',
+                                'compare' => 'REGEXP',
+                                'value' => '[0-9]{4}' . $selectMonth . '[0-9]{2}',
+                            )
+                        )
+                    );
+                } else {
+                    $args  = array(
+                        'posts_per_page' => 4,
+                        'category'       => 17,
+                        'orderby'        => 'meta_value_num',
+                        'order'          => 'DESC',
+                        'meta_query' => array(
+                            array(
+                                'key' => 'date',
+                                'compare' => 'REGEXP',
+                                'value' => '[0-9]{4}' . $curent_month . '[0-9]{2}',
+                            )
+                        )
+                    );
+                }
 
         if (isset($selectMonth) and isset($selectCity)) {
             $args = array(
@@ -234,7 +234,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                     array(
                         'key'     => 'date',
                         'compare'  => 'REGEXP',
-                        'value'    => '[0-9]{4}' . $month . '[0-9]{2}',
+                        'value'    => '[0-9]{4}' . $mon . '[0-9]{2}',
                     )
                 )
             );
@@ -256,7 +256,28 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                          <a href="" class="">
                              <div class="blog_item blog_item-main">
                                  <div class="date">
-                                     <h5 class="date_txt"><span><?php echo get_field('date'); ?></span><?php echo get_field('city'); ?></h5>
+                                     <h5 class="date_txt">
+                                         <span><?php echo get_field('date'); ?></span><?php echo get_field('city'); ?>
+                                         <div class="share_btn_wrap">
+                                             <div class="dropdown dropleft show">
+                                                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                     <i class="icon icon-union"></i>
+                                                 </a>
+                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                     <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
+                                                     <a class="dropdown-item" id="viber_share">
+                                                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
+                                                     </a>
+                                                     <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
+                                                         <div class="telegram_wrap">
+                                                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
+                                                             <span>Share</span>
+                                                         </div>
+                                                     </a>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </h5>
                                  </div>
                                  <div class="img-wrapper">
                                      <?php the_post_thumbnail(); ?>
@@ -293,7 +314,28 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                 </div>
                                 <div class="content">
                                     <div class="date">
-                                        <h5 class="date_txt"><span><?php echo get_field('date'); ?></span><?php echo get_field('city'); ?></h5>
+                                        <h5 class="date_txt">
+                                            <span><?php echo get_field('date'); ?></span><?php echo get_field('city'); ?>
+                                            <div class="share_btn_wrap">
+                                                <div class="dropdown dropleft show">
+                                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="icon icon-union"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                        <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
+                                                        <a class="dropdown-item" id="viber_share">
+                                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
+                                                        </a>
+                                                        <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
+                                                            <div class="telegram_wrap">
+                                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
+                                                                <span>Share</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </h5>
                                     </div>
                                     <div class="content-text">
                                         <h4 class="event_tittle"><?php the_title(); ?></h4>

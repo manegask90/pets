@@ -1159,7 +1159,41 @@ header .qtranxs_widget ul li {
     font-size: 12px;
     margin-right: 5px;
 }
-
+.events .date_txt {
+    display: flex;
+    justify-content: space-between;
+}
+.events .date_txt .share_btn_wrap .icon {
+    color: #fff;
+}
+.events .date_txt .share_btn_wrap .icon:hover {
+    color: #fff;
+}
+.events .date_txt a:hover {
+    color: #fff;
+}
+.events .date_txt .share_btn_wrap span {
+    margin-right: 0;
+    font-size: 16px;
+    font-style: normal;
+}
+.events .blog_item .date_txt .share_btn_wrap img {
+    max-width: initial;
+}
+.events .blog_item .date_txt .share_btn_wrap .telegram_wrap {
+    display: flex;
+    align-items: center;
+}
+.events .blog_item-main .date {
+    display: flex;
+    justify-content: flex-end;
+}
+.events .blog_item-main .date_txt {
+    display: flex;
+    justify-content: space-between;
+    width: 41%;
+    text-align: right;
+}
 
 
 /*Footer*/

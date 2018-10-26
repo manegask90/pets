@@ -7,7 +7,7 @@ $show_default_title = get_post_meta( get_the_ID(), '_et_pb_show_title', true );
 $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
 ?>
-    <div class="single-post zoopeople-single">
+    <div class="single-post advices-single">
         <?php
         if ( et_builder_is_product_tour_enabled() ):
             // load fullwidth page in Product Tour mode
@@ -44,7 +44,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                             <?php
                                 setup_postdata($post);
                                 $category = get_the_category();
-                                var_dump($category);
                             ?>
 
 
@@ -53,18 +52,15 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                 <div  class="blog_advices_link">
                                     <div class="advice_item">
                                         <div class="advice_item-header">
-                                            <h4 class="header_tittle"><span><?php echo $category[0]->cat_name; ?></span></h4>
+                                            <h4 class="header_tittle"><span><?php echo $category[1]->cat_name; ?></span></h4>
                                             <h4 class="header_tittle"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h4>
                                             <?php
-                                            echo '<pre>';
-                                            echo $category[0]->term_id;
-                                            echo '</pre>';
-                                            if ($category[0]->term_id == 9) {
+                                            if ($category[1]->term_id == 9) {
                                                 echo '<i class="icon demo-icon icon-cat"></i>';
-                                            } elseif ($category[0]->term_id == 8) {
+                                            } elseif ($category[1]->term_id == 8) {
                                                 echo '<i class="icon demo-icon icon-dog"></i>';
                                             }
-                                            elseif ($category[0]->term_id == 10) {
+                                            elseif ($category[1]->term_id == 10) {
                                                 echo '<i class="icon demo-icon icon-laps"></i>';
                                             }
                                             ?>
