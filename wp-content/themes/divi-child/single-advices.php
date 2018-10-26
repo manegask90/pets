@@ -27,27 +27,12 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
         else:
             ?>
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 advices">
-
-                        <?php
-                        $posts = get_posts( array(
-                            'numberposts' => 1,
-                            'tag' => 'main',
-                            'post_type'   => 'post',
-                            'category'    => 7,
-                            'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
-                        ) ); ?>
-
-                        <?php
-                        foreach( $posts as $post ){ ?>
-                            <?php
-                                setup_postdata($post);
-                                $category = get_the_category();
-                            ?>
-
-
-                            <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                        <?php while ( have_posts() ) : the_post(); ?>
+                            <?php setPostViews(get_the_ID()); ?>
+                            <?php if (et_get_option('divi_integration_single_top') <> '' && et_get_option('divi_integrate_singletop_enable') == 'on') echo(et_get_option('divi_integration_single_top')); ?>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 advices">
+                                <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
                                 <div  class="blog_advices_link">
                                     <div class="advice_item">
@@ -89,16 +74,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                         </div>
                                     </div>
                                 </div>
-                            </div> <!-- end_post -->
-
-                        <?php }
-
-                        wp_reset_postdata(); // сброс ?>
-                    </div>
-                </div>
-                        <?php while ( have_posts() ) : the_post(); ?>
-                            <?php setPostViews(get_the_ID()); ?>
-                            <?php if (et_get_option('divi_integration_single_top') <> '' && et_get_option('divi_integrate_singletop_enable') == 'on') echo(et_get_option('divi_integration_single_top')); ?>
+                            </div>
+                            </div>
+                            </div>
                             <div class="row">
                             <div class="col-md-12">
                                 <div class="single-content">

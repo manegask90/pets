@@ -61,7 +61,8 @@ $cat_id = get_query_var('cat');
                     <img src="<?php the_field('main_img'); ?>"  alt="" />
                 </div>
                 <div class="entry-content">
-                    <?php the_excerpt(); ?>
+                    <?php //the_excerpt(); ?>
+                    <?php echo kama_excerpt(array('maxchar'=>100)); ?>
                     <div class="date-box">
                         <?php echo get_the_date('j. m. Y'); ?>
                     </div>

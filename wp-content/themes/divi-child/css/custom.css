@@ -272,6 +272,9 @@ header .qtranxs_widget ul li {
     justify-content: space-between;
     padding-left: 0;
 }
+.main_news_wrap .block_2_2 .post {
+    max-width: 100%;
+}
 .main_news_wrap .et_pb_post {
     margin-bottom: 0;
 }
@@ -282,7 +285,7 @@ header .qtranxs_widget ul li {
 }
 .main_news_item .entry-title {
     text-transform: uppercase;
-    font-size: 21px;
+    font-size: 19px;
     font-weight: 900;
     letter-spacing: 4px;
     line-height: 25px;
@@ -1100,16 +1103,39 @@ header .qtranxs_widget ul li {
 .events_filter .event-filtr .select-box:first-child {
     margin-right: 50px;
 }
-.events_filter .event-filtr .select-box:after {
-    content: '';
-    background: url("../images/arrow.png") no-repeat 100%;
-    display: inline-block;
-    height: 9px;
-    width: 15px;
+/*.events_filter .event-filtr .select-box:after {*/
+    /*content: '';*/
+    /*background: url("../images/arrow.png") no-repeat 100%;*/
+    /*display: inline-block;*/
+    /*height: 9px;*/
+    /*width: 15px;*/
+/*}*/
+.events_filter .event-filtr .select-box {
+    /*content: '';*/
+    /*background: url("../images/arrow.png") no-repeat 100%;*/
+    /*display: inline-block;*/
+    /*height: 9px;*/
+    /*width: 15px;*/
 }
 .events_filter .event-filtr select:hover {
     cursor: pointer;
 }
+
+.events_filter .event-filtr .select-box select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    background-image: url("../images/arrow.png");
+    background-position: 100% center;
+    background-repeat: no-repeat;
+    outline: none;
+    min-width: 115px;
+}
+
+
+
+
 .events .blog_item {
     margin-bottom: 62px;
     min-height: 490px;
@@ -1629,6 +1655,12 @@ body .scroll-top-inner {
 .slider .blog_item img {
     height: 350px;
     min-width: 100%;
+}
+.advices-single .advices {
+    margin-bottom: 0;
+}
+.advices-single .advices .post {
+    padding-bottom: 0;
 }
 /*********/
 

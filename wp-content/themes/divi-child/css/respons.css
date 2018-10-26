@@ -1172,6 +1172,12 @@
     .posts .blog_item-overlay {
         padding: 0 10px;
     }
+    .posts .posts_filter-list li:last-child {
+        margin-right: 0;
+    }
+    .posts .posts_filter-list li:first-child {
+        display: block;
+    }
     /*Single*/
     .single-post .post-header-block::before {
         display: none;
@@ -1781,6 +1787,12 @@
     }
     .top_news_wrap .share_btn_wrap .dropdown-menu.show {
         transform: translate3d(-69px, 19px, 0px) !important;
+    }
+    .posts .posts_filter-list li:last-child {
+        margin-right: 0;
+    }
+    .posts .posts_filter-list li:first-child {
+        display: block;
     }
     /*Single*/
     .single-post .post-header-block::before {

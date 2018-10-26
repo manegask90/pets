@@ -444,8 +444,18 @@ function events_filtr_get_posts()
                                          <div class="event_brief"><?php the_excerpt(); ?></div>
                                      </div>
                                      <div class="place">
-                                         <h5 class="place_txt"><?php echo get_field('location'); ?></h5>
-                                         <h5 class="place_txt">FREE entrance</h5>
+                                          <i class="icon fas fa-map-marker-alt"></i>
+                                         <div class="place_txt"><?php echo get_field('location'); ?></div>
+                                     </div>
+                                     <div class="cost">
+                                         <i class="icon icon-money"></i>
+                                         <?php
+                                         if ($cost == 0) { ?>
+                                             <div class="place_txt">FREE entrance</div>
+                                         <?php } else { ?>
+                                             <div class="place_txt"><?php echo $cost; ?></div>
+                                         <?php }
+                                         ?>
                                      </div>
                                  </div>
                              </div>
