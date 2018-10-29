@@ -1026,12 +1026,12 @@ class ET_Builder_Module_Main_news extends ET_Builder_Module {
             <?php setup_postdata($post); ?>
 
             <div class="row">
-                <div class="col-md-5 block_1">
+                <div class="col-xl-5 col-lg-6 col-md-5 block_1">
                     <a href="<?php esc_url( the_permalink() ); ?>">
                         <img src="<?php the_field('main_img'); ?>" alt=""/>
                     </a>
                 </div>
-                <div class="col-md-7 block_2"></div>
+                <div class="col-xl-7 col-lg-6 col-md-7 block_2"></div>
             </div>
             </div>
             <div class="container container-2">
@@ -1070,7 +1070,7 @@ class ET_Builder_Module_Main_news extends ET_Builder_Module {
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-7 offset-lg-2 col-md-12 offset-md-0 block_2_2">
+                    <div class="col-xl-7 offset-xl-2 col-lg-6 offset-lg-3 col-md-12 offset-md-0 block_2_2">
 
                     <?php }
                     wp_reset_postdata(); // сброс ?>
