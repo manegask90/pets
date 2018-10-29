@@ -109,7 +109,7 @@ function news_filtr_get_posts()
         ob_start();
         if (!empty($posts)) {
             foreach( $posts as $post ){ setup_postdata($post); ?>
-                <div <?php post_class('col-md-4 col-sm-6'); ?>>
+                <div <?php post_class('col-xl-4 col-lg-6 col-md-6 col-sm-6'); ?>>
                     <a href="<?php the_permalink($post->ID); ?>" class="blog_news_link">
                         <div class="blog_item">
                             <div class="img-wrapper">

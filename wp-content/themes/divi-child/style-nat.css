@@ -1456,10 +1456,10 @@ and (max-device-width: 820px){
         overflow: hidden;
     }
     .news .img-wrapper {
-        width: 120px;
+        width: auto;
         overflow: hidden;
         float: left;
-        border-right: 3px solid #ff8000;
+        border-right: none;
     }
     .news .img-wrapper img{
         width: 100%;
@@ -1483,7 +1483,8 @@ and (max-device-width: 820px){
     .news .content_wrapper {
         margin-top: 0px;
         padding-top: 30px;
-        padding-left: 100px;
+        /*padding-left: 100px;*/
+        padding-left: 0;
         text-align: left;
     }
 

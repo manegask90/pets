@@ -187,17 +187,20 @@
         min-height: 400px;
     }
     .posts .blog_item .img-wrapper img {
-        height: 300px;
-        min-height: initial;
+        height: auto;
+        min-height: 300px;
+        vertical-align: bottom;
     }
     .posts .blog_item .post_tittle {
         font-size: 11px;
+        padding-bottom: 10px;
     }
     .news_posts_wrap .blog_item {
         max-height: 300px;
     }
     .posts .blog_item .post_brief {
         font-size: 11px;
+        padding-top: 10px;
     }
     .posts .blog_item-overlay .content_bottom {
         height: 200px;
@@ -211,6 +214,9 @@
     }
     .sidebar .sidebar_header {
         font-size: 18px;
+    }
+    .posts .blog_item-overlay {
+        padding: 0 10px;
     }
     /*Single*/
     .single-post .post-header-block::before {
@@ -337,12 +343,13 @@
         font-size: 10px;
     }
     .advices .advice_item-header {
-        background: #fff url("../images/Intersect.png") no-repeat 110% -60%;
+        background: #fff url("../images/Intersect.png") no-repeat 100% 0%;
+        background-size: 50px;
     }
     .advices .advice_item-header .icon {
-        font-size: 25px;
-        top: 5px;
-        right: 10px;
+        font-size: 21px;
+        top: 8px;
+        right: 5px;
     }
     .advices .advice_item-content {
         font-size: 12px;
@@ -371,22 +378,29 @@
     /*News*/
     .top_news_wrap .block_1_1 .entry-title {
         font-size: 16px;
+        background-size: cover;
+        min-height: 150px;
+    }
+    .top_news_wrap .block_1_1 .entry-title:after {
+        display: none;
     }
     .top_news_wrap .block_1 img {
-        min-height: 445px;
+        min-height: 300px;
     }
     .posts .blog_item .img-wrapper img {
-        height: 300px;
+        height: auto;
         min-height: initial;
     }
     .posts .blog_item .post_tittle {
         font-size: 11px;
+        padding-bottom: 10px;
     }
     .news_posts_wrap .blog_item {
         max-height: 300px;
     }
     .posts .blog_item .post_brief {
         font-size: 11px;
+        padding-top: 10px;
     }
     .posts .blog_item-overlay .content_bottom {
         height: 175px;
@@ -712,22 +726,33 @@
     /*News*/
     .top_news_wrap .block_1_1 .entry-title {
         font-size: 32px;
+        min-height: 150px;
+        background: none;
+        border-bottom: 3px solid #FF8000;
+        border-right: 3px solid #FF8000;
+    }
+    .top_news_wrap .block_1_1 .entry-title:after {
+        display: none;
     }
     .top_news_wrap .block_1 img {
-        min-height: 445px;
+        min-height: initial;
     }
     .posts .blog_item .img-wrapper img {
-        height: 300px;
+        height: auto;
         min-height: initial;
+        vertical-align: bottom;
     }
     .posts .blog_item .post_tittle {
         font-size: 11px;
+        padding-bottom: 10px;
     }
     .news_posts_wrap .blog_item {
-        max-height: 300px;
+        height: auto;
+        max-height: 375px;
     }
     .posts .blog_item .post_brief {
         font-size: 14px;
+        padding-top: 10px;
     }
     .posts .blog_item-overlay .content_bottom {
         height: 200px;
@@ -1182,9 +1207,16 @@
     /*News*/
     .top_news_wrap .block_1_1 .entry-title {
         font-size: 24px;
+        min-height: 150px;
+        background: none;
+        border-bottom: 3px solid #FF8000;
+        border-right: 3px solid #FF8000;
+    }
+    .top_news_wrap .block_1_1 .entry-title:after {
+        display: none;
     }
     .top_news_wrap .block_1 img {
-        min-height: 445px;
+        min-height: 325px;
     }
     .posts .blog_item .img-wrapper img {
         height: 300px;
