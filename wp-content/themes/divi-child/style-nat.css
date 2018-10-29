@@ -395,7 +395,7 @@
 }
 
 .events .img-wrapper{
-    max-height: 295px;
+    max-height: initial;
     overflow: hidden;
     position: relative;
 }
@@ -1338,7 +1338,7 @@ and (max-device-width: 1600px){
 
     /*events_blog*/
     .events .img-wrapper {
-        max-height: 230px;
+        max-height: initial;
     }
     .events .event_brief {
         max-height: 210px;

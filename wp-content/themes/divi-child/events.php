@@ -323,7 +323,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                              </div>
                          </a>
                 <?php } else { ?>
-                    <div <?php post_class('col-md-3 col-sm-6'); ?> >
+                    <div <?php post_class('col-lg-3 col-md-4 col-sm-6'); ?> >
                         <a href="<?php the_permalink(); ?>" class="">
                             <div class="blog_item">
                                 <div class="img-wrapper">

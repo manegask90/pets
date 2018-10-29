@@ -905,9 +905,9 @@ header .qtranxs_widget ul li {
 
 }
 .blog_item img{
-    height: auto;
+    height: 100%;
     min-width: 100%;
-
+    vertical-align: bottom;
 }
 .blog_item-overlay{
     text-align: center;
@@ -947,6 +947,9 @@ header .qtranxs_widget ul li {
 }
 .blog_item_main {
     margin-bottom: 62px;
+}
+.events .img-wrapper {
+    height: 295px;
 }
 .main_left_block {
     padding-left: 0;
@@ -1145,7 +1148,7 @@ header .qtranxs_widget ul li {
 
 .events .blog_item {
     margin-bottom: 62px;
-    min-height: 490px;
+    height: 500px;
 }
 .events .blog_item .place {
     display: flex;
@@ -1173,6 +1176,7 @@ header .qtranxs_widget ul li {
 }
 .events .blog_item-main .img-wrapper {
     width: 55%;
+    height: calc(100% - 30px);
 }
 .events .blog_item-main .content {
     width: 45%;

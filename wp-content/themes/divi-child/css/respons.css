@@ -75,7 +75,20 @@
     .slider.news .blog_item .share_btn_wrap {
         display: inline-block;
     }
-        /*Footer*/
+    /*Events*/
+    .events .blog_item {
+        margin-bottom: 30px;
+        height: 375px;
+        min-height: auto;
+    }
+    .events .img-wrapper {
+        height: 220px;
+    }
+    .events .content-text {
+        overflow: hidden;
+        height: 110px;
+    }
+    /*Footer*/
     .main_footer .footer_info {
         font-size: 12px;
     }
@@ -257,6 +270,32 @@
     }
     .advices-single .advice_item-header {
         background: #fff url(../images/Intersect.png) no-repeat 100% 0%;
+    }
+    /*Events*/
+    .events .blog_item {
+        margin-bottom: 30px;
+        height: 315px;
+        min-height: auto;
+    }
+    .events .img-wrapper {
+        height: 185px;
+    }
+    .events .content-text {
+        overflow: hidden;
+        height: 110px;
+        padding: 10px;
+    }
+    .events .date_txt {
+        font-size: 9px;
+    }
+    .events .event_brief {
+        font-size: 12px;
+    }
+    .events .event_tittle {
+        line-height: 16px;
+    }
+    .events .blog_item-main .img-wrapper {
+        height: calc(100% - 27px);
     }
     /*Footer*/
     .main_footer .footer_info {
@@ -490,6 +529,45 @@
     }
     .zoopeople-single .blog_item_main p {
         font-size: 14px;
+    }
+    /*Events*/
+    .events .blog_item {
+        margin-bottom: 30px;
+        height: 315px;
+        min-height: auto;
+    }
+    .events .img-wrapper {
+        height: 185px;
+    }
+    .events .content-text {
+        overflow: hidden;
+        height: 110px;
+        padding: 10px;
+    }
+    .events .date_txt {
+        font-size: 9px;
+    }
+    .events .event_brief {
+        font-size: 12px;
+    }
+    .events .event_tittle {
+        line-height: 16px;
+        font-size: 12px;
+    }
+    .events .blog_item-main .img-wrapper {
+        height: calc(100% - 27px);
+    }
+    .events .date {
+        padding: 8px 10px;
+    }
+    .events .date_txt span {
+        margin-right: 15px;
+    }
+    .events .blog_item-main .content {
+        padding: 15px;
+    }
+    .events .icon-money:before {
+        vertical-align: top;
     }
     /*Footer*/
     .main_footer .footer_info {
@@ -773,6 +851,12 @@
         max-width: 100%;
         padding-right: 0;
     }
+    .posts .posts_filter-list li:last-child {
+        margin-right: 0;
+    }
+    .posts .posts_filter-list li {
+        margin-right: 10px;
+    }
     /*Single*/
     .single-post .post-header-block::before {
         display: none;
@@ -888,6 +972,45 @@
     /*Search*/
     .search .et_pb_post a img {
         height: 240px;
+    }
+    /*Events*/
+    .events .blog_item {
+        margin-bottom: 30px;
+        height: 315px;
+        min-height: auto;
+    }
+    .events .img-wrapper {
+        height: 185px;
+    }
+    .events .content-text {
+        overflow: hidden;
+        height: 110px;
+        padding: 10px;
+    }
+    .events .date_txt {
+        font-size: 9px;
+    }
+    .events .event_brief {
+        font-size: 12px;
+    }
+    .events .event_tittle {
+        line-height: 16px;
+        font-size: 12px;
+    }
+    .events .blog_item-main .img-wrapper {
+        height: calc(100% - 27px);
+    }
+    .events .date {
+        padding: 8px 10px;
+    }
+    .events .date_txt span {
+        margin-right: 15px;
+    }
+    .events .blog_item-main .content {
+        padding: 15px;
+    }
+    .events .icon-money:before {
+        vertical-align: top;
     }
     /*Footer*/
     .main_footer .footer_info {
@@ -1792,6 +1915,13 @@
     .advices .advice_item-content {
         font-size: 12px;
         padding-right: 15px;
+    }
+    .advices .advice_item {
+        background-size: 30px;
+    }
+    .advices .advice_item .share_btn_wrap .dropup {
+        margin-right: 0;
+        margin-bottom: 0;
     }
     .zoopeople h2 {
         padding-bottom: 0;
