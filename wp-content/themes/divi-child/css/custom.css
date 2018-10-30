@@ -1606,6 +1606,12 @@ body .scroll-top-inner {
 .slider.news .share_btn_wrap .icon {
     font-size: 13px;
 }
+.slider.news .content {
+    padding: 0 40px 0 15px;
+}
+.slider.news .news_tittle {
+    font-size: 12px;
+}
 .news .content {
     right: 0;
 }

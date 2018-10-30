@@ -541,7 +541,7 @@ function true_load_posts(){
     query_posts($args);?>
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
-            <div <?php post_class('col-md-3 col-sm-6'); ?> >
+            <div <?php post_class('col-lg-3 col-md-4 col-sm-6'); ?> >
                 <a href="<?php the_permalink(); ?>" class="">
                     <div class="blog_item">
                         <div class="img-wrapper">

@@ -5,7 +5,6 @@ get_header();
 $show_default_title = get_post_meta( get_the_ID(), '_et_pb_show_title', true );
 
 $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
-
 ?>
     <div class="single-post">
         <?php
@@ -94,7 +93,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                         <a href="<?php the_permalink() ?>" class="blog_news_link">
                                             <div class="blog_item">
                                                 <div class="img-wrapper">
-                                                    <?php the_post_thumbnail(); ?>
+                                                    <?php
+                                                    if( has_post_thumbnail() ) {
+                                                    the_post_thumbnail();
+                                                    }
+                                                    else { ?>
+                                                        <img class="test" src="<?php echo get_stylesheet_directory_uri(); ?>/images/sm_bottom_photo.jpg" alt="">
+                                                   <?php } ?>
                                                 </div>
                                                 <div class="content">
                                                     <div class="content_wrapper">

@@ -400,7 +400,7 @@
     position: relative;
 }
 .events .blog_item{
-    min-height: 500px;
+    /*min-height: 500px;*/
 }
 .events .blog_item-main .img-wrapper{
     float: left;

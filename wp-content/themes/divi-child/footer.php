@@ -271,24 +271,38 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
                 ttCarousel,
                 ttCarousel_Config = {
                     pager: true,
-                    minSlides: 4,
-                    maxSlides: 4,
-                    moveSlides: 1,
-                    slideWidth: 320,
-                    controls: false,
-            };
-
-            if( width > 575) {
-                    ttCarousel = jQuery('.slider').bxSlider(ttCarousel_Config);
-            } else {
-                ttCarousel = jQuery('.slider').bxSlider({
-                    pager: true,
                     minSlides: 2,
                     maxSlides: 2,
                     moveSlides: 1,
                     slideWidth: 320,
                     controls: false,
+            },
+                ttCarousel_Config_md = {
+                    pager: true,
+                    minSlides: 3,
+                    maxSlides: 3,
+                    moveSlides: 1,
+                    slideWidth: 320,
+                    controls: false,
+                };
+
+            if ( 1200 > width ) {
+                ttCarousel = jQuery('.slider').bxSlider(ttCarousel_Config_md);
+                console.log('992');
+            } else if( width < 576) {
+                ttCarousel = jQuery('.slider').bxSlider(ttCarousel_Config);
+                console.log('575');
+            }
+            else {
+                ttCarousel = jQuery('.slider').bxSlider({
+                    pager: true,
+                    minSlides: 4,
+                    maxSlides: 4,
+                    moveSlides: 1,
+                    slideWidth: 320,
+                    controls: false,
                 });
+                console.log('else');
             }
 
             // jQuery(window).resize(function() {
