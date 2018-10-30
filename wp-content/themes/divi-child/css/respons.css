@@ -1093,6 +1093,22 @@
     .et_header_style_centered #main-header {
         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
     }
+    .et_mobile_menu li.qtranxs-lang-menu {
+        display: block;
+    }
+    .et_mobile_menu li.qtranxs-lang-menu a {
+        display: none;
+    }
+    .et_mobile_menu li.qtranxs-lang-menu .sub-menu a {
+        display: block;
+        text-transform: uppercase;
+    }
+    .et_mobile_menu li.qtranxs-lang-menu .sub-menu a img {
+        display: none;
+    }
+    .et_mobile_menu li.qtranxs-lang-menu .sub-menu .current-menu-item a {
+        color: #FF8000;
+    }
     /*Home*/
     .home #main-content .container-1 {
         display: none;

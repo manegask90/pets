@@ -93,6 +93,16 @@ a {
 #et-secondary-nav .menu-item-has-children>a:first-child:after, #top-menu .menu-item-has-children>a:first-child:after {
     position: initial;
     content: '';
+    font-size: 0;
+}
+#et-secondary-nav .menu-item-has-children>a:first-child, #top-menu .menu-item-has-children>a:first-child {
+    padding-right: 0;
+}
+#top-menu>li.qtranxs-lang-menu {
+    display: none;
+}
+.et_mobile_menu li.qtranxs-lang-menu {
+    display: none;
 }
 .top_header .soc_box a {
     color: inherit;
