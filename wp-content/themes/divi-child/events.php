@@ -25,6 +25,10 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                             echo 'Львів';
                         } elseif (isset($_COOKIE['select-city']) && $_COOKIE['select-city'] == 'kyiv'){
                             echo 'Київ';
+                        } elseif (isset($_COOKIE['select-city']) && $_COOKIE['select-city'] == 'all-city'){
+                            echo 'Всі міста';
+                        } else {
+                            echo 'Всі міста';
                         }
                         ?>
                     </span>

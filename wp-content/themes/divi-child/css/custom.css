@@ -434,12 +434,15 @@ header .qtranxs_widget ul li {
     padding: 0;
     width: 10px;
     /*display: none;*/
+    opacity: 0;
 }
 .newsletter.error input[type="submit"] {
-    display: none;
+    /*display: block;*/
+    opacity: 0;
 }
 .newsletter.valid input[type="submit"] {
-    display: block;
+    /*display: block;*/
+    opacity: 1;
 }
 .section-tittle {
     font-style: normal;
@@ -595,6 +598,7 @@ header .qtranxs_widget ul li {
 }
 .tnp-field-button {
     margin-left: -15px;
+    opacity: 1;
 }
 .home .news {
     padding: 0;
