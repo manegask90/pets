@@ -358,13 +358,13 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
         });
 
         // Input file
-        jQuery(document).ready(function($){
-            $("input[type=file].nicefileinput").nicefileinput();
-            $("#download-link").click(function(){
-                $('html, body').animate({scrollTop: $("#download").offset().top},'slow');
-                return false;
-            });
-        });
+        // jQuery(document).ready(function($){
+        //     $("input[type=file].nicefileinput").nicefileinput();
+        //     $("#download-link").click(function(){
+        //         $('html, body').animate({scrollTop: $("#download").offset().top},'slow');
+        //         return false;
+        //     });
+        // });
 </script>
 </body>
 </html>

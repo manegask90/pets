@@ -87,6 +87,13 @@ a {
 #top-menu li:nth-last-child {
     padding-right: 0;
 }
+#top-menu li .sub-menu {
+    display: none;
+}
+#et-secondary-nav .menu-item-has-children>a:first-child:after, #top-menu .menu-item-has-children>a:first-child:after {
+    position: initial;
+    content: '';
+}
 .top_header .soc_box a {
     color: inherit;
 }

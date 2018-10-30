@@ -465,9 +465,9 @@
     max-height: 455px;
     position: relative;
 }
-.news .img-wrapper{
-    height: 100%;
-}
+/*.news .img-wrapper{*/
+    /*height: 100%;*/
+/*}*/
 .news .img-wrapper img{
     filter: grayscale(100%);
 }
