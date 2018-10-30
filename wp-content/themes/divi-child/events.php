@@ -270,7 +270,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
 <!--                    $events_date = $post;-->
                 <?php if ($number_posts == 3) { ?>
-                     <div <?php post_class('col-md-6 col-sm-12'); ?> >
+                     <div <?php post_class('col-lg-6 col-md-4 col-sm-12'); ?> >
                          <a href="" class="">
                              <div class="blog_item blog_item-main">
                                  <div class="date">

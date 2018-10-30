@@ -408,7 +408,7 @@ function events_filtr_get_posts()
             ?>
 
                 <?php if ($number_posts == 3) { ?>
-                     <div <?php post_class('col-md-6 col-sm-12'); ?> >
+                     <div <?php post_class('col-lg-6 col-md-4 col-sm-12'); ?> >
                         <a href="" class="">
                              <div class="blog_item blog_item-main">
                                  <div class="date">
@@ -461,7 +461,7 @@ function events_filtr_get_posts()
                              </div>
                          </a>
                 <?php } else { ?>
-                    <div <?php post_class('col-md-3 col-sm-6'); ?> >
+                    <div <?php post_class('col-lg-3 col-md-4 col-sm-6'); ?> >
                         <a href="<?php the_permalink($post->ID); ?>" class="">
                             <div class="blog_item">
                                 <div class="img-wrapper">
