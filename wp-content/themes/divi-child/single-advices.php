@@ -6,6 +6,7 @@ $show_default_title = get_post_meta( get_the_ID(), '_et_pb_show_title', true );
 
 $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
+$post_categories = wp_get_post_categories( $post->ID );
 ?>
     <div class="single-post advices-single">
         <?php
@@ -37,15 +38,23 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                 <div  class="blog_advices_link">
                                     <div class="advice_item">
                                         <div class="advice_item-header">
-                                            <h4 class="header_tittle"><span><?php echo $category[1]->cat_name; ?></span></h4>
+                                            <h4 class="header_tittle">
+                                                <span>
+                                                    <?php
+                                                    foreach( get_the_category() as $category ){
+                                                        echo $category->cat_name . ' ';
+                                                    }
+                                                    ?>
+                                                </span>
+                                            </h4>
                                             <h4 class="header_tittle"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h4>
                                             <?php
-                                            if ($category[1]->term_id == 9) {
+                                            if (in_array(9, $post_categories)) {
                                                 echo '<i class="icon demo-icon icon-cat"></i>';
-                                            } elseif ($category[1]->term_id == 8) {
+                                            } elseif (in_array(8, $post_categories)) {
                                                 echo '<i class="icon demo-icon icon-dog"></i>';
                                             }
-                                            elseif ($category[1]->term_id == 10) {
+                                            elseif (in_array(10, $post_categories)) {
                                                 echo '<i class="icon demo-icon icon-laps"></i>';
                                             }
                                             ?>
