@@ -863,13 +863,13 @@
         display: none;
     }
     .slider .blog_item img {
-        height: 300px;
+        height: 250px;
         min-width: 100%;
     }
     .slider.news .blog_item {
         min-height: initial;
         margin-bottom: 0;
-        height: 300px;
+        height: 375px;
     }
     .slider.news .blog_item .share_btn_wrap {
         display: none;
@@ -878,10 +878,12 @@
         padding-left: 10px;
         padding-right: 10px;
         height: auto;
+        min-height: 135px;
     }
     .slider.news .content_wrapper {
         padding-left: 0;
         padding-top: 15px;
+        margin: 0;
     }
     .slider.news .news_time {
         font-size: 10px;
@@ -901,6 +903,7 @@
     }
     .slider.news .content::after {
         right: 5px;
+        display: none;
     }
     .single-post .post-header-block .text-block {
         height: auto;
@@ -930,6 +933,7 @@
     .slider.news .img-wrapper {
         width: auto;
         float: none;
+        height: auto;
     }
     .zoopeople-single .blog_item_main p span {
         font-size: 16px;
@@ -2111,7 +2115,7 @@
         display: none;
     }
     .slider .blog_item img {
-        height: 175px;
+        height: auto;
         min-width: 100%;
     }
     .slider.news .blog_item {
@@ -2181,6 +2185,7 @@
         width: auto;
         float: none;
         border: none;
+        max-width: initial;
     }
     .single-post .title-block .entry-title {
         font-size: 18px;

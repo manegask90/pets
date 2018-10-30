@@ -267,7 +267,7 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
             // }
             // $(window).resize(tourLandingScript);
 
-            var width = $(window).width(),
+            var width = $(document).width(),
                 ttCarousel,
                 ttCarousel_Config = {
                     pager: true,
@@ -285,15 +285,13 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
                     slideWidth: 320,
                     controls: false,
                 };
-
-            if ( 1200 > width ) {
-                ttCarousel = jQuery('.slider').bxSlider(ttCarousel_Config_md);
-                console.log('992');
-            } else if( width < 576) {
+            if( width < 576) {
                 ttCarousel = jQuery('.slider').bxSlider(ttCarousel_Config);
-                console.log('575');
-            }
-            else {
+                console.log(width);
+            } else if ( width < 1200 ) {
+                ttCarousel = jQuery('.slider').bxSlider(ttCarousel_Config_md);
+                console.log(width);
+            } else {
                 ttCarousel = jQuery('.slider').bxSlider({
                     pager: true,
                     minSlides: 4,
