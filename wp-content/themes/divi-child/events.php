@@ -38,6 +38,22 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                 <div class="events_filter">
                     <?php
 
+
+                    if (qtranxf_getLanguage() == 'ua') {
+                        $field_key = "field_5bb5c1873312c";
+                    } elseif (qtranxf_getLanguage() == 'ru') {
+                        $field_key = "field_5bd99bf9374a4";
+                    }
+
+                    $post_id = $post->ID;
+                    $field = get_field_object($field_key, $post_id);
+                    $field = get_field_object($field_key);
+                    $field_ch = $field['choices'];
+
+
+
+
+
                     $curent_month = date("m");
                     $selectMonth = $_COOKIE['select-month'];
                     $selectCity  = $_COOKIE['select-city'];
@@ -56,12 +72,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                 '11' => 'Листопад',
                                 '12' => 'Грудень'
                         );
-                        $allCity = array(
-                          'all-city' => 'Всі міста',
-                          'lviv'     => 'Львів',
-                          'kyiv'     => 'Київ',
-                          'dnipro'   => 'Дніпро'
-                        )
+//                        $allCity = array(
+//                          'all-city' => 'Всі міста',
+//                          'lviv'     => 'Львів',
+//                          'kyiv'     => 'Київ',
+//                          'dnipro'   => 'Дніпро'
+//                        )
+
 
                     ?>
 
@@ -95,7 +112,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                         <div class="select-box">
                             <select name="city" class="filtr-select-city">
                                 <?php
-                                foreach ($allCity as $numberCity => $city) {
+                                foreach ($field_ch as $numberCity => $city) {
                                     $option = '<option value="' . $numberCity . '"';
                                     if ($numberCity == $_COOKIE['select-city']) {
                                         $option .= ' selected="selected"';
