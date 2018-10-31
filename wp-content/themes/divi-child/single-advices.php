@@ -99,6 +99,10 @@ $post_categories = wp_get_post_categories( $post->ID );
                                         <?php get_template_part( '/includes/social_icons' ); ?>
                                     </div>
                                 </div>
+                                <div class="sidebar_contact-box">
+                                    <h4 class="cbox_txt">Маєш цікаву історію? Розкажи редактору</h4>
+                                    <a href="#" class="cbox_btn" data-toggle="modal" data-target="#sidebarModal"> Написати</a>
+                                </div>
                                 <div class="read-next">
                                     <div class="border-box"></div>
                                     <div class="text">читати більше</div>

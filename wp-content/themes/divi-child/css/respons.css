@@ -486,7 +486,7 @@
         margin-bottom: 0;
     }
     .slider.news .blog_item .share_btn_wrap {
-        display: inline-block;
+        display: none;
     }
     .slider.news .content {
         padding-left: 15px;
@@ -2313,7 +2313,16 @@
     .zoopeople-single .blog_item_main img {
         vertical-align: bottom;
     }
-
+    .single-post .sidebar_contact-box {
+        width: 100%;
+    }
+    /*Modal*/
+    .modal-body .wpcf7-form-control {
+        width: 100%;
+    }
+    .file_text {
+        width: 100%;
+    }
     /*Search*/
     .search .et_pb_post a img {
         height: auto;

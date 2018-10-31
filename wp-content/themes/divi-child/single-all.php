@@ -75,6 +75,10 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                         <?php get_template_part( '/includes/social_icons' ); ?>
                                     </div>
                                 </div>
+                                <div class="sidebar_contact-box">
+                                    <h4 class="cbox_txt">Маєш цікаву історію? Розкажи редактору</h4>
+                                    <a href="#" class="cbox_btn" data-toggle="modal" data-target="#sidebarModal"> Написати</a>
+                                </div>
                                 <div class="read-next">
                                     <div class="border-box"></div>
                                     <div class="text">читати більше</div>

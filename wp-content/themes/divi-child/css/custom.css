@@ -1689,7 +1689,6 @@ body .scroll-top-inner {
 .zoopeople-single .blog_item_main a:hover {
     color: inherit;
 }
-
 .slider .blog_item img {
     height: 350px;
     min-width: 100%;
@@ -1699,6 +1698,42 @@ body .scroll-top-inner {
 }
 .advices-single .advices .post {
     padding-bottom: 0;
+}
+.single-post .sidebar_contact-box {
+    padding: 23px 25px;
+    background: #FF8000;
+    margin: 50px auto;
+    text-align: center;
+    width: 350px;
+}
+.single-post .cbox_txt {
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 0;
+}
+.single-post .cbox_btn {
+    display: inline-block;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding: 10px 30px;
+    border: 2px solid #fff;
+}
+.single-post .cbox_btn:hover {
+    color: #FF8000;
+    border: 2px solid #FF8000;
+    background-color: #fff;
 }
 /*********/
 
