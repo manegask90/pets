@@ -42,7 +42,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                     if (qtranxf_getLanguage() == 'ua') {
                         $field_key = "field_5bb5c1873312c";
                     } elseif (qtranxf_getLanguage() == 'ru') {
-                        $field_key = "field_5bd99bf9374a4";
+                        $field_key = "field_5bd99df06edb2";
                     }
 
                     $post_id = $post->ID;

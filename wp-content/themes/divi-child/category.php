@@ -98,6 +98,9 @@ $cat_id = get_query_var('cat');
                         </li>
                     </ul>
                 </div>
+                <div class="col-md-3 sidebar-bot-wrap">
+                    <?php get_sidebar('bottom'); ?>
+                </div>
             </div>
             <div class="row news_posts_wrap" data-main-post="<?php echo $main_post; ?>" data-cat="<?php echo $cat_id ?>">
                 <?php
