@@ -186,15 +186,19 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
             document.cookie = updatedCookie;
         }
 
-
+        // Input file
         jQuery(function(){
 
-            jQuery(".file_text input").change(function(){
-                var val = jQuery(this).val();
-                jQuery(".file_text").html(val.replace("C:\\fakepath\\", ""));
+            jQuery(".wpcf7-file").change(function(){
+                // var val = jQuery(this).val();
+                var val = jQuery(".wpcf7-file")[0].files[0],
+                    name = val.name;
+                jQuery('.file_text .text').text(name);
             });
 
         });
+
+
 
 
         // Filtr events
