@@ -36,7 +36,21 @@
         height: 23%;
     }
     .advices .advice_item-content, .advices .advice_item-header {
-        padding: 20px 25px;
+        padding: 10px 25px;
+        height: 105px;
+    }
+    .advices .advice_item-header .icon {
+        font-size: 26px;
+    }
+    .advices .advice_item-header {
+        background-size: 65px;
+    }
+    .advices .advice_item-header .icon {
+        top: 12px;
+        right: 12px;
+    }
+    .advices .advice_item-header {
+        padding-right: 60px;
     }
     .zoopeople .blog_item-overlay h2 {
         font-size: 18px;
