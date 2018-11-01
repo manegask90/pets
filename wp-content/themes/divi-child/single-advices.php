@@ -112,7 +112,7 @@ $post_categories = wp_get_post_categories( $post->ID );
                                 <div class="slider news">
                                     <?php
 
-                                $related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => -1, 'post__not_in' => array($post->ID) ) );
+                                $related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 12, 'post__not_in' => array($post->ID) ) );
                                 if( $related ) foreach( $related as $post ) {
                                     setup_postdata($post); ?>
 

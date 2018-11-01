@@ -88,7 +88,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                 <div class="slider news">
                                     <?php
 
-                                $related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => -1, 'post__not_in' => array($post->ID) ) );
+                                $related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 12, 'post__not_in' => array($post->ID) ) );
                                 if( $related ) foreach( $related as $post ) {
                                     setup_postdata($post); ?>
 

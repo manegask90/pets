@@ -1735,6 +1735,7 @@ body .scroll-top-inner {
     margin: 50px auto;
     text-align: center;
     width: 350px;
+    display: none;
 }
 .single-post .cbox_txt {
     font-style: normal;

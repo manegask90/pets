@@ -2380,6 +2380,7 @@
     }
     .single-post .sidebar_contact-box {
         width: 100%;
+        display: block;
     }
     /*Modal*/
     .modal-body .wpcf7-form-control {

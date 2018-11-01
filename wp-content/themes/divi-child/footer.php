@@ -277,7 +277,7 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
                     pager: true,
                     minSlides: 2,
                     maxSlides: 2,
-                    moveSlides: 1,
+                    moveSlides: 3,
                     slideWidth: 320,
                     controls: false,
             },
@@ -285,7 +285,7 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
                     pager: true,
                     minSlides: 3,
                     maxSlides: 3,
-                    moveSlides: 1,
+                    moveSlides: 3,
                     slideWidth: 320,
                     controls: false,
                 };
@@ -300,7 +300,7 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
                     pager: true,
                     minSlides: 4,
                     maxSlides: 4,
-                    moveSlides: 1,
+                    moveSlides: 3,
                     slideWidth: 320,
                     controls: false,
                 });
