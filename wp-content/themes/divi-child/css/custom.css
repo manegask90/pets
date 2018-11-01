@@ -101,6 +101,25 @@ a {
 #top-menu>li.qtranxs-lang-menu {
     display: none;
 }
+#top-menu li.current-menu-ancestor>a {
+    color: #FF8000;
+}
+#top-menu-nav ul li.current-menu-ancestor a:after {
+    content: '';
+    display: block;
+    width: 75%;
+    height: 2px;
+    background-color: #FF8000;
+    margin-top: 3px;
+}
+#top-menu-nav ul li.current-menu-ancestor:hover a:after {
+    content: '';
+    display: block;
+    width: 75%;
+    height: 2px;
+    background-color: #FF8000;
+    margin-top: 3px;
+}
 .et_mobile_menu li.qtranxs-lang-menu {
     display: none;
 }
