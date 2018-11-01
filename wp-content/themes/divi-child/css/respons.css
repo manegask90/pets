@@ -86,7 +86,7 @@
         margin-top: -300px;
     }
     .sidebar-bot-wrap .sidebar {
-        margin-top: 50px;
+        margin-top: 85px;
     }
     /*Single*/
     .slider.news .blog_item {
@@ -189,7 +189,7 @@
         padding: 20px 15px;
     }
     .advices .advice_item-header {
-        background: #fff url("../images/Intersect.png") no-repeat 100% -50%;
+        background: #fff url("../images/Intersect.png") no-repeat 110% -50%;
     }
     .advices .advice_item-header .icon {
         font-size: 25px;
@@ -256,7 +256,10 @@
         min-height: 370px;
     }
     .sidebar-bot-wrap .sidebar {
-        margin-top: 50px;
+        margin-top: 85px;
+    }
+    .sidebar .sidebar_contact-box {
+        padding: 23px 20px;
     }
     /*Single*/
     .single-post .post-header-block::before {
@@ -480,7 +483,7 @@
         padding-left: 0;
     }
     .sidebar .cbox_txt {
-        font-size: 11px;
+        font-size: 10px;
     }
     .sidebar .sidebar_header {
         font-size: 16px;
@@ -489,7 +492,7 @@
         font-size: 12px;
     }
     .sidebar li {
-        padding: 15px 10px;
+        padding: 10px 10px;
     }
     .sidebar .sidebar_top-list li a {
         font-size: 12px;
@@ -501,14 +504,14 @@
         padding: 10px 25px;
     }
     .news_posts_wrap {
-        margin-top: -400px;
+        margin-top: -365px;
         min-height: 500px;
     }
     .sidebar-bot-wrap {
         padding-left: 0;
     }
     .sidebar-bot-wrap .sidebar {
-        margin-top: 150px;
+        margin-top: 175px;
     }
     /*Single*/
     .single-post .post-header-block::before {
