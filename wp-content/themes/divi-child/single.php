@@ -15,6 +15,8 @@ if ( in_array(3, $post_categories)) {
     include(get_stylesheet_directory() . '/single-zoo.php');
 } elseif (in_array(7, $post_categories)) {
     include(get_stylesheet_directory() . '/single-advices.php');
+} elseif (in_array(17, $post_categories)) {
+    include(get_stylesheet_directory() . '/single-event.php');
 } else {
     include(get_stylesheet_directory() . '/single-all.php');
 }

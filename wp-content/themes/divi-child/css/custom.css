@@ -1300,7 +1300,90 @@ header .qtranxs_widget ul li {
     max-width: 25%;
     padding-left: 30px;
 }
-
+/*Single event*/
+.event_single_wrap {
+    position: relative;
+    margin-bottom: 50px;
+}
+.event_single_wrap .container-1 .block_1 {
+    padding-left: 0;
+    padding-right: 0;
+}
+.event_single_wrap .container-1 .block_1 img {
+    vertical-align: bottom;
+}
+.event_single_wrap .container-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 0;
+    height: 100%;
+}
+.event_single_wrap .container-2 .row {
+    height: 100%;
+}
+.event_single_wrap .container-2 .block_2_2 {
+    padding-left: 0;
+}
+.event_single_wrap .entry-title {
+    font-size: 38px;
+    text-transform: uppercase;
+    color: #ff8000;
+    background: url("../images/news-border.png");
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: cover;
+    padding-left: 50px;
+}
+.event_single_wrap .entry-content {
+    padding-left: 50px;
+}
+.event_single_wrap .container-2 .block_2_2 .block-wrap {
+    margin-left: -3.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+.event_single_wrap .icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 25px;
+}
+.event_single_wrap .event-date {
+    background-image: url("../images/event-date-icon.png");
+}
+.event_single_wrap .event-time {
+    background-image: url("../images/event-time-icon.png");
+}
+.event_single_wrap .event-loc {
+    background-image: url("../images/event-loc-icon.png");
+}
+.event_single_wrap .date-box {
+    font-size: 15px;
+    margin: 50px 0;
+}
+.event_single_wrap .date-box .box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.event_single_wrap .date-box .box .month {
+    padding: 0 10px;
+}
+.event_single_wrap .et-social-icons {
+    padding: 0;
+}
+.event_single_wrap .et-social-icon:before {
+    font-size: 25px;
+}
+.event_single_wrap .et-social-icons .icon {
+    margin-right: 0;
+}
 /*Footer*/
 #main-footer {
     background-color: #404040;
