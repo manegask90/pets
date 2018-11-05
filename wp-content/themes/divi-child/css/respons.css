@@ -98,7 +98,7 @@
     /*Events*/
     .events .blog_item {
         margin-bottom: 30px;
-        height: 375px;
+        height: 400px;
         min-height: auto;
     }
     .events .img-wrapper {
@@ -305,7 +305,7 @@
     /*Events*/
     .events .blog_item {
         margin-bottom: 30px;
-        height: 315px;
+        height: 330px;
         min-height: auto;
     }
     .events .img-wrapper {
@@ -327,6 +327,9 @@
     }
     .events .blog_item-main .img-wrapper {
         height: calc(100% - 27px);
+    }
+    .sidebar_wrap_events .sidebar .sidebar_top-list li a {
+        font-size: 11px;
     }
     /*Footer*/
     .main_footer .footer_info {
@@ -578,7 +581,7 @@
         min-height: auto;
     }
     .events .img-wrapper {
-        height: 185px;
+        height: 165px;
     }
     .events .content-text {
         overflow: hidden;
@@ -602,13 +605,25 @@
         padding: 8px 10px;
     }
     .events .date_txt span {
-        margin-right: 15px;
+        margin-right: 0;
     }
     .events .blog_item-main .content {
         padding: 15px;
     }
     .events .icon-money:before {
         vertical-align: top;
+    }
+    .sidebar_wrap_events .sidebar .sidebar_top-list li a {
+        font-size: 9px;
+    }
+    .sidebar_wrap_events .sidebar .sidebar_header {
+        font-size: 14px;
+    }
+    .sidebar_wrap_events .sidebar .demo-icon {
+        font-size: 15px;
+    }
+    .sidebar_wrap_events .sidebar .cbox_btn {
+        padding: 10px;
     }
     /*Footer*/
     .main_footer .footer_info {
@@ -1033,7 +1048,7 @@
     /*Events*/
     .events .blog_item {
         margin-bottom: 30px;
-        height: 350px;
+        height: 375px;
         min-height: auto;
     }
     .events .img-wrapper {
@@ -1041,7 +1056,7 @@
     }
     .events .content-text {
         overflow: hidden;
-        height: 115px;
+        height: 125px;
         padding: 10px;
     }
     .events .date_txt {
@@ -1061,7 +1076,7 @@
         padding: 8px 10px;
     }
     .events .date_txt span {
-        margin-right: 15px;
+        margin-right: 0;
     }
     .events .blog_item-main .content {
         padding: 10px;
@@ -1075,6 +1090,14 @@
     }
     .events .blog_item-main .date_txt {
         width: 100%;
+    }
+    .sidebar_wrap_events {
+        display: none;
+    }
+    .events_posts_wrap {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
     }
     /*Footer*/
     .main_footer .footer_info {
@@ -1613,11 +1636,12 @@
     /*Events*/
     .events .blog_item {
         margin-bottom: 30px;
-        height: 360px;
+        height: 400px;
         min-height: auto;
     }
     .events .img-wrapper {
-        height: 300px;
+        height: 215px;
+        max-height: initial;
     }
     .events .content-text {
         overflow: hidden;
@@ -1625,7 +1649,7 @@
         padding: 10px;
     }
     .events .date_txt {
-        font-size: 9px;
+        font-size: 12px;
     }
     .events .event_brief {
         font-size: 12px;
@@ -1642,7 +1666,7 @@
         padding: 8px 10px;
     }
     .events .date_txt span {
-        margin-right: 15px;
+        margin-right: 0;
     }
     .events .blog_item-main .content {
         padding: 10px;
@@ -1659,6 +1683,14 @@
     }
     .events .evens_tittle {
         font-size: 16px;
+    }
+    .sidebar_wrap_events {
+        display: none;
+    }
+    .events_posts_wrap {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
     }
     /*Footer*/
     .main_footer .footer_info {
@@ -1761,6 +1793,10 @@
     }
     .et_mobile_menu li.qtranxs-lang-menu .sub-menu .current-menu-item a {
         color: #FF8000;
+    }
+    .et_header_style_centered #logo {
+        max-height: initial;
+        height: 60px;
     }
     /*Home*/
     .home .main_news_wrap .block_2_2 .post:nth-child(1) .img-wrap {
@@ -2399,7 +2435,7 @@
     }
     /*Events*/
     .events .blog_item {
-        height: 360px;
+        height: auto;
         min-height: auto;
         max-width: 275px;
         margin: 7px auto;
@@ -2409,11 +2445,11 @@
     }
     .events .content-text {
         overflow: hidden;
-        height: 110px;
+        height: auto;
         padding: 10px;
     }
     .events .date_txt {
-        font-size: 9px;
+        font-size: 12px;
     }
     .events .event_brief {
         font-size: 12px;
@@ -2430,7 +2466,7 @@
         padding: 8px 10px;
     }
     .events .date_txt span {
-        margin-right: 15px;
+        margin-right: 0;
     }
     .events .blog_item-main .content {
         padding: 10px;
@@ -2463,6 +2499,17 @@
     }
     .events_filter .event-filtr .select-box select {
         min-width: 85px;
+    }
+    .sidebar_wrap_events {
+        display: none;
+    }
+    .events_posts_wrap {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .events_wrap {
+        justify-content: center;
     }
     /*Footer*/
     .main_footer .footer_info {

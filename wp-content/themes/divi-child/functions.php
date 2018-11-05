@@ -401,67 +401,13 @@ function events_filtr_get_posts()
         query_posts($args);
         ob_start();
         if (have_posts()) :
-            $iter = 0;
+//            $iter = 0;
             while (have_posts()) : the_post();
-                $iter++;
-                $number_posts = $iter;
+//                $iter++;
+//                $number_posts = $iter;
             ?>
 
-                <?php if ($number_posts == 3) { ?>
-                     <div <?php post_class('col-lg-6 col-md-4 col-sm-12'); ?> >
-                        <a href="" class="">
-                             <div class="blog_item blog_item-main">
-                                 <div class="date">
-                                     <h5 class="date_txt">
-                                        <span><?php echo get_field('date'); ?></span><?php echo get_field('city'); ?>
-                                        <div class="share_btn_wrap">
-                                             <div class="dropdown dropleft show">
-                                                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                     <i class="icon icon-union"></i>
-                                                 </a>
-                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                     <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
-                                                     <a class="dropdown-item" id="viber_share">
-                                                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
-                                                     </a>
-                                                     <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
-                                                         <div class="telegram_wrap">
-                                                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
-                                                             <span>Share</span>
-                                                         </div>
-                                                     </a>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                     </h5>
-                                 </div>
-                                 <div class="img-wrapper">
-                                     <?php the_post_thumbnail(); ?>
-                                 </div>
-                                 <div class="content">
-                                     <div class="content-text">
-                                         <h4 class="event_tittle"><?php the_title(); ?></h4>
-                                         <div class="event_brief"><?php the_excerpt(); ?></div>
-                                     </div>
-                                     <div class="place">
-                                          <i class="icon fas fa-map-marker-alt"></i>
-                                         <div class="place_txt"><?php echo get_field('location'); ?></div>
-                                     </div>
-                                     <div class="cost">
-                                         <i class="icon icon-money"></i>
-                                         <?php
-                                         if ($cost == 0) { ?>
-                                             <div class="place_txt">FREE entrance</div>
-                                         <?php } else { ?>
-                                             <div class="place_txt"><?php echo $cost; ?></div>
-                                         <?php }
-                                         ?>
-                                     </div>
-                                 </div>
-                             </div>
-                         </a>
-                <?php } else { ?>
-                    <div <?php post_class('col-lg-3 col-md-4 col-sm-6'); ?> >
+                    <div <?php post_class('col-md-4 col-sm-6'); ?> >
                         <a href="<?php the_permalink($post->ID); ?>" class="">
                             <div class="blog_item">
                                 <div class="img-wrapper">
@@ -469,37 +415,50 @@ function events_filtr_get_posts()
                                 </div>
                                 <div class="content">
                                     <div class="date">
-                                        <h5 class="date_txt">
-                                            <span><?php echo get_field('date', $post->ID ); ?></span><?php  echo get_field('city', $post->ID ); ?>
-                                            <div class="share_btn_wrap">
-                                             <div class="dropdown dropleft show">
-                                                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                     <i class="icon icon-union"></i>
-                                                 </a>
-                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                     <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
-                                                     <a class="dropdown-item" id="viber_share">
-                                                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
-                                                     </a>
-                                                     <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
-                                                         <div class="telegram_wrap">
-                                                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
-                                                             <span>Share</span>
-                                                         </div>
-                                                     </a>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                         </h5>
+                                        <h4 class="event_tittle"><?php the_title(); ?></h4>
+<!--                                            <div class="share_btn_wrap">-->
+<!--                                             <div class="dropdown dropleft show">-->
+<!--                                                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                                                     <i class="icon icon-union"></i>-->
+<!--                                                 </a>-->
+<!--                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">-->
+<!--                                                     <a class="dropdown-item fb-share-button" href="--><?php //esc_url( the_permalink() ); ?><!--" data-layout="button" data-size="large"></a>-->
+<!--                                                     <a class="dropdown-item" id="viber_share">-->
+<!--                                                         <img src="--><?php //echo get_stylesheet_directory_uri(); ?><!--/images/share_viber.png" alt="">-->
+<!--                                                     </a>-->
+<!--                                                     <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">-->
+<!--                                                         <div class="telegram_wrap">-->
+<!--                                                             <img src="--><?php //echo get_stylesheet_directory_uri(); ?><!--/images/telegram-plane.png" alt="">-->
+<!--                                                             <span>Share</span>-->
+<!--                                                         </div>-->
+<!--                                                     </a>-->
+<!--                                                 </div>-->
+<!--                                             </div>-->
+<!--                                         </div>-->
                                     </div>
                                     <div class="content-text">
-                                        <h4 class="event_tittle"><?php echo get_the_title($post); ?></h4>
+                                        <h5 class="date_txt">
+                                            <div class="date_wrap">
+                                                <?php
+                                                $date_start = strtotime(get_field('date'));
+                                                $date_end = get_field('date_end');
+                                                ?>
+                                                <span><?php echo date('d', $date_start); ?></span>
+                                                <?php if (isset($date_end)) { ?>
+                                                    <span>-</span>
+                                                    <span><?php echo $date_end; ?></span>
+                                                <?php } ?>
+                                                <span class="month"><?php echo date('F', $date_start); ?></span>
+                                                <span><?php echo date('Y', $date_start); ?></span>
+                                            </div>
+
+                                            <span class="city_name"><?php echo get_field('city'); ?></span>
+                                        </h5>
                                         <div class="event_brief"><?php echo apply_filters( 'the_excerpt', get_the_excerpt($post) ); ?></div>
                                     </div>
                                 </div>
                             </div>
                         </a>
-                        <?php } ?>
                     </div>
 
             <?php endwhile; ?>
@@ -541,7 +500,7 @@ function true_load_posts(){
     query_posts($args);?>
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
-            <div <?php post_class('col-lg-3 col-md-4 col-sm-6'); ?> >
+            <div <?php post_class('col-md-4 col-sm-6'); ?> >
                 <a href="<?php the_permalink(); ?>" class="">
                     <div class="blog_item">
                         <div class="img-wrapper">
@@ -549,31 +508,45 @@ function true_load_posts(){
                         </div>
                         <div class="content">
                             <div class="date">
-                                <h5 class="date_txt">
-                                <span><?php echo get_field('date'); ?></span><?php echo get_field('city'); ?>
-                                <div class="share_btn_wrap">
-                                                <div class="dropdown dropleft show">
-                                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <i class="icon icon-union"></i>
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                        <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
-                                                        <a class="dropdown-item" id="viber_share">
-                                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
-                                                        </a>
-                                                        <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
-                                                            <div class="telegram_wrap">
-                                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
-                                                                <span>Share</span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                </h5>
+                                <h4 class="event_tittle"><?php the_title(); ?></h4>
+<!--                                <div class="share_btn_wrap">-->
+<!--                                                <div class="dropdown dropleft show">-->
+<!--                                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                                                        <i class="icon icon-union"></i>-->
+<!--                                                    </a>-->
+<!--                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">-->
+<!--                                                        <a class="dropdown-item fb-share-button" href="--><?php //esc_url( the_permalink() ); ?><!--" data-layout="button" data-size="large"></a>-->
+<!--                                                        <a class="dropdown-item" id="viber_share">-->
+<!--                                                            <img src="--><?php //echo get_stylesheet_directory_uri(); ?><!--/images/share_viber.png" alt="">-->
+<!--                                                        </a>-->
+<!--                                                        <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">-->
+<!--                                                            <div class="telegram_wrap">-->
+<!--                                                                <img src="--><?php //echo get_stylesheet_directory_uri(); ?><!--/images/telegram-plane.png" alt="">-->
+<!--                                                                <span>Share</span>-->
+<!--                                                            </div>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
                             </div>
                             <div class="content-text">
-                                <h4 class="event_tittle"><?php the_title(); ?></h4>
+                                <h5 class="date_txt">
+                                    <div class="date_wrap">
+                                        <?php
+                                        $date_start = strtotime(get_field('date'));
+                                        $date_end = get_field('date_end');
+                                        ?>
+                                        <span><?php echo date('d', $date_start); ?></span>
+                                        <?php if (isset($date_end)) { ?>
+                                            <span>-</span>
+                                            <span><?php echo $date_end; ?></span>
+                                        <?php } ?>
+                                        <span class="month"><?php echo date('F', $date_start); ?></span>
+                                        <span><?php echo date('Y', $date_start); ?></span>
+                                    </div>
+
+                                    <span class="city_name"><?php echo get_field('city'); ?></span>
+                                </h5>
                                 <div class="event_brief"><?php the_excerpt(); ?></div>
                             </div>
                         </div>

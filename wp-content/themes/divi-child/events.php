@@ -128,6 +128,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                 </div>
             </div>
         </div>
+        <div class="events_wrap">
         <div class="row events_posts_wrap">
         <?php
 
@@ -276,75 +277,16 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                 )
             );
         }
-//echo '<pre>';
-//        var_dump($curent_month);
-//var_dump($args);
-//        echo '</pre>';
+
                 query_posts($args);
                 if (have_posts()) :
-                    $iter = 0;
+//                    $iter = 0;
                 while (have_posts()) : the_post();
-                    $iter++;
-                    $number_posts = $iter;
+//                    $iter++;
+//                    $number_posts = $iter;
                     $cost = get_field('cost');
                 ?>
-
-<!--                    $events_date = $post;-->
-                <?php if ($number_posts == 3) { ?>
-                     <div <?php post_class('col-lg-6 col-md-4 col-sm-12'); ?> >
-                         <a href="" class="">
-                             <div class="blog_item blog_item-main">
-                                 <div class="date">
-                                     <h5 class="date_txt">
-                                         <span><?php echo get_field('date'); ?></span><?php echo get_field('city'); ?>
-                                         <div class="share_btn_wrap">
-                                             <div class="dropdown dropleft show">
-                                                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                     <i class="icon icon-union"></i>
-                                                 </a>
-                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                     <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
-                                                     <a class="dropdown-item" id="viber_share">
-                                                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
-                                                     </a>
-                                                     <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
-                                                         <div class="telegram_wrap">
-                                                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
-                                                             <span>Share</span>
-                                                         </div>
-                                                     </a>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                     </h5>
-                                 </div>
-                                 <div class="img-wrapper">
-                                     <?php the_post_thumbnail(); ?>
-                                 </div>
-                                 <div class="content">
-                                     <div class="content-text">
-                                         <h4 class="event_tittle"><?php the_title(); ?></h4>
-                                         <div class="event_brief"><?php the_excerpt(); ?></div>
-                                     </div>
-                                     <div class="place">
-                                         <i class="icon fas fa-map-marker-alt"></i>
-                                         <div class="place_txt"><?php echo get_field('location'); ?></div>
-                                     </div>
-                                     <div class="cost">
-                                         <i class="icon icon-money"></i>
-                                         <?php
-                                         if ($cost == 0) { ?>
-                                             <div class="place_txt">FREE entrance</div>
-                                         <?php } else { ?>
-                                             <div class="place_txt"><?php echo $cost; ?></div>
-                                         <?php }
-                                         ?>
-                                     </div>
-                                 </div>
-                             </div>
-                         </a>
-                <?php } else { ?>
-                    <div <?php post_class('col-lg-3 col-md-4 col-sm-6'); ?> >
+                    <div <?php post_class('col-md-4 col-sm-6'); ?> >
                         <a href="<?php the_permalink(); ?>" class="">
                             <div class="blog_item">
                                 <div class="img-wrapper">
@@ -352,54 +294,56 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                 </div>
                                 <div class="content">
                                     <div class="date">
-                                        <h5 class="date_txt">
-                                            <span><?php echo get_field('date'); ?></span><?php echo get_field('city'); ?>
-                                            <div class="share_btn_wrap">
-                                                <div class="dropdown dropleft show">
-                                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <i class="icon icon-union"></i>
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                        <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
-                                                        <a class="dropdown-item" id="viber_share">
-                                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
-                                                        </a>
-                                                        <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
-                                                            <div class="telegram_wrap">
-                                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
-                                                                <span>Share</span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </h5>
+                                        <h4 class="event_tittle"><?php the_title(); ?></h4>
+<!--                                        <h5 class="date_txt">-->
+<!--                                            <span>--><?php //echo get_field('date'); ?><!--</span>--><?php //echo get_field('city'); ?>
+<!--                                            <div class="share_btn_wrap">-->
+<!--                                                <div class="dropdown dropleft show">-->
+<!--                                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                                                        <i class="icon icon-union"></i>-->
+<!--                                                    </a>-->
+<!--                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">-->
+<!--                                                        <a class="dropdown-item fb-share-button" href="--><?php //esc_url( the_permalink() ); ?><!--" data-layout="button" data-size="large"></a>-->
+<!--                                                        <a class="dropdown-item" id="viber_share">-->
+<!--                                                            <img src="--><?php //echo get_stylesheet_directory_uri(); ?><!--/images/share_viber.png" alt="">-->
+<!--                                                        </a>-->
+<!--                                                        <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">-->
+<!--                                                            <div class="telegram_wrap">-->
+<!--                                                                <img src="--><?php //echo get_stylesheet_directory_uri(); ?><!--/images/telegram-plane.png" alt="">-->
+<!--                                                                <span>Share</span>-->
+<!--                                                            </div>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </h5>-->
                                     </div>
                                     <div class="content-text">
-                                        <h4 class="event_tittle"><?php the_title(); ?></h4>
+                                        <h5 class="date_txt">
+                                            <div class="date_wrap">
+                                                <?php
+                                                    $date_start = strtotime(get_field('date'));
+                                                    $date_end = get_field('date_end');
+                                                ?>
+                                                <span><?php echo date('d', $date_start); ?></span>
+                                                <?php if (isset($date_end)) { ?>
+                                                    <span>-</span>
+                                                    <span><?php echo $date_end; ?></span>
+                                                <?php } ?>
+                                                <span class="month"><?php echo date('F', $date_start); ?></span>
+                                                <span><?php echo date('Y', $date_start); ?></span>
+                                            </div>
+
+                                            <span class="city_name"><?php echo get_field('city'); ?></span>
+                                        </h5>
                                         <div class="event_brief"><?php the_excerpt(); ?></div>
                                     </div>
                                 </div>
                             </div>
                         </a>
-                    <?php } ?>
                     </div>
                          <?php
                          endwhile; ?>
-
-                <?php
-                /*
-                    if (  $wp_query->max_num_pages > 1 ) : ?>
-                        <script>
-                            var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
-                            var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
-                            var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
-                            var max_pages = '<?php echo $wp_query->max_num_pages; ?>';
-                        </script>
-                        <div id="true_loadmore" class="col-md-12">Загрузить ещё<div id="preloader1"></div></div>
-                    <?php endif; ?>
-                */
-                ?>
 
 
                 <?php //if (  $wp_query->max_num_pages > 1 ) : ?>
@@ -417,6 +361,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
             <?php endif; ?>
             <?php endif; ?>
         </div>
+
+        <div class="col-md-12 sidebar_wrap_events">
+            <?php get_sidebar('events'); ?>
+        </div>
+
+        </div>
+    </div>
     </div>
 </section>
 

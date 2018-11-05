@@ -784,6 +784,7 @@ header .qtranxs_widget ul li {
     max-width: 75%;
     padding-right: 15px;
     margin-top: -290px;
+    min-height: 500px;
 }
 .news_posts_wrap .tag-main {
     display: none;
@@ -1164,24 +1165,9 @@ header .qtranxs_widget ul li {
 .events_filter .event-filtr .select-box:first-child {
     margin-right: 50px;
 }
-/*.events_filter .event-filtr .select-box:after {*/
-    /*content: '';*/
-    /*background: url("../images/arrow.png") no-repeat 100%;*/
-    /*display: inline-block;*/
-    /*height: 9px;*/
-    /*width: 15px;*/
-/*}*/
-.events_filter .event-filtr .select-box {
-    /*content: '';*/
-    /*background: url("../images/arrow.png") no-repeat 100%;*/
-    /*display: inline-block;*/
-    /*height: 9px;*/
-    /*width: 15px;*/
-}
 .events_filter .event-filtr select:hover {
     cursor: pointer;
 }
-
 .events_filter .event-filtr .select-box select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -1193,10 +1179,6 @@ header .qtranxs_widget ul li {
     outline: none;
     min-width: 115px;
 }
-
-
-
-
 .events .blog_item {
     margin-bottom: 62px;
     height: 500px;
@@ -1250,6 +1232,28 @@ header .qtranxs_widget ul li {
 .events .date_txt {
     display: flex;
     justify-content: space-between;
+    color: #000;
+    flex-direction: column;
+}
+.events .event_tittle {
+    color: #fff;
+    padding-bottom: 0;
+}
+.events .date_txt span {
+    margin-right: 0;
+    font-style: normal;
+    text-transform: none;
+    font-weight: bold;
+    letter-spacing: 0;
+    float: left;
+}
+.events .date_txt span.month {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.events .date_txt span.city_name {
+    text-transform: uppercase;
+    padding: 5px 0;
 }
 .events .date_txt .share_btn_wrap .icon {
     color: #fff;
@@ -1282,7 +1286,20 @@ header .qtranxs_widget ul li {
     width: 41%;
     text-align: right;
 }
-
+.events_wrap {
+    display: flex;
+}
+.events_posts_wrap {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+.sidebar_wrap_events {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding-left: 30px;
+}
 
 /*Footer*/
 #main-footer {
