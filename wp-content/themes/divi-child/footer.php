@@ -326,9 +326,15 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 
         <!--Viber share-->
         var buttonID = "viber_share";
-        var text = "Check this out: ";
-        document.getElementById(buttonID)
-            .setAttribute('href', "https://3p3x.adj.st/?adjust_t=u783g1_kw9yml&adjust_fallback=https%3A%2F%2Fwww.viber.com%2F%3Futm_source%3DPartner%26utm_medium%3DSharebutton%26utm_campaign%3DDefualt&adjust_campaign=Sharebutton&adjust_deeplink=" + encodeURIComponent("viber://forward?text=" + encodeURIComponent(text + " " + window.location.href)));
+        var text = "";
+        var href = jQuery('a.blog_news_link').attr('href');
+        var shareButtons = jQuery('.viber_share');
+        shareButtons.each(function () {
+            var shareLink = jQuery(this).closest('.blog_item').find('.blog_news_link').attr('href');
+            jQuery(this).attr("href", "https://3p3x.adj.st/?adjust_t=u783g1_kw9yml&adjust_fallback=https%3A%2F%2Fwww.viber.com%2F%3Futm_source%3DPartner%26utm_medium%3DSharebutton%26utm_campaign%3DDefualt&adjust_campaign=Sharebutton&adjust_deeplink=" + encodeURIComponent("viber://forward?text=" + encodeURIComponent(text + " " + shareLink) ) );
+        });
+        // document.getElementById(buttonID)
+        //     .setAttribute('href', "https://3p3x.adj.st/?adjust_t=u783g1_kw9yml&adjust_fallback=https%3A%2F%2Fwww.viber.com%2F%3Futm_source%3DPartner%26utm_medium%3DSharebutton%26utm_campaign%3DDefualt&adjust_campaign=Sharebutton&adjust_deeplink=" + encodeURIComponent("viber://forward?text=" + encodeURIComponent(text + " " + href)));
 
         // Load Facebook SDK for JavaScript
             (function(d, s, id) {

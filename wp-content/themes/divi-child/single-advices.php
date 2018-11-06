@@ -69,7 +69,7 @@ $post_categories = wp_get_post_categories( $post->ID );
                                                 </a>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                     <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
-                                                    <a class="dropdown-item" id="viber_share">
+                                                    <a class="dropdown-item viber_share">
                                                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
                                                     </a>
                                                     <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
@@ -133,7 +133,7 @@ $post_categories = wp_get_post_categories( $post->ID );
                                                                 </a>
                                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                                     <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
-                                                                    <a class="dropdown-item" id="viber_share">
+                                                                    <a class="dropdown-item viber_share">
                                                                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
                                                                     </a>
                                                                     <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">

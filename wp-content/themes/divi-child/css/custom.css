@@ -1873,7 +1873,7 @@ body .scroll-top-inner {
 
 
 /*Share btn*/
-.share_btn_wrap #viber_share img {
+.share_btn_wrap .viber_share img {
     width: 73px;
     height: 28px;
 }
