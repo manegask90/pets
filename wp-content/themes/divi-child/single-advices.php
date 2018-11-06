@@ -68,15 +68,12 @@ $post_categories = wp_get_post_categories( $post->ID );
                                                     <i class="icon icon-union"></i>
                                                 </a>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                    <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
+                                                    <?php dynamic_sidebar('share'); ?>
                                                     <a class="dropdown-item viber_share">
-                                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
+                                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/viber.png" alt="">
                                                     </a>
-                                                    <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
-                                                        <div class="telegram_wrap">
-                                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
-                                                            <span>Share</span>
-                                                        </div>
+                                                    <a class="dropdown-item telegram-share" href="">
+                                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram.png" alt="">
                                                     </a>
                                                 </div>
                                             </div>
@@ -90,13 +87,27 @@ $post_categories = wp_get_post_categories( $post->ID );
                             <div class="col-md-12">
                                 <div class="single-content">
                                     <div class="social-box">
-                                        <?php get_template_part( '/includes/social_icons' ); ?>
+                                        <?php //get_template_part( '/includes/social_icons' ); ?>
+                                        <?php dynamic_sidebar('share'); ?>
+                                        <a class="dropdown-item viber_share">
+                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/viber.png" alt="">
+                                        </a>
+                                        <a class="dropdown-item telegram-share" href="">
+                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram.png" alt="">
+                                        </a>
                                     </div>
                                     <div class="single-entry-content">
                                         <?php the_content(); ?>
                                     </div>
                                     <div class="social-box bottom-soc">
-                                        <?php get_template_part( '/includes/social_icons' ); ?>
+                                        <?php //get_template_part( '/includes/social_icons' ); ?>
+                                        <?php dynamic_sidebar('share'); ?>
+                                        <a class="dropdown-item viber_share">
+                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/viber.png" alt="">
+                                        </a>
+                                        <a class="dropdown-item telegram-share" href="">
+                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram.png" alt="">
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="sidebar_contact-box">
@@ -132,15 +143,12 @@ $post_categories = wp_get_post_categories( $post->ID );
                                                                     <i class="icon icon-union"></i>
                                                                 </a>
                                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                                    <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
+                                                                    <?php dynamic_sidebar('share'); ?>
                                                                     <a class="dropdown-item viber_share">
-                                                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
+                                                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/viber.png" alt="">
                                                                     </a>
-                                                                    <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
-                                                                        <div class="telegram_wrap">
-                                                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
-                                                                            <span>Share</span>
-                                                                        </div>
+                                                                    <a class="dropdown-item telegram-share" href="">
+                                                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram.png" alt="">
                                                                     </a>
                                                                 </div>
                                                             </div>

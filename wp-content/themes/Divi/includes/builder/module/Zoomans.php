@@ -1038,15 +1038,12 @@ class ET_Builder_Module_Zoomans extends ET_Builder_Module_Type_PostBased {
                                                     <i class="icon icon-union"></i>
                                                 </a>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                    <a class="dropdown-item fb-share-button" href="<?php esc_url( the_permalink() ); ?>" data-layout="button" data-size="large"></a>
+                                                    <?php dynamic_sidebar('share'); ?>
                                                     <a class="dropdown-item viber_share">
-                                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share_viber.png" alt="">
+                                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/viber.png" alt="">
                                                     </a>
-                                                    <a class="dropdown-item telegram-share" href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')">
-                                                        <div class="telegram_wrap">
-                                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram-plane.png" alt="">
-                                                            <span>Share</span>
-                                                        </div>
+                                                    <a class="dropdown-item telegram-share" href="">
+                                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram.png" alt="">
                                                     </a>
                                                 </div>
                                             </div>
