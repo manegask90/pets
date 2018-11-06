@@ -107,8 +107,8 @@ else:
                                     </div>
                                 </div>
                                 <div class="sidebar_contact-box">
-                                    <h4 class="cbox_txt">Маєш цікаву історію? Розкажи редактору</h4>
-                                    <a href="#" class="cbox_btn" data-toggle="modal" data-target="#sidebarModal"> Написати</a>
+                                    <h4 class="cbox_txt">Розкажи нам про подію!</h4>
+                                    <a href="#" class="cbox_btn" data-toggle="modal" data-target="#sidebarModal">Надіслати анонс</a>
                                 </div>
                                 <div class="read-next">
                                     <div class="border-box"></div>

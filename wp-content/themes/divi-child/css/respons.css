@@ -954,7 +954,8 @@
         display: none;
     }
     .slider .blog_item img {
-        height: 250px;
+        /*height: 225px;*/
+        height: auto;
         min-width: 100%;
     }
     .slider.news .blog_item {
@@ -1170,6 +1171,10 @@
 
 @media (max-width: 767px) and  (min-width: 576px) {
     /*Header*/
+    .et_header_style_centered #logo {
+        max-height: initial;
+        height: 60px;
+    }
     .top_left {
         display: none;
     }
@@ -2588,6 +2593,9 @@
     }
     .event_single_wrap {
         margin-bottom: 15px;
+    }
+    .event_single_wrap .et-social-icons {
+        text-align: center;
     }
     /*Footer*/
     .main_footer .footer_info {
