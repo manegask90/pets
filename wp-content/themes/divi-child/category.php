@@ -107,14 +107,14 @@ $cat_id = get_query_var('cat');
 
                 if ($type == 'latest') {
                     $args = array(
-                        'numberposts' => 6,
+                        'numberposts' => 10,
                         'order'    => 'DESC',
-                        'category'    => $cat
+                        'category'    => array('23, 6')
                     );
                 } else {
                     $args = array(
-                        'numberposts' => 6,
-                        'category'    => $cat,
+                        'numberposts' => 10,
+                        'category'    => array('23, 6'),
                         'meta_key' => 'post_views_count',
                         'orderby'  => 'meta_value_num',
                     );
