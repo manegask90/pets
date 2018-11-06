@@ -29,7 +29,11 @@ function my_theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 
-
+register_sidebar( array(
+    'id'          => 'share',
+    'name'        => __( 'Share' ),
+    'description' => '',
+) );
 
 /* include custom image module file*/
 include(get_stylesheet_directory() . '/custom-pb-text-module.php');

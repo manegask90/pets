@@ -1384,6 +1384,9 @@ header .qtranxs_widget ul li {
 .event_single_wrap .et-social-icons .icon {
     margin-right: 0;
 }
+.event_single_wrap .et-social-icons .icon:hover {
+    color: #FF8000;
+}
 /*Footer*/
 #main-footer {
     background-color: #404040;
@@ -1909,7 +1912,10 @@ body .scroll-top-inner {
     height: 36px;
 }
 .share_btn_wrap .dropdown-menu.show {
-    min-width: 100px;
+    min-width: 125px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 0;
 }
 .share_btn_wrap .dropdown {
     display: inline-block;
@@ -1922,6 +1928,9 @@ body .scroll-top-inner {
 }
 .share_btn_wrap .dropdown a:hover .icon {
     color: #FF8000;
+}
+.share_btn_wrap .widgettitle {
+    display: none;
 }
 .dropdown-custom {
     position: relative;

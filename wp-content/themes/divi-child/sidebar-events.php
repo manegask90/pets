@@ -36,7 +36,7 @@
 
     <div class="sidebar_contact-box">
         <h4 class="cbox_txt">Розкажи нам про подію!</h4>
-        <a href="#" class="cbox_btn" data-toggle="modal" data-target="#sidebarModal"> Написати</a>
+        <a href="#" class="cbox_btn" data-toggle="modal" data-target="#sidebarModal">Надіслати анонс</a>
     </div>
 
 </div>
