@@ -1055,6 +1055,7 @@ class ET_Builder_Module_Main_news extends ET_Builder_Module {
 <!--                                                <span>Share</span>-->
 <!--                                              </div>-->
 <!--                                            </a>-->
+                                            <a href="<?php the_permalink(); ?>" class="permalink" style="display: none"></a>
                                             <?php dynamic_sidebar('share'); ?>
                                             <a class="dropdown-item viber_share">
                                                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/viber.png" alt="">
@@ -1132,6 +1133,7 @@ class ET_Builder_Module_Main_news extends ET_Builder_Module {
                                             <i class="icon icon-union"></i>
                                           </a>
                                           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                          <a href="<?php the_permalink(); ?>" class="permalink" style="display: none"></a>
                                                 <?php dynamic_sidebar('share'); ?>
                                                 <a class="dropdown-item viber_share">
                                                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/viber.png" alt="">

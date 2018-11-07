@@ -68,6 +68,7 @@ $post_categories = wp_get_post_categories( $post->ID );
                                                     <i class="icon icon-union"></i>
                                                 </a>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                    <a href="<?php the_permalink(); ?>" class="permalink" style="display: none"></a>
                                                     <?php dynamic_sidebar('share'); ?>
                                                     <a class="dropdown-item viber_share">
                                                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/viber.png" alt="">
@@ -143,6 +144,7 @@ $post_categories = wp_get_post_categories( $post->ID );
                                                                     <i class="icon icon-union"></i>
                                                                 </a>
                                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                                    <a href="<?php the_permalink(); ?>" class="permalink" style="display: none"></a>
                                                                     <?php dynamic_sidebar('share'); ?>
                                                                     <a class="dropdown-item viber_share">
                                                                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/viber.png" alt="">

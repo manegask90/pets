@@ -35,7 +35,7 @@ $cat_id = get_query_var('cat');
         <div class="row main-news-row">
         <div class="col-lg-6 col-md-12 block_1_1">
         <div class="block-wrap">
-            <a href="<?php esc_url( the_permalink() ); ?>">
+            <a href="<?php esc_url( the_permalink() ); ?>" class="blog_news_link">
                 <h2 class="entry-title"><?php the_title(); ?>
                     <div class="share_btn_wrap">
                         <div class="dropdown dropleft show">
@@ -43,6 +43,7 @@ $cat_id = get_query_var('cat');
                                 <i class="icon icon-union"></i>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a href="<?php the_permalink(); ?>" class="permalink" style="display: none"></a>
                                 <?php dynamic_sidebar('share'); ?>
                                 <a class="dropdown-item viber_share">
                                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/viber.png" alt="">
@@ -137,6 +138,7 @@ $cat_id = get_query_var('cat');
                                                     <i class="icon icon-union"></i>
                                                 </a>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                    <a href="<?php the_permalink(); ?>" class="permalink" style="display: none"></a>
                                                     <?php dynamic_sidebar('share'); ?>
                                                     <a class="dropdown-item viber_share">
                                                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/viber.png" alt="">

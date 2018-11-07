@@ -57,6 +57,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                                         <i class="icon icon-union"></i>
                                                     </a>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                        <a href="<?php the_permalink(); ?>" class="permalink" style="display: none"></a>
                                                         <?php dynamic_sidebar('share'); ?>
                                                         <a class="dropdown-item viber_share">
                                                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/viber.png" alt="">
@@ -139,6 +140,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                                                     <i class="icon icon-union"></i>
                                                                 </a>
                                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                                    <a href="<?php the_permalink(); ?>" class="permalink" style="display: none"></a>
                                                                     <?php dynamic_sidebar('share'); ?>
                                                                     <a class="dropdown-item viber_share">
                                                                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/viber.png" alt="">
