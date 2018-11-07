@@ -695,10 +695,10 @@ header .qtranxs_widget ul li {
     box-shadow: none;
     -webkit-box-shadow: none;
 }
-.advices .advice_item .share_btn_wrap .icon {
+.advices .advice_item .share_btn_wrap .dropdown  .icon {
     color: #fff;
 }
-.advices .advice_item .share_btn_wrap .dropup {
+.advices .advice_item .share_btn_wrap .dropdown {
     display: inline-block;
     margin-right: 8px;
     margin-bottom: 5px;
@@ -1943,6 +1943,7 @@ body .scroll-top-inner {
     /*padding-right: 15px;*/
     /*height: 36px;*/
     padding: 0;
+    width: auto;
 }
 .widget_synved_social_share div {
     width: 57px;

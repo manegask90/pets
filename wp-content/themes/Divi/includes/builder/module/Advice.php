@@ -1066,7 +1066,7 @@ class ET_Builder_Module_Advice extends ET_Builder_Module_Type_PostBased {
                             <?php the_excerpt(); ?>
                         </div>
                         <div class="share_btn_wrap">
-                                    <div class="dropup">
+                                    <div class="dropdown dropleft">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="icon icon-union"></i>
                                         </a>

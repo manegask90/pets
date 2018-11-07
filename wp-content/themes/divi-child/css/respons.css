@@ -1330,7 +1330,7 @@
         margin-bottom: 15px;
     }
     .home .news .blog_item .share_btn_wrap .dropdown-menu.show {
-        top: -100px !important;
+        top: -50px !important;
     }
     .info_devider .devider-sub {
         font-size: 20px;
@@ -1341,7 +1341,7 @@
     }
     .advices .advice_item-header {
         padding-right: 25px;
-        background: #fff url("../images/Intersect.png") no-repeat 120% -100%;
+        background: #fff url("../images/Intersect.png") no-repeat 110% -100%;
     }
     .advices .advice_item-header .icon {
         font-size: 21px;
@@ -2168,7 +2168,7 @@
     .advices .advice_item {
         background-size: 30px;
     }
-    .advices .advice_item .share_btn_wrap .dropup {
+    .advices .advice_item .share_btn_wrap .dropdown {
         margin-right: 0;
         margin-bottom: 0;
     }
@@ -2191,10 +2191,10 @@
         width: 100%;
     }
     .home .news .blog_item .share_btn_wrap .dropdown-menu.show {
-        top: -100px !important;
+        top: -50px !important;
     }
     .advices .advice_item .share_btn_wrap .dropdown-menu.show {
-        left: -50px !important;
+        /*left: -50px !important;*/
     }
     .zoopeople .blog_item_main .share_btn_wrap .dropdown-menu.show {
         /*top: -145px !important;*/
