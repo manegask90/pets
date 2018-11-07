@@ -3,6 +3,9 @@
 a {
     color: #FF8000;
 }
+.newsletter-wrap {
+    min-height: 37vh;
+}
 .et_pb_bg_layout_light .et_pb_portfolio_item .post-meta, .et_pb_bg_layout_light .et_pb_portfolio_item .post-meta a, .et_pb_bg_layout_light .et_pb_post .post-meta, .et_pb_bg_layout_light .et_pb_post .post-meta a, .et_pb_bg_layout_light .et_pb_post p, .et_pb_bg_layout_light p.et_pb_title_meta_container, .et_pb_bg_layout_light p.et_pb_title_meta_container a {
     color: #000;
 }

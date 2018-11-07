@@ -421,3 +421,22 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
         </div>
     </div>
 </div>
+
+<!-- Modal events -->
+<div class="modal fade bd-example-modal-lg" id="sidebarModal" tabindex="-1" role="dialog" aria-labelledby="sidebarModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">НАПИСАТИ РЕДАКТОРУ</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <?php echo do_shortcode( ' [contact-form-7 id="681" title="Contact form events"] ' ); ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+
