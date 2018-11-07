@@ -149,6 +149,7 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
                         data: data,
                         success: function (response) {
                             $newsWrap.html(response);
+                            initSareButtons();
                         }
                     });
                 }
@@ -324,26 +325,26 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
             // });
         });
 
-        <!--Viber share-->
-        var text = "";
-        var shareButtons = jQuery('.viber_share');
-        shareButtons.each(function () {
-            // var shareLink = jQuery(this).closest('.blog_news_link').find('.blog_news_link').attr('href');
-            var shareLink = jQuery(this).closest('.dropdown-menu').find('.permalink').attr('href');
-            jQuery(this).attr("href", "https://3p3x.adj.st/?adjust_t=u783g1_kw9yml&adjust_fallback=https%3A%2F%2Fwww.viber.com%2F%3Futm_source%3DPartner%26utm_medium%3DSharebutton%26utm_campaign%3DDefualt&adjust_campaign=Sharebutton&adjust_deeplink=" + encodeURIComponent("viber://forward?text=" + encodeURIComponent(text + " " + shareLink) ) );
-        });
+        function initSareButtons() {
+            <!--Viber share-->
+            var text = "";
+            var shareButtons = jQuery('.viber_share');
+            shareButtons.each(function () {
+                // var shareLink = jQuery(this).closest('.blog_news_link').find('.blog_news_link').attr('href');
+                var shareLink = jQuery(this).closest('.dropdown-menu').find('.permalink').attr('href');
+                jQuery(this).attr("href", "https://3p3x.adj.st/?adjust_t=u783g1_kw9yml&adjust_fallback=https%3A%2F%2Fwww.viber.com%2F%3Futm_source%3DPartner%26utm_medium%3DSharebutton%26utm_campaign%3DDefualt&adjust_campaign=Sharebutton&adjust_deeplink=" + encodeURIComponent("viber://forward?text=" + encodeURIComponent(text + " " + shareLink)));
+            });
 
 
-
-        <!--Telegram share-->
-        var href_tel = jQuery('a.blog_news_link').attr('href');
-        var shareButtonsTelegram = jQuery('.telegram-share');
-        shareButtonsTelegram.each(function () {
-            var shareLinkTelegram = jQuery(this).closest('.dropdown-menu').find('.permalink').attr('href');
-            jQuery(this).attr("href", "https://telegram.me/share/url?url=" + encodeURIComponent(shareLinkTelegram));
-        });
-
-
+            <!--Telegram share-->
+            var href_tel = jQuery('a.blog_news_link').attr('href');
+            var shareButtonsTelegram = jQuery('.telegram-share');
+            shareButtonsTelegram.each(function () {
+                var shareLinkTelegram = jQuery(this).closest('.dropdown-menu').find('.permalink').attr('href');
+                jQuery(this).attr("href", "https://telegram.me/share/url?url=" + encodeURIComponent(shareLinkTelegram));
+            });
+        }
+        initSareButtons();
 
         // Form validator
         jQuery(document).ready(function($) {
