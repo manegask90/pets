@@ -1059,6 +1059,9 @@ class ET_Builder_Module_Main_news extends ET_Builder_Module {
                                             <a class="dropdown-item viber_share">
                                                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/viber.png" alt="">
                                             </a>
+                                            <a class="dropdown-item telegram-share" href="">
+                                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram.png" alt="">
+                                                </a>
                                           </div>
                                         </div>
                                     </div>

@@ -365,14 +365,14 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
             });
         });
 
-        // Input file
-        // jQuery(document).ready(function($){
-        //     $("input[type=file].nicefileinput").nicefileinput();
-        //     $("#download-link").click(function(){
-        //         $('html, body').animate({scrollTop: $("#download").offset().top},'slow');
-        //         return false;
-        //     });
-        // });
+        // Hover search
+        jQuery( ".sb-search" ).hover(
+            function() {
+                jQuery( this ).addClass( "search-hover" );
+            }, function() {
+                jQuery( this ).removeClass( "search-hover" );
+            }
+        );
 </script>
 </body>
 </html>

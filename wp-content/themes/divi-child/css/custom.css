@@ -46,6 +46,16 @@ a {
     font-size: 20px;
     line-height: 27px;
 }
+.sb-icon-search:hover {
+    color: #FF8000;
+}
+.sb-search.sb-search-open .sb-icon-search:hover {
+    color: #FF8000;
+}
+.sb-search.search-hover input[type=text] {
+    display: block;
+    border-bottom: 1px solid #FF8000;
+}
 .sb-icon-search:before {
     content: "\e80a";
 }
@@ -1311,6 +1321,7 @@ header .qtranxs_widget ul li {
 }
 .event_single_wrap .block_2_2 .social-box {
     justify-content: start;
+    margin: 0;
 }
 .event_single_wrap .container-1 .block_1 {
     padding-left: 0;

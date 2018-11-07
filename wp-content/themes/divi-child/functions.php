@@ -18,9 +18,9 @@ function my_theme_enqueue_styles() {
     if( is_page_template( array('events.php', 'news.php') ) ) {
         wp_enqueue_script('loadmore', get_stylesheet_directory_uri().'/assets/load-more/loadmore.js', array('jquery'), false, true);
     }
-    if( is_page_template( array('zoomans.php') ) ) {
+//    if( is_page_template( 'category-zoopeoples.php' ) ) {
         wp_enqueue_script('loadmore-zoo', get_stylesheet_directory_uri().'/assets/load-more/loadmore-zoo.js', array('jquery'), false, true);
-    }
+//    }
     wp_enqueue_script('bxslider', get_stylesheet_directory_uri().'/assets/bxslider/jquery.bxslider.js', array('jquery'), false, true);
 //    wp_enqueue_script('file-input', get_stylesheet_directory_uri().'/assets/file-input/jquery.nicefileinput.min.js', array('jquery'), false, true);
 //    wp_enqueue_script('validator', get_stylesheet_directory_uri().'/js/bootstrapvalidator.min.js', array('jquery'), false, true);

@@ -861,7 +861,7 @@
     }
     .zoopeople .blog_item_main .share_btn_wrap .dropdown-menu.show {
         /*top: -145px !important;*/
-        transform: translate3d(94px, -120px, 0px) !important;
+        transform: translate3d(94px, -55px, 0px) !important;
     }
     .zoopeople .blog_item_main .dropdown-menu img {
         min-width: auto;
@@ -1040,7 +1040,7 @@
     }
     .zoopeople-single .blog_item_main .share_btn_wrap .dropdown-menu.show {
         /*top: -145px !important;*/
-        transform: translate3d(94px, -120px, 0px) !important;
+        transform: translate3d(94px, -55px, 0px) !important;
     }
     .zoopeople-single .blog_item_main .dropdown-menu img {
         min-width: auto;
@@ -1469,7 +1469,7 @@
     }
     .zoopeople .blog_item_main .share_btn_wrap .dropdown-menu.show {
         /*top: -145px !important;*/
-        transform: translate3d(94px, -120px, 0px) !important;
+        transform: translate3d(94px, -55px, 0px) !important;
     }
     .zoopeople .blog_item_main .dropdown-menu img {
         min-width: auto;
@@ -1659,7 +1659,7 @@
     }
     .zoopeople-single .blog_item_main .share_btn_wrap .dropdown-menu.show {
         /*top: -145px !important;*/
-        transform: translate3d(94px, -120px, 0px) !important;
+        transform: translate3d(94px, -55px, 0px) !important;
     }
     .zoopeople-single .blog_item_main .dropdown-menu img {
         min-width: auto;
@@ -2198,7 +2198,7 @@
     }
     .zoopeople .blog_item_main .share_btn_wrap .dropdown-menu.show {
         /*top: -145px !important;*/
-        transform: translate3d(94px, -120px, 0px) !important;
+        transform: translate3d(94px, -55px, 0px) !important;
     }
     .zoopeople .blog_item_main .dropdown-menu img {
         min-width: auto;
@@ -2286,7 +2286,7 @@
         min-height: initial;
     }
     .top_news_wrap .share_btn_wrap .dropdown-menu.show {
-        transform: translate3d(-69px, 19px, 0px) !important;
+        /*transform: translate3d(-69px, 19px, 0px) !important;*/
     }
     .posts .posts_filter-list li:last-child {
         margin-right: 0;
@@ -2466,7 +2466,7 @@
     }
     .zoopeople-single .blog_item_main .share_btn_wrap .dropdown-menu.show {
         /* top: -145px !important; */
-        transform: translate3d(94px, -120px, 0px) !important;
+        transform: translate3d(94px, -55px, 0px) !important;
     }
     .zoopeople-single .blog_item_main img {
         vertical-align: bottom;
