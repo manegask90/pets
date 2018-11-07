@@ -773,7 +773,7 @@ header .qtranxs_widget ul li {
     padding-right: 8px;
 }
 .top_news_wrap .main-news-row .share_btn_wrap .dropdown-item {
-    height: 36px;
+    height: auto;
 }
 .main-news-row {
     min-height: 500px;
@@ -1304,6 +1304,13 @@ header .qtranxs_widget ul li {
 .event_single_wrap {
     position: relative;
     margin-bottom: 50px;
+}
+.event_single_wrap .social-box a {
+    padding: 0;
+    width: auto;
+}
+.event_single_wrap .block_2_2 .social-box {
+    justify-content: start;
 }
 .event_single_wrap .container-1 .block_1 {
     padding-left: 0;
