@@ -366,6 +366,24 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
             });
         });
 
+        // Form validator modal
+        jQuery(document).ready(function($) {
+            $('.wpcf7-form .wpcf7-email').keyup(function() {
+                if($(this).val() != '') {
+                    var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+                    var mail = $('.wpcf7-form .wpcf7-email');
+                    if(pattern.test($(this).val())){
+                        $(this).parents('.wpcf7-form').removeClass('error').addClass('valid');
+                    } else {
+                        $(this).parents('.wpcf7-form').removeClass('valid').addClass('error');
+                    }
+                } else {
+                    // $(this).css({'border' : '1px solid #ff0000'});
+                    // $('#valid').text('Поле email не должно быть пустым');
+                }
+            });
+        });
+
         // Hover search
         jQuery( ".sb-search" ).hover(
             function() {

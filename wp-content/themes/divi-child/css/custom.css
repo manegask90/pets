@@ -1157,6 +1157,18 @@ header .qtranxs_widget ul li {
     left: -2px;
     box-shadow: none;
 }
+.modal-body .wpcf7-form.error .wpcf7-email {
+    border: 2px solid #FF0000;
+    background-image: url("../images/attention.png");
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+}
+.modal-body .wpcf7-form.valid .wpcf7-email {
+    border: 2px solid #3AB75D;
+    background-image: url("../images/Path.png");
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+}
 /*Events*/
 .events {
     margin-bottom: 45px;
