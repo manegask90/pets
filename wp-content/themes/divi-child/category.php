@@ -38,7 +38,7 @@ $cat_id = get_query_var('cat');
             <a href="<?php esc_url( the_permalink() ); ?>">
                 <h2 class="entry-title"><?php the_title(); ?>
                     <div class="share_btn_wrap">
-                        <div class="dropdown show">
+                        <div class="dropdown dropleft show">
                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="icon icon-union"></i>
                             </a>

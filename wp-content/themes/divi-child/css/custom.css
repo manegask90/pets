@@ -1070,6 +1070,9 @@ header .qtranxs_widget ul li {
 .modal-body .select-box select:hover {
     cursor: pointer;
 }
+.modal-body .select-box .wpcf7-form-control-wrap {
+
+}
 .modal-body .form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #C4C4C4;
     letter-spacing: 2.25px;
@@ -1141,7 +1144,19 @@ header .qtranxs_widget ul li {
     color: #fff;
     font-size: 45px;
 }
-
+.modal-body .nice-select {
+    padding-top: 0;
+    float: initial;
+}
+.modal-body .nice-select.open .list {
+    border: 2px solid #FF8000;
+    border-top: none;
+    border-radius: 0;
+    width: calc(100% + 4px);
+    top: 90%;
+    left: -2px;
+    box-shadow: none;
+}
 /*Events*/
 .events {
     margin-bottom: 45px;

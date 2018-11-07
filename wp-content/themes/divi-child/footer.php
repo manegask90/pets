@@ -373,6 +373,11 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
                 jQuery( this ).removeClass( "search-hover" );
             }
         );
+
+        // Select custom
+        jQuery(document).ready(function($) {
+            jQuery('.select-box .wpcf7-select').niceSelect();
+        });
 </script>
 </body>
 </html>
