@@ -448,11 +448,16 @@ function events_filtr_get_posts()
                                                     <span>-</span>
                                                     <span><?php echo $date_end; ?></span>
                                                 <?php } ?>
-                                                <span class="month"><?php echo date('F', $date_start); ?></span>
+                                                <span class="month"><?php echo date_i18n('F', $date_start); ?></span>
                                                 <span><?php echo date('Y', $date_start); ?></span>
                                             </div>
 
-                                            <span class="city_name"><?php echo get_field('city'); ?></span>
+                                            <span class="city_name"><?php
+                                                $field = get_field_object('city');
+                                                $value = get_field('city');
+                                                $label = $field['choices'][ $value ];
+                                                echo $label ?>
+                                            </span>
                                         </h5>
                                         <div class="event_brief"><?php echo apply_filters( 'the_excerpt', get_the_excerpt($post) ); ?></div>
                                     </div>
@@ -541,11 +546,16 @@ function true_load_posts(){
                                             <span>-</span>
                                             <span><?php echo $date_end; ?></span>
                                         <?php } ?>
-                                        <span class="month"><?php echo date('F', $date_start); ?></span>
+                                        <span class="month"><?php echo date_i18n('F', $date_start); ?></span>
                                         <span><?php echo date('Y', $date_start); ?></span>
                                     </div>
 
-                                    <span class="city_name"><?php echo get_field('city'); ?></span>
+                                    <span class="city_name"><?php
+                                        $field = get_field_object('city');
+                                        $value = get_field('city');
+                                        $label = $field['choices'][ $value ];
+                                        echo $label ?>
+                                    </span>
                                 </h5>
                                 <div class="event_brief"><?php the_excerpt(); ?></div>
                             </div>

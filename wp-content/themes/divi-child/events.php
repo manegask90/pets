@@ -334,7 +334,12 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                                 <span><?php echo date('Y', $date_start); ?></span>
                                             </div>
 
-                                            <span class="city_name"><?php echo get_field('city'); ?></span>
+                                            <span class="city_name"><?php
+                                                $field = get_field_object('city');
+                                                $value = get_field('city');
+                                                $label = $field['choices'][ $value ];
+                                                echo $label ?>
+                                            </span>
                                         </h5>
                                         <div class="event_brief"><?php the_excerpt(); ?></div>
                                     </div>

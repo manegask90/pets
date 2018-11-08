@@ -80,7 +80,12 @@ else:
                                         </div>
                                         <div class="box">
                                             <i class="icon event-loc"></i>
-                                            <span class="city_name"><?php echo get_field('city'); ?></span>
+                                            <span class="city_name"><?php
+                                                $field = get_field_object('city');
+                                                $value = get_field('city');
+                                                $label = $field['choices'][ $value ];
+                                                echo $label ?>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
