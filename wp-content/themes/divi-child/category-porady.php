@@ -3,6 +3,8 @@ get_header();
 
 $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 $cat_id = get_query_var('cat');
+
+$category = get_the_category();
 ?>
 <?php //if ( ! $is_page_builder_used ) : ?>
 
@@ -86,7 +88,7 @@ $cat_id = get_query_var('cat');
             } ?>
             <div class="row">
                 <div class="col-md-9 posts_filter">
-                    <ul class="posts_filter-list">
+                    <ul class="posts_filter-list advice-list">
                         <li>Показувати спочатку:</li>
                         <li class="filter">
                             <a href="#" class="<?php echo ($type == 'latest' ? 'active' : '' ); ?>" data-type="latest">Останні</a>
@@ -100,7 +102,7 @@ $cat_id = get_query_var('cat');
                     <?php get_sidebar('bottom'); ?>
                 </div>
             </div>
-            <div class="row news_posts_wrap" data-main-post="<?php echo $main_post; ?>" data-cat="<?php echo $cat_id ?>">
+            <div class="row news_posts_wrap advices" data-main-post="<?php echo $main_post; ?>" data-cat="<?php echo $cat_id ?>">
                 <?php
 
                 if ($type == 'latest') {
@@ -122,44 +124,61 @@ $cat_id = get_query_var('cat');
                 }
 
                 $posts = get_posts( $args );
+                $bootstrap_col = ' col-lg-4 col-md-6 col-sm-6 col-6';
+//                $post_categories = wp_get_post_categories( $post->ID );
                 if (!empty($posts)) {
-                    foreach( $posts as $post ){ ?>
-                        <div <?php post_class('col-xl-4 col-lg-6 col-md-6 col-sm-6'); ?>>
-                            <a href="<?php the_permalink(); ?>" class="blog_news_link">
-                                <div class="blog_item">
-                                    <div class="img-wrapper">
-                                        <?php the_post_thumbnail(); ?>
+                    foreach( $posts as $post ){
+                        $post_categories = wp_get_post_categories( $post->ID );
+                        $post_categories_all = wp_get_post_categories( $post->ID, array('fields' => 'all')  );
+                        ?>
+                        <div id="post-<?php the_ID(); ?>"  <?php post_class( 'et_pb_post clearfix' . $bootstrap_col  ); ?>>
+
+                            <div class="blog_advices_link">
+                                <div class="advice_item">
+                                    <div class="advice_item-header">
+                                        <h4 class="header_tittle">
+                                            <span>
+                                                <?php
+                                                foreach( $post_categories_all as $cat ){
+                                                    echo $cat->name .' ';
+                                                }
+                                                ?>
+                                            </span>
+                                        </h4>
+                                        <h4 class="header_tittle"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                                        <?php
+                                        if (in_array(9, $post_categories)) {
+                                            echo '<i class="icon demo-icon icon-cat"></i>';
+                                        } elseif (in_array(8, $post_categories)) {
+                                            echo '<i class="icon demo-icon icon-dog"></i>';
+                                        }
+                                        elseif (in_array(10, $post_categories)) {
+                                            echo '<i class="icon demo-icon icon-laps"></i>';
+                                        }
+                                        ?>
                                     </div>
-                                    <div class="blog_item-overlay-top">
-                                        <h5 class="post_date"><?php echo get_the_date('j. m. Y'); ?></h5>
-                                        <div class="share_btn_wrap">
-                                            <div class="dropdown dropleft show">
-                                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="icon icon-union"></i>
+                                    <div class="advice_item-content">
+                                        <p>Зі своїм улюбленцем варто проводити якомога більше вільного часу, і відпустка не має стати цьому на заваді.</p>
+                                    </div>
+                                    <div class="share_btn_wrap">
+                                        <div class="dropdown dropleft">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="icon icon-union"></i>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <a href="<?php the_permalink(); ?>" class="permalink" style="display: none"></a>
+                                                <?php dynamic_sidebar('share'); ?>
+                                                <a class="dropdown-item viber_share">
+                                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/viber.png" alt="">
                                                 </a>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                    <a href="<?php the_permalink(); ?>" class="permalink" style="display: none"></a>
-                                                    <?php dynamic_sidebar('share'); ?>
-                                                    <a class="dropdown-item viber_share">
-                                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/viber.png" alt="">
-                                                    </a>
-                                                    <a class="dropdown-item telegram-share" href="">
-                                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram.png" alt="">
-                                                    </a>
-                                                </div>
+                                                <a class="dropdown-item telegram-share" href="">
+                                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram.png" alt="">
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="blog_item-overlay">
-                                        <div class="content_bottom">
-                                            <a href="<?php the_permalink(); ?>">
-                                                <h4 class="post_tittle"><?php the_title(); ?></h4>
-                                            </a>
-                                            <div class="post_brief"><?php echo kama_excerpt(array('maxchar'=>100)); ?></div>
-                                        </div>
-                                    </div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     <?php }
                 } ?>

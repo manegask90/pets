@@ -168,6 +168,111 @@ function news_filtr_get_posts()
     wp_die($resp);
 }
 
+//Filtr
+add_action( 'wp_ajax_advice_filtr', 'advice_filtr_get_posts' );
+add_action( 'wp_ajax_nopriv_advice_filtr', 'advice_filtr_get_posts' );
+
+function advice_filtr_get_posts()
+{
+    $data = $_POST;
+    $resp = '';
+    $bootstrap_col = ' col-lg-4 col-md-6 col-sm-6 col-6';
+    $category = get_the_category();
+
+
+    if (isset($data['type'])) {
+        $type = $data['type'];
+
+        if ($type == 'latest') {
+            $args = array(
+                'numberposts' => 6,
+                'order'    => 'DESC',
+                'category' => 6
+            );
+        } else {
+            $args = array(
+                'numberposts' => 6,
+                'category' => 6,
+                'meta_key' => 'post_views_count',
+                'orderby'  => 'meta_value_num'
+            );
+        }
+
+        if (isset($data['mainPostId'])) {
+            $args['exclude'] = [$data['mainPostId']];
+        }
+        if (isset($data['catId'])) {
+            $args['category'] = $data['catId'];
+        }
+        $posts = get_posts($args);
+        ob_start();
+        if (!empty($posts)) {
+            foreach( $posts as $post ){
+                setup_postdata($post);
+                $post_categories = wp_get_post_categories( $post->ID );
+                $post_categories_all = wp_get_post_categories( $post->ID, array('fields' => 'all')  );
+                ?>
+                <div id="post-<?php the_ID(); ?>"  <?php post_class( 'et_pb_post clearfix' . $bootstrap_col  ); ?>>
+
+                    <div class="blog_advices_link">
+                        <div class="advice_item">
+                            <div class="advice_item-header">
+                                <h4 class="header_tittle">
+                                    <span>
+                                        <?php
+                                        foreach ($post_categories_all as $cat) {
+                                            echo $cat->name . ' ';
+                                        }
+                                        ?>
+                                    </span>
+                                </h4>
+                                <h4 class="header_tittle"><a href="<?php the_permalink(); ?>"><?php echo get_the_title($post); ?></a></h4>
+                                <?php
+                                if (in_array(9, $post_categories)) {
+                                    echo '<i class="icon demo-icon icon-cat"></i>';
+                                } elseif (in_array(8, $post_categories)) {
+                                    echo '<i class="icon demo-icon icon-dog"></i>';
+                                }
+                                elseif (in_array(10, $post_categories)) {
+                                    echo '<i class="icon demo-icon icon-laps"></i>';
+                                }
+                                ?>
+                            </div>
+                            <div class="advice_item-content">
+                                <?php $excerpt = apply_filters( 'the_excerpt', get_the_excerpt($post) ); ?>
+                                <p>
+                                    <?php echo mb_substr( strip_tags( $excerpt ), 0, 80 ); ?>
+                                </p>
+                            </div>
+                            <div class="share_btn_wrap">
+                                <div class="dropdown dropleft">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="icon icon-union"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a href="<?php the_permalink(); ?>" class="permalink" style="display: none"></a>
+                                        <?php dynamic_sidebar('share'); ?>
+                                        <a class="dropdown-item viber_share">
+                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/viber.png" alt="">
+                                        </a>
+                                        <a class="dropdown-item telegram-share" href="">
+                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/telegram.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php }
+            wp_reset_postdata(); // сброс
+        }
+        $resp = ob_get_contents();
+        ob_clean();
+    }
+    wp_die($resp);
+}
+
 
 //Filtr stories
 add_action( 'wp_ajax_stories_filtr', 'stories_filtr_get_posts' );
