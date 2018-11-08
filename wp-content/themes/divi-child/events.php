@@ -325,12 +325,12 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                                     $date_start = strtotime(get_field('date'));
                                                     $date_end = get_field('date_end');
                                                 ?>
-                                                <span><?php echo date('d', $date_start); ?></span>
+                                                <span><?php echo date_i18n('d', $date_start); ?></span>
                                                 <?php if (isset($date_end)) { ?>
                                                     <span>-</span>
                                                     <span><?php echo $date_end; ?></span>
                                                 <?php } ?>
-                                                <span class="month"><?php echo date('F', $date_start); ?></span>
+                                                <span class="month"><?php echo date_i18n('F', $date_start); ?></span>
                                                 <span><?php echo date('Y', $date_start); ?></span>
                                             </div>
 

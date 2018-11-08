@@ -63,7 +63,7 @@ $post_categories = wp_get_post_categories( $post->ID );
                                             <?php the_excerpt(); ?>
                                         </div>
                                         <div class="share_btn_wrap">
-                                            <div class="dropup">
+                                            <div class="dropdown">
                                                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <i class="icon icon-union"></i>
                                                 </a>

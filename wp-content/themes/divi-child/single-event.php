@@ -71,7 +71,7 @@ else:
                                                 <span>-</span>
                                                 <span><?php echo $date_end; ?></span>
                                             <?php } ?>
-                                            <span class="month"><?php echo date('F', $date_start); ?></span>
+                                            <span class="month"><?php echo date_i18n('F', $date_start); ?></span>
                                             <span><?php echo date('Y', $date_start); ?></span>
                                         </div>
                                         <div class="box">
